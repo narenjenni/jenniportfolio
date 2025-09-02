@@ -174,3 +174,56 @@ if (form){
   });
   updateDots(); restart();
 })();
+
+// v10: defer header slider start until first image is loaded
+(function(){
+  const slider = document.getElementById('headerSlider');
+  if(!slider) return;
+  const firstImg = slider.querySelector('.slide img');
+  const startHeader = () => {
+    if (!slider.__started) {
+      slider.__started = true;
+      const ev = new Event('headerslider:start'); slider.dispatchEvent(ev);
+    }
+  };
+  if (firstImg && !firstImg.complete) {
+    firstImg.addEventListener('load', startHeader, {once:true});
+    firstImg.addEventListener('error', startHeader, {once:true});
+  } else { startHeader(); }
+
+  slider.addEventListener('headerslider:start', ()=>{
+    const track = slider.querySelector('.slides');
+    const slides = Array.from(slider.querySelectorAll('.slide'));
+    const dotsWrap = slider.querySelector('.slider-dots');
+    let index = 0; let timer;
+
+    slides.forEach((_, i)=>{
+      const b = document.createElement('button');
+      b.setAttribute('aria-label', 'Ke slide ' + (i+1));
+      b.addEventListener('click', ()=> go(i));
+      dotsWrap.appendChild(b);
+    });
+    function updateDots(){
+      dotsWrap.querySelectorAll('button').forEach((b, i)=> b.classList.toggle('is-active', i===index));
+    }
+    function go(i){
+      index = (i+slides.length)%slides.length;
+      track.style.transform = `translateX(-${index*100}%)`;
+      updateDots(); restart();
+    }
+    function next(){ go(index+1) }
+    function prev(){ go(index-1) }
+    slider.querySelector('.next').addEventListener('click', next);
+    slider.querySelector('.prev').addEventListener('click', prev);
+    function restart(){ clearInterval(timer); timer = setInterval(next, 5000); }
+
+    // If lazy images error, keep slider alive
+    slides.forEach(sl=>{
+      const img = sl.querySelector('img');
+      if(!img) return;
+      img.addEventListener('error', ()=>{ img.classList.add('broken'); });
+    });
+
+    updateDots(); restart();
+  }, {once:true});
+})();
