@@ -174,3 +174,23 @@ input:focus, textarea:focus{box-shadow:var(--ring);border-color:transparent}
 .card-media{overflow:hidden}
 .card-media img{width:100%; height:auto; aspect-ratio:16/10; object-fit:cover; transform:scale(1); transition:transform .5s ease}
 .card--elevate:hover .card-media img{transform:scale(1.06)}
+
+/* Hero simple like reference */
+.hero--simple{padding:56px 0 80px;background-image:radial-gradient(ellipse at 20% 0%, rgba(255,255,255,.04), transparent 40%), radial-gradient(ellipse at 80% -10%, rgba(255,255,255,.03), transparent 40%);}
+.hero-simple-inner{display:block}
+.hero-simple-copy h1{font-size:clamp(26px,5.2vw,52px);letter-spacing:.05em;margin:6px 0}
+.mouse-indicator{width:22px;height:36px;border:2px solid rgba(255,255,255,.35);border-radius:14px;margin:22px auto 0;position:relative;opacity:.7}
+.mouse-indicator::after{content:"";position:absolute;top:6px;left:50%;transform:translateX(-50%);width:4px;height:8px;border-radius:2px;background:rgba(255,255,255,.35);animation:wheel 1.4s infinite}
+@keyframes wheel{0%{opacity:0;transform:translate(-50%,0)}50%{opacity:1;transform:translate(-50%,8px)}100%{opacity:0;transform:translate(-50%,14px)}}
+
+/* Projects list rows */
+.projects-list{display:grid;gap:34px}
+.proj-row{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:center;background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:20px;padding:16px;transition:transform .25s ease, box-shadow .25s ease}
+.proj-row:hover{transform:translateY(-4px);box-shadow:0 20px 44px rgba(154,39,64,.18)}
+.proj-img{border-radius:14px;border:1px solid rgba(255,255,255,.08)}
+.proj-copy h3{margin:0 0 6px}
+.proj-copy .btn{margin-top:10px}
+
+@media (max-width: 900px){
+  .proj-row{grid-template-columns:1fr}
+}
