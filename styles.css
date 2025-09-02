@@ -200,3 +200,39 @@ input:focus, textarea:focus{box-shadow:var(--ring);border-color:transparent}
 .skill-card{background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:22px;transition:transform .25s ease,box-shadow .25s ease}
 .skill-card:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(154,39,64,.15)}
 .skill-card h3{margin-top:0;font-size:1.2rem}
+
+/* ===== Header decorative slider ===== */
+.hero-slider{padding:8px 0 0; background:linear-gradient(180deg, rgba(255,255,255,.02), transparent 60%);}
+.hero-slider .slider{position:relative; overflow:hidden; border-radius:22px; border:1px solid rgba(255,255,255,.06); max-width:min(1120px, 92vw); margin:0 auto; box-shadow:0 24px 60px rgba(154,39,64,.15)}
+.hero-slider .slides{display:flex; transition:transform .6s ease}
+.hero-slider .slide{min-width:100%; display:grid; place-items:center; background:radial-gradient(80% 60% at 50% 40%, rgba(255,255,255,.03), transparent 60%);}
+.hero-slider img{width:100%; height:auto; aspect-ratio:16/7; object-fit:cover}
+.hero-slider .slider-nav{position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,.35); border:none; border-radius:99px; padding:6px 10px; cursor:pointer}
+.hero-slider .slider-nav.prev{left:10px} .hero-slider .slider-nav.next{right:10px}
+.hero-slider .slider-dots{position:absolute; bottom:12px; left:0; right:0; display:flex; gap:6px; justify-content:center}
+.hero-slider .slider-dots button{width:8px; height:8px; border-radius:50%; border:none; opacity:.5}
+.hero-slider .slider-dots button.is-active{opacity:1}
+
+/* ===== CTA arrow to About ===== */
+.cta-to-about{display:flex; justify-content:center; margin:18px 0 0}
+.cta-to-about .arrow{width:22px; height:22px; border-right:3px solid rgba(255,255,255,.5); border-bottom:3px solid rgba(255,255,255,.5); transform:rotate(45deg); animation:downChevron 1.6s ease-in-out infinite}
+@keyframes downChevron{0%{transform:translateY(0) rotate(45deg)}50%{transform:translateY(8px) rotate(45deg)}100%{transform:translateY(0) rotate(45deg)}}
+
+/* ===== Desktop responsiveness improvements ===== */
+.container{max-width:1140px}
+.hero-simple-copy h1{font-size:clamp(32px,5vw,64px)}
+.hero-simple-copy .lede{font-size:clamp(16px,2.2vw,20px)}
+.nav-wrap{gap:20px}
+.nav{gap:18px}
+.projects-list{gap:42px}
+.proj-row{padding:24px; gap:28px}
+.proj-copy h3{font-size:clamp(18px,2.2vw,24px)}
+.proj-img{aspect-ratio:16/9; object-fit:cover}
+@media(min-width:1024px){
+  .hero--simple{padding:72px 0 96px}
+}
+
+/* Minor fix: ensure nav in desktop horizontal */
+@media(min-width:900px){
+  .nav{display:flex !important}
+}
