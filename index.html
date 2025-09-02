@@ -10,6 +10,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='10' cy='10' r='6' fill='%237B1E38'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css" />
+  <link rel="preload" as="image" href="assets/hero2.jpg?v=5">
+  <link rel="preload" as="image" href="assets/hero3.jpg?v=5">
+  <link rel="preload" as="image" href="assets/hero2.jpg?v=4">
+  <link rel="preload" as="image" href="assets/hero3.jpg?v=4">
+  <link rel="preload" as="image" href="assets/hero2.jpg?v=4">
+  <link rel="preload" as="image" href="assets/hero3.jpg?v=4">
 </head>
 <body>
   <aside class="social-rail" aria-label="tautan sosial">
@@ -43,9 +49,9 @@
     <section class="hero-slider" aria-roledescription="carousel">
       <div class="slider" id="headerSlider">
         <div class="slides">
-          <div class="slide is-active"><img src="assets/hero1.jpg" alt="Visual apparel"/></div>
-          <div class="slide"><img src="assets/hero2.jpg" alt="Visual mug"/></div>
-          <div class="slide"><img src="assets/hero3.jpg" alt="Visual banner"/></div>
+          <div class="slide is-active"><img src="assets/hero1.jpg?v=5" alt="Hero 1" onerror="console.error('Hero1 failed'); this.style.outline='3px solid #f66'; this.src='assets/hero1.jpg?v=5'" /></div>
+          <div class="slide"><img src="assets/hero3.jpg?v=5" alt="Hero 3" onerror="console.error(\'Hero3 missing, using Hero1\'); this.style.outline=\'3px solid #f66\'; this.src=\'assets/hero1.jpg?v=5\'" /></div>
+          <div class="slide"><img src="assets/__resolve_hero3__" alt="Hero 3" onerror="this.dataset.fb=1; this.src=\'assets/hero1.jpg?v=4\'; console.warn(\'Hero3 missing, fallback to hero1\')" /></div>
         </div>
         <button class="slider-nav prev" aria-label="Sebelumnya">&#10094;</button>
         <button class="slider-nav next" aria-label="Berikutnya">&#10095;</button>
