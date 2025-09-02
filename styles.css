@@ -194,3 +194,9 @@ input:focus, textarea:focus{box-shadow:var(--ring);border-color:transparent}
 @media (max-width: 900px){
   .proj-row{grid-template-columns:1fr}
 }
+
+/* Skills section redesign */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;margin-top:28px}
+.skill-card{background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:22px;transition:transform .25s ease,box-shadow .25s ease}
+.skill-card:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(154,39,64,.15)}
+.skill-card h3{margin-top:0;font-size:1.2rem}
