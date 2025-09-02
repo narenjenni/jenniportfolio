@@ -127,3 +127,50 @@ if (form){
   }, {passive:true});
   slider.addEventListener('touchend', ()=> touching=false);
 })();
+
+// === Header slider init ===
+(function(){
+  const slider = document.getElementById('headerSlider');
+  if(!slider) return;
+  const track = slider.querySelector('.slides');
+  const slides = Array.from(slider.querySelectorAll('.slide'));
+  const dotsWrap = slider.querySelector('.slider-dots');
+  let index = 0; let timer;
+
+  // dots
+  slides.forEach((_, i)=>{
+    const b = document.createElement('button');
+    b.setAttribute('aria-label', 'Ke slide ' + (i+1));
+    b.addEventListener('click', ()=> go(i));
+    dotsWrap.appendChild(b);
+  });
+  function updateDots(){
+    dotsWrap.querySelectorAll('button').forEach((b, i)=>{
+      b.classList.toggle('is-active', i===index);
+    });
+  }
+  function go(i){
+    index = (i+slides.length)%slides.length;
+    track.style.transform = `translateX(-${index*100}%)`;
+    updateDots(); restart();
+  }
+  function next(){ go(index+1) }
+  function prev(){ go(index-1) }
+  slider.querySelector('.next').addEventListener('click', next);
+  slider.querySelector('.prev').addEventListener('click', prev);
+
+  function restart(){
+    clearInterval(timer);
+    timer = setInterval(next, 5000);
+  }
+  // swipe
+  let startX=null;
+  slider.addEventListener('touchstart', (e)=>{ startX = e.touches[0].clientX; clearInterval(timer); });
+  slider.addEventListener('touchend', (e)=>{
+    if(startX==null) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    if(Math.abs(dx) > 40){ dx<0 ? next() : prev(); }
+    restart(); startX=null;
+  });
+  updateDots(); restart();
+})();
