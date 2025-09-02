@@ -267,3 +267,7 @@ input:focus, textarea:focus{box-shadow:var(--ring);border-color:transparent}
 .hero-slider .slide img[data-fb="1"]::after{content:"";}
 /* Fallback badge */
 .hero-slider .slide img[data-fb="1"]{outline:2px dashed rgba(255,255,255,.25); outline-offset:-8px}
+
+/* v16 slider fix */
+.hero-slider .slides{display:flex;transition:transform .6s ease}
+.hero-slider .slide{flex:0 0 100%;width:100%}

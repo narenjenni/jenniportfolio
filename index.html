@@ -315,5 +315,23 @@
   </footer>
 
   <script src="script.js"></script>
+
+<script id="inline-slider-fix">
+// inline slider fix v16
+(function () {
+  const s = document.getElementById('headerSlider');
+  if (!s) return;
+  const track = s.querySelector('.slides');
+  const slides = Array.from(s.querySelectorAll('.slide'));
+  let i = 0, timer;
+  function go(n){ i=(n+slides.length)%slides.length;
+    track.style.transform=`translateX(-${i*100}%)`; restart(); }
+  function next(){ go(i+1); } function prev(){ go(i-1); }
+  function restart(){ clearInterval(timer); timer=setInterval(next,4000); }
+  s.querySelector('.next').addEventListener('click', next);
+  s.querySelector('.prev').addEventListener('click', prev);
+  go(0);
+})();
+</script>
 </body>
 </html>
