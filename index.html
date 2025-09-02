@@ -18,7 +18,7 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6ZM18.2 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg>
     </a>
     <a href="https://wa.me/6288296642919" target="_blank" rel="noopener" aria-label="WhatsApp">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.01 2a9.9 9.9 0 0 0-8.5 15l-1 3.7 3.8-1a9.9 9.9 0 1 0 5.7-17.8Zm0 2a7.9 7.9 0 1 1 0 15.8 7.9 7.9 0 0 1-7.9-7.9 7.9 7.9 0 0 1 7.9-7.9Zm-3 3.9c-.2 0-.5.1-.7.3-.2.3-.8.8-.8 1.8 0 1 .7 2 1 2.4.3.4 1.7 2.6 4.1 3.5 2.4.9 2.4.6 2.8.5.5-.1 1.4-.6 1.6-1.2.2-.6.2-1.1.2-1.2 0-.1-.2-.2-.5-.3-.3-.1-1.4-.7-1.6-.7-.1 0-.3 0-.4.2-.1.1-.6.7-.7.8-.1.1-.2.2-.5.1-.3 0-1.2-.4-2.3-1.5-1.1-1-1.5-2-1.6-2.3 0-.3.2-.4.3-.5l.2-.3c.1-.2.1-.3.1-.4 0-.1-.5-1.3-.7-1.7-.1-.2-.3-.3-.5-.3Z"/></svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.01 2a9.9 9.9 0 0 0-8.5 15l-1 3.7 3.8-1a9.9 9.9 0 1 0 5.7-17.8Zm0 2a7.9 7.9 0 1 1 0 15.8 7.9 7.9 0 0 1 7.9-7.9 7.9 7.9 0 0 1-7.9-7.9Zm-3 3.9c-.2 0-.5.1-.7.3-.2.3-.8.8-.8 1.8 0 1 .7 2 1 2.4.3.4 1.7 2.6 4.1 3.5 2.4.9 2.4.6 2.8.5.5-.1 1.4-.6 1.6-1.2.2-.6.2-1.1.2-1.2 0-.1-.2-.2-.5-.3-.3-.1-1.4-.7-1.6-.7-.1 0-.3 0-.4.2-.1.1-.6.7-.7.8-.1.1-.2.2-.5.1-.3 0-1.2-.4-2.3-1.5-1.1-1-1.5-2-1.6-2.3 0-.3.2-.4.3-.5l.2-.3c.1-.2.1-.3.1-.4 0-.1-.5-1.3-.7-1.7-.1-.2-.3-.3-.5-.3Z"/></svg>
     </a>
     <a href="#contact" aria-label="Email">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6.5A2.5 2.5 0 0 1 4.5 4h15A2.5 2.5 0 0 1 22 6.5v11A2.5 2.5 0 0 1 19.5 20h-15A2.5 2.5 0 0 1 2 17.5v-11Zm2.5-.5a.5.5 0 0 0-.5.5v.3l8 4.9 8-4.9V6.5a.5.5 0 0 0-.5-.5h-15Zm15.5 3.7-7.6 4.6a1 1 0 0 1-1 0L4.8 9.7V17a.5.5 0 0 0 .5.5h13.4a.5.5 0 0 0 .5-.5V9.7Z"/></svg>
@@ -46,36 +46,58 @@
       </nav>
     </div>
 
+    <!-- Hero Slider -->
     <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-text">
-          <p class="eyebrow">Graphic Designer • Portfolio</p>
-          <h1>Hai, saya <span class="gradient">Jennifer Calluella</span></h1>
-          <p class="lede">
-            Desainer grafis berorientasi hasil yang fokus pada <b>apparel</b>, <b>merchandise</b>, dan <b>branding</b>.
-            Saya membantu brand dan UMKM tampil profesional melalui visual yang konsisten & siap produksi.
-          </p>
-          <div class="cta-row">
-            <a href="#projects" class="btn btn--primary">Lihat Project</a>
-            <a href="#contact" class="btn btn--ghost">Hubungi Saya</a>
+      <div class="container">
+        <div class="slider" id="heroSlider" aria-roledescription="carousel">
+          <div class="slides">
+            <div class="slide is-active">
+              <div class="hero-inner">
+                <div class="hero-text">
+                  <p class="eyebrow">Graphic Designer • Portfolio</p>
+                  <h1>Hai, saya <span class="gradient">Jennifer Calluella</span></h1>
+                  <p class="lede">Desainer grafis berorientasi hasil — membantu brand & UMKM tampil profesional lewat visual yang konsisten & siap produksi.</p>
+                  <div class="cta-row">
+                    <a href="#projects" class="btn btn--primary">Lihat Project</a>
+                    <a href="#contact" class="btn btn--ghost">Hubungi Saya</a>
+                  </div>
+                </div>
+                <div class="hero-art"><img src="assets/hero-mock.svg" alt="Mockup karya Jenii Design" /></div>
+              </div>
+            </div>
+
+            <div class="slide">
+              <div class="hero-inner">
+                <div class="hero-text">
+                  <p class="eyebrow">Apparel & Merchandise</p>
+                  <h1><span class="gradient">Baju, Hoodie, Mug</span> & lainnya</h1>
+                  <p class="lede">Dari sketsa sampai file siap cetak: sablon DTG/Polyflex, sublim, ukuran presisi & mockup realistis.</p>
+                  <div class="cta-row">
+                    <a href="#projects" class="btn btn--primary">Lihat Apparel</a>
+                  </div>
+                </div>
+                <div class="hero-art"><img src="assets/proj-tshirt.svg" alt="Ilustrasi apparel" /></div>
+              </div>
+            </div>
+
+            <div class="slide">
+              <div class="hero-inner">
+                <div class="hero-text">
+                  <p class="eyebrow">Branding & Banner</p>
+                  <h1>Visual <span class="gradient">kuat</span> & mudah dibaca</h1>
+                  <p class="lede">Komposisi rapi, hierarki jelas, dan tipografi yang bicara—untuk spanduk, banner, hingga cover novel.</p>
+                  <div class="cta-row">
+                    <a href="#projects" class="btn btn--primary">Lihat Branding</a>
+                  </div>
+                </div>
+                <div class="hero-art"><img src="assets/proj-banner.svg" alt="Ilustrasi banner" /></div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="hero-art" aria-hidden="true">
-          <!-- Decorative SVG shape -->
-          <svg viewBox="0 0 400 300" class="hero-svg">
-            <defs>
-              <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
-                <stop offset="0%" stop-color="#9A2740"/>
-                <stop offset="100%" stop-color="#7B1E38"/>
-              </linearGradient>
-            </defs>
-            <g opacity="0.2">
-              <circle cx="80" cy="60" r="60" fill="url(#g1)"/>
-              <circle cx="200" cy="180" r="100" fill="url(#g1)"/>
-              <circle cx="330" cy="80" r="50" fill="url(#g1)"/>
-            </g>
-          </svg>
-          <img src="assets/hero-mock.svg" alt="Mockup karya Jenii Design" />
+
+          <button class="slider-nav prev" aria-label="Slide sebelumnya">&#10094;</button>
+          <button class="slider-nav next" aria-label="Slide berikutnya">&#10095;</button>
+          <div class="slider-dots" aria-label="Slide indikator"></div>
         </div>
       </div>
       <a href="#about" class="scroll-indicator" aria-label="Scroll ke konten">&#x21E3;</a>
@@ -130,7 +152,7 @@
           <h2>My Skill</h2>
           <div class="underline"></div>
           <p class="muted">
-            Alat & keahlian utama yang saya gunakan sehari‑hari, ditambah kemampuan kerja profesional & kolaborasi.
+            Alat & keahlian utama yang saya gunakan sehari-hari, ditambah kemampuan kerja profesional & kolaborasi.
           </p>
         </header>
 
@@ -161,7 +183,7 @@
               <li>Brief → Riset → Moodboard → Sketsa → Desain final</li>
               <li>Mockup realistis untuk validasi visual</li>
               <li>Ekspor multi-format (PNG/JPG/PDF/SVG) • CMYK/RGB</li>
-              <li>Checklist pra‑cetak: bleed, margin, ukuran, dan warna</li>
+              <li>Checklist pra-cetak: bleed, margin, ukuran, dan warna</li>
             </ul>
           </div>
         </div>
@@ -174,82 +196,82 @@
         <header class="section-head">
           <h2>My Project</h2>
           <div class="underline"></div>
-          <p class="muted">Beberapa karya yang pernah saya kerjakan.</p>
+          <p class="muted">Beberapa karya yang pernah saya kerjakan. Klik kartu untuk lihat case study.</p>
         </header>
 
         <div class="grid projects-grid">
           <!-- Cards -->
-          <article class="card reveal">
+          <a class="card reveal" href="projects/tshirt.html">
             <img src="assets/proj-tshirt.svg" alt="Desain Baju/Kaos" />
             <div class="card-body">
               <h3>Desain Baju / Kaos</h3>
               <p>Konsep tipografi & ilustrasi, siap sablon DTG/Polyflex dengan mockup realistis.</p>
             </div>
-          </article>
+          </a>
 
-          <article class="card reveal">
+          <a class="card reveal" href="projects/mug.html">
             <img src="assets/proj-mug.svg" alt="Desain Mug" />
             <div class="card-body">
               <h3>Desain Mug</h3>
               <p>Layout wrap 360°, siap cetak sublim, opsi warna & personalisasi.</p>
             </div>
-          </article>
+          </a>
 
-          <article class="card reveal">
+          <a class="card reveal" href="projects/blanket.html">
             <img src="assets/proj-blanket.svg" alt="Desain Selimut" />
             <div class="card-body">
               <h3>Desain Selimut</h3>
               <p>Pola menyeluruh dengan pengulangan rapi & pengaturan ukuran.</p>
             </div>
-          </article>
+          </a>
 
-          <article class="card reveal">
+          <a class="card reveal" href="projects/pillow.html">
             <img src="assets/proj-pillow.svg" alt="Desain Bantal" />
             <div class="card-body">
               <h3>Desain Bantal</h3>
-              <p>Motif depan‑belakang & varian warna, file siap potong.</p>
+              <p>Motif depan-belakang & varian warna, file siap potong.</p>
             </div>
-          </article>
+          </a>
 
-          <article class="card reveal">
+          <a class="card reveal" href="projects/banner.html">
             <img src="assets/proj-banner.svg" alt="Banner" />
             <div class="card-body">
               <h3>Banner / Spanduk</h3>
-              <p>Ukuran fleksibel, grid yang kuat, komposisi visual yang mudah dibaca.</p>
+              <p>Ukuran fleksibel, grid kuat, komposisi visual yang mudah dibaca.</p>
             </div>
-          </article>
+          </a>
 
-          <article class="card reveal">
+          <a class="card reveal" href="projects/cover.html">
             <img src="assets/proj-cover.svg" alt="Cover Novel" />
             <div class="card-body">
               <h3>Cover Novel</h3>
-              <p>Desain sampul depan‑belakang, spine, dan tipografi judul yang kuat.</p>
+              <p>Desain sampul depan-belakang, spine, dan tipografi judul yang kuat.</p>
             </div>
-          </article>
+          </a>
 
-          <article class="card reveal">
+          <a class="card reveal" href="projects/hoodie.html">
             <img src="assets/proj-hoodie.svg" alt="Hoodie" />
             <div class="card-body">
               <h3>Hoodie</h3>
               <p>Desain posisi chest/back/sleeve, mockup berbagai warna kain.</p>
             </div>
-          </article>
+          </a>
 
-          <article class="card reveal">
+          <a class="card reveal" href="projects/goodie.html">
             <img src="assets/proj-goodie.svg" alt="Goodiebag" />
             <div class="card-body">
               <h3>Goodiebag</h3>
               <p>Branding rapi dengan area aman cetak & margin yang tepat.</p>
             </div>
-          </article>
+          </a>
 
-          <article class="card reveal">
+          <a class="card reveal" href="projects/tumbler.html">
             <img src="assets/proj-tumbler.svg" alt="Tumbler" />
             <div class="card-body">
               <h3>Tumbler</h3>
               <p>Template kurva wrap untuk hasil presisi saat produksi.</p>
             </div>
-          </article>
+          </a>
         </div>
       </div>
     </section>

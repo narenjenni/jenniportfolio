@@ -142,3 +142,17 @@ input:focus, textarea:focus{box-shadow:var(--ring);border-color:transparent}
   .projects-grid{grid-template-columns:1fr}
   .footer-grid{flex-direction:column;align-items:flex-start}
 }
+
+
+/* Slider */
+.slider{position:relative}
+.slides{position:relative;overflow:hidden}
+.slide{position:relative;inset:0;opacity:0;pointer-events:none;transition:opacity .6s ease}
+.slide.is-active{opacity:1;pointer-events:auto}
+.slider-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(6px);color:#fff;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;cursor:pointer}
+.slider-nav:hover{background:rgba(0,0,0,.5)}
+.slider .prev{left:6px}
+.slider .next{right:6px}
+.slider-dots{display:flex;gap:8px;justify-content:center;margin-top:10px}
+.slider-dots button{width:8px;height:8px;border-radius:999px;border:0;background:#3a3a44;cursor:pointer}
+.slider-dots button[aria-current="true"]{background:linear-gradient(90deg,var(--primary),var(--primary-2))}
