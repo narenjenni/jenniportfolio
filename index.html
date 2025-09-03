@@ -1,337 +1,356 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jenii Design — Portfolio Jennifer Calluella</title>
-  <meta name="description" content="Portfolio Jennifer Calluella — Graphic Designer. Apparel, Merchandise, Banner, Cover Novel, dan lainnya." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jenii Design — Portfolio Jennifer Calluella Gavrila Bacas</title>
+  <meta name="description" content="Portfolio desain grafis — Jenii Design. Baju, Mug, Selimut, Bantal, Banner, Cover Novel, Hoodie, Goodiebag, Tumbler, dan lainnya."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='10' cy='10' r='6' fill='%237B1E38'/%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
-  <link rel="preload" as="image" href="/assets/hero2.jpg?v=6">
-  <link rel="preload" as="image" href="/assets/hero3.jpg?v=6">
-  <link rel="preload" as="image" href="assets/hero2.jpg?v=5">
-  <link rel="preload" as="image" href="assets/hero3.jpg?v=5">
-  <link rel="preload" as="image" href="assets/hero2.jpg?v=4">
-  <link rel="preload" as="image" href="assets/hero3.jpg?v=4">
-  <link rel="preload" as="image" href="assets/hero2.jpg?v=4">
-  <link rel="preload" as="image" href="assets/hero3.jpg?v=4">
 </head>
 <body>
-  <aside class="social-rail" aria-label="tautan sosial">
-    <a href="https://www.instagram.com/jenfornaren?igsh=MXJmdXBoeDNkODU4MA==" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
-    <a href="https://wa.me/6288296642919" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
-    <a href="#contact" aria-label="Email">Email</a>
-  </aside>
-
-  <header class="site-header" id="home">
-    <div class="container nav-wrap">
-      <a class="brand" href="#home" aria-label="Beranda Jenii Design">
-        <span class="brand-mark">&lt;/&gt;</span>
-        <span class="brand-name">Jenii <strong>Design</strong></span>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#" class="brand">
+        <img src="assets/logo.svg" alt="Jenii Design" />
       </a>
-
-      <button class="nav-toggle" aria-controls="nav" aria-expanded="false" aria-label="Buka menu">
-        <span></span><span></span><span></span>
-      </button>
-
-      <nav id="nav" class="nav">
-        <a href="#home" class="nav-link">Home</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#skills" class="nav-link">My Skill</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#contact" class="nav-link btn btn--outline">Contact</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <nav class="menu" id="menu">
+        <a href="#home">Home</a>
+        <a href="#projects">My Project</a>
+        <a href="#skills">My Skill</a>
+        <a href="#about">About Me</a>
+        <a href="#contact">Contact Me</a>
       </nav>
     </div>
-
-    
-    <!-- Decorative header slider (visual only) -->
-    <section class="hero-slider" aria-roledescription="carousel">
-      <div class="slider" id="headerSlider">
-        
-          <div class="slides">
-            <div class="slide is-active">
-              <picture>
-                <source srcset="/assets/hero1.jpg?v=6">
-                <img src="assets/hero1.jpg?v=6" alt="Hero 1" />
-              </picture>
-            </div>
-            <div class="slide">
-              <picture>
-                <source srcset="/assets/hero2.jpg?v=6">
-                <img src="assets/hero2.jpg?v=6" alt="Hero 2" />
-              </picture>
-            </div>
-            <div class="slide">
-              <picture>
-                <source srcset="/assets/hero3.jpg?v=6">
-                <img src="assets/hero3.jpg?v=6" alt="Hero 3" />
-              </picture>
-            </div>
-          </div>
-    
-          <button class="slider-nav prev" aria-label="Sebelumnya">&#10094;</button>
-        <button class="slider-nav next" aria-label="Berikutnya">&#10095;</button>
-        <div class="slider-dots" data-for="headerSlider"></div>
-      </div>
-    </section>
-
-    <section class="hero hero--simple">
-      <div class="container hero-simple-inner">
-        <div class="hero-simple-copy">
-          <h1>HEY, I'M <span class="gradient">JENNIFER CALLUELLA</span></h1>
-          <p class="lede">Graphic Designer untuk apparel, merchandise, banner, cover novel, dan kebutuhan branding lainnya.</p>
-          <a href="#projects" class="btn btn--primary">PROJECTS</a>
-        </div>
-      </div>
-      <a href="#about" class="scroll-cue" aria-label="Scroll ke About Me"><span class="arrow"></span></a>
-    </section>
   </header>
 
-  <main>
-    <section id="about" class="section">
-      <div class="container">
-        <header class="section-head">
-          <h2>ABOUT ME</h2>
-          <div class="underline"></div>
-        </header>
-        <div class="about-grid">
+  <!-- HERO SLIDER -->
+  <section id="home" class="hero">
+    <div class="slides">
+      <div class="slide active" style="--bg: url('assets/hero1.jpg')">
+        <div class="overlay">
+          <h1 class="title">Hai, saya <span>Jennifer Calluella Gavrila Bacas</span></h1>
+          <p class="subtitle">Desainer grafis & brand crafter di <strong>Jenii Design</strong>.</p>
+          <a href="#projects" class="btn primary">Lihat Proyek</a>
+        </div>
+      </div>
+      <div class="slide" style="--bg: url('assets/hero2.jpg')">
+        <div class="overlay">
+          <h1 class="title">Merancang visual yang <span>berdampak</span></h1>
+          <p class="subtitle">Dari merchandise, identitas brand, hingga kemasan produk.</p>
+          <a href="#skills" class="btn">Keahlian Saya</a>
+        </div>
+      </div>
+      <div class="slide" style="--bg: url('assets/hero3.jpg')">
+        <div class="overlay">
+          <h1 class="title">Siap kolaborasi secara <span>profesional</span></h1>
+          <p class="subtitle">On‑time, detail‑oriented, dan komunikatif.</p>
+          <a href="#contact" class="btn outline">Hubungi Saya</a>
+        </div>
+      </div>
+    </div>
+    <div class="slider-nav">
+      <button class="prev" aria-label="Sebelumnya">‹</button>
+      <button class="next" aria-label="Selanjutnya">›</button>
+      <div class="dots" id="dots"></div>
+    </div>
+  </section>
+
+  <!-- INTRO just below hero -->
+  <section class="intro container reveal">
+    <div class="intro-card">
+      <h3>Halo! 👋</h3>
+      <p>
+        Saya desainer grafis yang telah menyelesaikan berbagai proyek seperti
+        <em>Baju, Mug, Selimut, Bantal, Banner, Cover Novel, Hoodie, Goodiebag, Tumbler</em>, dan lainnya.
+        Fokus saya adalah menghadirkan desain yang <strong>konsisten dengan brand</strong>, mudah diaplikasikan ke media apa pun,
+        dan selesai <strong>tepat waktu</strong> dengan komunikasi yang jelas.
+      </p>
+      <div class="intro-stats">
+        <div><span>80+</span> Proyek Selesai</div>
+        <div><span>25+</span> Kategori Produk</div>
+        <div><span>5★</span> Kepuasan Klien</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about container reveal">
+    <div class="about-grid">
+      <div>
+        <h2 class="section-title">About Me</h2>
+        <p>
+          Saya adalah seorang <strong>Graphic Designer</strong> dengan pendekatan <em>user‑first</em> dan
+          perhatian tinggi pada detail produksi (warna, bahan, teknik cetak, dan finishing).
+          Berpengalaman mengelola proyek end‑to‑end: dari brainstorming konsep, pembuatan style guide,
+          produksi aset, hingga quality check sebelum naik cetak atau publikasi.
+        </p>
+        <p>
+          Dalam tim, saya nyaman berkolaborasi lintas peran—dengan marketing untuk memastikan pesan brand tepat sasaran,
+          dengan tim produksi untuk akurasi teknis, serta dengan stakeholder untuk menjaga timeline. Saya terbiasa
+          <strong>kerja profesional</strong>: disiplin, responsif, terbuka pada feedback, dan proaktif menawarkan solusi.
+        </p>
+        <p>
+          Target saya sederhana: <strong>membuat brand Anda terlihat lebih meyakinkan</strong> dan membantu
+          penjualan lewat visual yang rapi, konsisten, dan mudah diingat.
+        </p>
+      </div>
+      <div class="about-card">
+        <h3>Ketersediaan</h3>
+        <ul>
+          <li>Freelance / Kontrak</li>
+          <li>Kolaborasi Tim & Remote‑friendly</li>
+          <li>Siap revisi cepat dan terjadwal</li>
+        </ul>
+        <a class="btn primary" href="#contact">Ayo Kolaborasi</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="skills container reveal">
+    <h2 class="section-title">My Skill</h2>
+    <p class="section-subtitle">Tools & kemampuan kerja profesional</p>
+    <div class="skills-grid">
+      <div class="skill">
+        <h4>Aplikasi Desain</h4>
+        <p class="tags">
+          <span>Canva</span><span>Adobe After Effects</span><span>Adobe Photoshop</span>
+          <span>Figma</span><span>Blender</span><span>Adobe Illustrator</span>
+          <span>Alight Motion</span><span>Ibis Paint X</span><span>CapCut</span>
+          <span>Microsoft Word</span><span>Microsoft Excel</span>
+        </p>
+      </div>
+      <div class="skill">
+        <h4>Soft Skills</h4>
+        <ul class="bullets">
+          <li>Profesional & berorientasi hasil, menjaga kualitas konsisten di setiap media.</li>
+          <li>Kerja tim yang solid: kolaboratif, komunikatif, dan menghargai feedback.</li>
+          <li>Manajemen waktu & prioritas yang baik, terbiasa dengan deadline ketat.</li>
+          <li>Problem‑solving kreatif: dari ide hingga eksekusi siap produksi.</li>
+        </ul>
+      </div>
+      <div class="skill">
+        <h4>Produksi & Teknis</h4>
+        <ul class="bullets">
+          <li>Setting file siap cetak (bleed, margin, color profile CMYK/RGB).</li>
+          <li>Optimasi aset digital untuk web & sosial media.</li>
+          <li>Moodboard, mockup, dan dokumentasi style untuk konsistensi brand.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="projects container reveal">
+    <h2 class="section-title">My Project</h2>
+    <p class="section-subtitle">Silakan ganti gambar di bawah dengan karya Anda—klik “Ganti Gambar”.</p>
+
+    <div class="grid">
+      <!-- 9 sample project cards -->
+      <!-- Card template repeated with different images/titles -->
+      
+<article class="card">
+  <div class="thumb">
+    <img src="assets/proj1.jpg" alt="Baju Custom" loading="lazy"/>
+  </div>
+  <div class="card-body">
+    <h3>Baju Custom</h3>
+    <p>Desain kaos/baju custom dengan identitas brand yang kuat.</p>
+    <div class="actions">
+      <button class="btn small outline replace-btn" data-target="assets/proj1.jpg">Ganti Gambar</button>
+      <a class="btn small" href="#contact">Hubungi untuk detail</a>
+    </div>
+    <input class="file" type="file" accept="image/*" hidden />
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="thumb">
+    <img src="assets/proj2.jpg" alt="Mug" loading="lazy"/>
+  </div>
+  <div class="card-body">
+    <h3>Mug</h3>
+    <p>Mockup dan desain mug siap cetak.</p>
+    <div class="actions">
+      <button class="btn small outline replace-btn" data-target="assets/proj2.jpg">Ganti Gambar</button>
+      <a class="btn small" href="#contact">Hubungi untuk detail</a>
+    </div>
+    <input class="file" type="file" accept="image/*" hidden />
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="thumb">
+    <img src="assets/proj3.jpg" alt="Selimut" loading="lazy"/>
+  </div>
+  <div class="card-body">
+    <h3>Selimut</h3>
+    <p>Selimut motif eksklusif; nyaman & estetik.</p>
+    <div class="actions">
+      <button class="btn small outline replace-btn" data-target="assets/proj3.jpg">Ganti Gambar</button>
+      <a class="btn small" href="#contact">Hubungi untuk detail</a>
+    </div>
+    <input class="file" type="file" accept="image/*" hidden />
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="thumb">
+    <img src="assets/proj4.jpg" alt="Bantal" loading="lazy"/>
+  </div>
+  <div class="card-body">
+    <h3>Bantal</h3>
+    <p>Desain bantal dekoratif dan foto printing.</p>
+    <div class="actions">
+      <button class="btn small outline replace-btn" data-target="assets/proj4.jpg">Ganti Gambar</button>
+      <a class="btn small" href="#contact">Hubungi untuk detail</a>
+    </div>
+    <input class="file" type="file" accept="image/*" hidden />
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="thumb">
+    <img src="assets/proj5.jpg" alt="Banner" loading="lazy"/>
+  </div>
+  <div class="card-body">
+    <h3>Banner</h3>
+    <p>Banner promosi event & toko dengan tipografi tegas.</p>
+    <div class="actions">
+      <button class="btn small outline replace-btn" data-target="assets/proj5.jpg">Ganti Gambar</button>
+      <a class="btn small" href="#contact">Hubungi untuk detail</a>
+    </div>
+    <input class="file" type="file" accept="image/*" hidden />
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="thumb">
+    <img src="assets/proj6.jpg" alt="Cover Novel" loading="lazy"/>
+  </div>
+  <div class="card-body">
+    <h3>Cover Novel</h3>
+    <p>Sampul/cover novel yang menarik perhatian.</p>
+    <div class="actions">
+      <button class="btn small outline replace-btn" data-target="assets/proj6.jpg">Ganti Gambar</button>
+      <a class="btn small" href="#contact">Hubungi untuk detail</a>
+    </div>
+    <input class="file" type="file" accept="image/*" hidden />
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="thumb">
+    <img src="assets/proj7.jpg" alt="Hoodie" loading="lazy"/>
+  </div>
+  <div class="card-body">
+    <h3>Hoodie</h3>
+    <p>Hoodie dengan ilustrasi & lettering khas.</p>
+    <div class="actions">
+      <button class="btn small outline replace-btn" data-target="assets/proj7.jpg">Ganti Gambar</button>
+      <a class="btn small" href="#contact">Hubungi untuk detail</a>
+    </div>
+    <input class="file" type="file" accept="image/*" hidden />
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="thumb">
+    <img src="assets/proj8.jpg" alt="Goodiebag" loading="lazy"/>
+  </div>
+  <div class="card-body">
+    <h3>Goodiebag</h3>
+    <p>Goodiebag acara/perusahaan, eye‑catching dan fungsional.</p>
+    <div class="actions">
+      <button class="btn small outline replace-btn" data-target="assets/proj8.jpg">Ganti Gambar</button>
+      <a class="btn small" href="#contact">Hubungi untuk detail</a>
+    </div>
+    <input class="file" type="file" accept="image/*" hidden />
+  </div>
+</article>
+
+
+<article class="card">
+  <div class="thumb">
+    <img src="assets/proj9.jpg" alt="Tumbler" loading="lazy"/>
+  </div>
+  <div class="card-body">
+    <h3>Tumbler</h3>
+    <p>Tumbler custom dengan visual bersih dan modern.</p>
+    <div class="actions">
+      <button class="btn small outline replace-btn" data-target="assets/proj9.jpg">Ganti Gambar</button>
+      <a class="btn small" href="#contact">Hubungi untuk detail</a>
+    </div>
+    <input class="file" type="file" accept="image/*" hidden />
+  </div>
+</article>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact container reveal">
+    <h2 class="section-title">Contact Me</h2>
+    <div class="contact-grid">
+      <div class="contact-cards">
+        <a class="contact-card" target="_blank" rel="noopener" href="https://www.instagram.com/jenfornaren?igsh=MXJmdXBoeDNkODU4MA==">
+          <div class="icon">📷</div>
           <div>
-            <p>Saya desainer grafis yang fokus pada <b>aparel & merchandise</b> serta materi promosi cetak/digital. Terbiasa dari <b>brief → konsep → mockup → file siap cetak</b> dengan komunikasi yang jelas dan tepat waktu.</p>
-            <p>Saya nyaman bekerja <b>profesional</b> baik individu maupun <b>kolaborasi tim</b>, menggunakan alur kerja rapi dan terbuka untuk feedback.</p>
+            <h4>Instagram</h4>
+            <p>@jenfornaren</p>
           </div>
-          <div class="about-card">
-            <h3>Ringkas</h3>
-            <ul class="checklist">
-              <li>Berorientasi hasil & detail produksi</li>
-              <li>Kolaboratif lintas fungsi</li>
-              <li>Siap dari konsep hingga file siap cetak</li>
-              <li>Respons cepat & komunikasi jelas</li>
-            </ul>
+        </a>
+        <a class="contact-card" target="_blank" rel="noopener" href="https://wa.me/6288296642919">
+          <div class="icon">💬</div>
+          <div>
+            <h4>WhatsApp</h4>
+            <p>+62 882‑9664‑2919</p>
           </div>
-        </div>
+        </a>
+        <button class="contact-card email-toggle" id="emailToggle" type="button">
+          <div class="icon">✉️</div>
+          <div>
+            <h4>Email</h4>
+            <p>caella1705@gmail.com</p>
+          </div>
+        </button>
       </div>
-    </section>
 
-    <section id="skills" class="section section--alt">
-      <div class="container">
-        <header class="section-head">
-          <h2>MY SKILL</h2>
-          <div class="underline"></div>
-          <p class="muted">Alat, keahlian, dan nilai kerja yang saya gunakan setiap hari — tidak hanya teknis desain, tetapi juga profesionalisme, kolaborasi, dan orientasi hasil yang dicari perekrut.</p>
-        </header>
-
-        <div class="skills-grid">
-          <div class="skill-card reveal">
-            <h3>🎨 Tools & Apps</h3>
-            <ul class="bullets">
-              <li><b>Canva</b> — social media & presentasi.</li>
-              <li><b>Photoshop</b> — manipulasi foto & compositing.</li>
-              <li><b>Illustrator</b> — logo & vektor presisi.</li>
-              <li><b>Figma</b> — UI/UX & kolaborasi real-time.</li>
-              <li><b>After Effects</b> & <b>Alight Motion</b> — motion graphic.</li>
-              <li><b>Blender</b> — mockup 3D & ilustrasi.</li>
-              <li><b>Ibis Paint X</b>, <b>CapCut</b> — ilustrasi & video pendek.</li>
-              <li><b>Microsoft Word & Excel</b> — administrasi & pelaporan.</li>
-            </ul>
-          </div>
-
-          <div class="skill-card reveal">
-            <h3>🤝 Soft Skills</h3>
-            <ul class="bullets">
-              <li><b>Profesional & on-time</b> terhadap deadline.</li>
-              <li><b>Kerja tim</b> & kolaborasi lintas fungsi.</li>
-              <li><b>Komunikasi jelas</b> dengan klien & rekan kerja.</li>
-              <li><b>Problem solving</b> & adaptif pada perubahan.</li>
-              <li><b>Berpikir bisnis</b>: desain harus berdampak.</li>
-            </ul>
-          </div>
-
-          <div class="skill-card reveal">
-            <h3>🚀 Workflow & Mindset</h3>
-            <ul class="bullets">
-              <li>Brief → Riset → Moodboard → Sketsa → Desain final.</li>
-              <li>Mockup realistis sebelum produksi.</li>
-              <li>Ekspor PNG/JPG/PDF/SVG • CMYK/RGB.</li>
-              <li>Checklist pra-cetak: bleed, margin, ukuran, warna.</li>
-              <li>Dokumentasi versi & catatan revisi.</li>
-            </ul>
-            <p class="muted">Kombinasi <b>skill teknis + soft skill</b> membuat saya siap berkontribusi cepat di tim.</p>
-          </div>
+      <form id="emailForm" class="email-form" hidden>
+        <div class="row">
+          <label>Nama<input required name="name" placeholder="Nama Anda"/></label>
+          <label>Email<input required name="email" type="email" placeholder="email@domain.com"/></label>
         </div>
-      </div>
-    </section>
+        <label>Pesan<textarea required name="message" rows="6" placeholder="Tulis pesan Anda…"></textarea></label>
+        <button class="btn primary" type="submit">Kirim via Serverless</button>
+        <p class="note">Form ini mengirim ke fungsi serverless <code>/api/contact</code>. Atur variabel lingkungan di Vercel agar email benar‑benar terkirim.</p>
+        <div id="formStatus" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
 
-    <section id="projects" class="section">
-      <div class="container">
-        <header class="section-head">
-          <h2>PROJECTS</h2>
-          <div class="underline"></div>
-          <p class="muted">Klik baris untuk melihat case study.</p>
-        </header>
-
-        <div class="projects-list">
-          <div class="proj-row reveal">
-            <img src="assets/proj-tshirt.svg" alt="Kaos" class="proj-img"/>
-            <div class="proj-copy">
-              <h3>Desain Baju / Kaos</h3>
-              <p class="muted">Tipografi & ilustrasi; file siap sablon (DTG/Polyflex) + mockup warna kain.</p>
-              <a class="btn btn--primary" href="projects/tshirt.html">CASE STUDY</a>
-            </div>
-          </div>
-
-          <div class="proj-row reveal">
-            <img src="assets/proj-hoodie.svg" alt="Hoodie" class="proj-img"/>
-            <div class="proj-copy">
-              <h3>Desain Hoodie</h3>
-              <p class="muted">Artwork chest/back/sleeve; panduan ukuran posisi & mockup multiwarna.</p>
-              <a class="btn btn--primary" href="projects/hoodie.html">CASE STUDY</a>
-            </div>
-          </div>
-
-          <div class="proj-row reveal">
-            <img src="assets/proj-mug.svg" alt="Mug" class="proj-img"/>
-            <div class="proj-copy">
-              <h3>Desain Mug</h3>
-              <p class="muted">Wrap 360° siap sublim lengkap safe area & bleed presisi.</p>
-              <a class="btn btn--primary" href="projects/mug.html">CASE STUDY</a>
-            </div>
-          </div>
-
-          <div class="proj-row reveal">
-            <img src="assets/proj-tumbler.svg" alt="Tumbler" class="proj-img"/>
-            <div class="proj-copy">
-              <h3>Desain Tumbler</h3>
-              <p class="muted">Template kurva wrap sesuai bentuk; hasil presisi saat produksi.</p>
-              <a class="btn btn--primary" href="projects/tumbler.html">CASE STUDY</a>
-            </div>
-          </div>
-
-          <div class="proj-row reveal">
-            <img src="assets/proj-blanket.svg" alt="Selimut" class="proj-img"/>
-            <div class="proj-copy">
-              <h3>Desain Selimut</h3>
-              <p class="muted">Pattern seamless; file besar siap cetak untuk berbagai ukuran.</p>
-              <a class="btn btn--primary" href="projects/blanket.html">CASE STUDY</a>
-            </div>
-          </div>
-
-          <div class="proj-row reveal">
-            <img src="assets/proj-pillow.svg" alt="Bantal" class="proj-img"/>
-            <div class="proj-copy">
-              <h3>Desain Bantal</h3>
-              <p class="muted">Desain dua sisi + varian warna; file siap potong & margin jahit.</p>
-              <a class="btn btn--primary" href="projects/pillow.html">CASE STUDY</a>
-            </div>
-          </div>
-
-          <div class="proj-row reveal">
-            <img src="assets/proj-goodie.svg" alt="Goodiebag" class="proj-img"/>
-            <div class="proj-copy">
-              <h3>Desain Goodiebag</h3>
-              <p class="muted">Branding tas dengan area aman cetak, lipatan, dan garis potong.</p>
-              <a class="btn btn--primary" href="projects/goodie.html">CASE STUDY</a>
-            </div>
-          </div>
-
-          <div class="proj-row reveal">
-            <img src="assets/proj-banner.svg" alt="Banner" class="proj-img"/>
-            <div class="proj-copy">
-              <h3>Banner / Spanduk</h3>
-              <p class="muted">Komposisi & tipografi kuat; keterbacaan jarak jauh; file CMYK siap cetak.</p>
-              <a class="btn btn--primary" href="projects/banner.html">CASE STUDY</a>
-            </div>
-          </div>
-
-          <div class="proj-row reveal">
-            <img src="assets/proj-cover.svg" alt="Cover Novel" class="proj-img"/>
-            <div class="proj-copy">
-              <h3>Cover Novel</h3>
-              <p class="muted">Sampul depan-belakang & spine; tipografi judul menonjol; versi thumbnail.</p>
-              <a class="btn btn--primary" href="projects/cover.html">CASE STUDY</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section section--alt">
-      <div class="container">
-        <header class="section-head">
-          <h2>CONTACT</h2>
-          <div class="underline"></div>
-          <p class="muted">Hubungi saya melalui media sosial atau formulir di bawah.</p>
-        </header>
-
-        <div class="contact-grid">
-          <div class="contact-info">
-            <a class="contact-chip" href="https://www.instagram.com/jenfornaren?igsh=MXJmdXBoeDNkODU4MA==" target="_blank" rel="noopener">
-              <span class="chip-ico">📸</span> Instagram
-            </a>
-            <a class="contact-chip" href="https://wa.me/6288296642919" target="_blank" rel="noopener">
-              <span class="chip-ico">💬</span> WhatsApp
-            </a>
-            <a class="contact-chip" href="mailto:caella1705@gmail.com">
-              <span class="chip-ico">✉️</span> caella1705@gmail.com
-            </a>
-          </div>
-
-          <form class="card contact-form" id="contactForm" novalidate>
-            <div class="form-field">
-              <label for="name">Nama</label>
-              <input id="name" name="name" type="text" placeholder="Nama lengkap" required>
-              <small class="error"></small>
-            </div>
-            <div class="form-field">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="email@contoh.com" required>
-              <small class="error"></small>
-            </div>
-            <div class="form-field">
-              <label for="message">Pesan</label>
-              <textarea id="message" name="message" rows="5" placeholder="Tulis pesan Anda..." required></textarea>
-              <small class="error"></small>
-            </div>
-            <button class="btn btn--primary" type="submit" id="submitBtn">Submit</button>
-            <p class="form-note">Form ini menggunakan <b>serverless function</b> untuk mengirim email.</p>
-            <div id="formStatus" role="status" aria-live="polite"></div>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
+  <footer class="site-footer">
     <div class="container footer-grid">
-      <p>&copy; <span id="year"></span> Jenii Design • Jennifer Calluella.</p>
-      <div class="footer-social">
+      <p>© <span id="year"></span> Jenii Design — Jennifer C. G. Bacas</p>
+      <div class="social">
         <a href="https://www.instagram.com/jenfornaren?igsh=MXJmdXBoeDNkODU4MA==" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
         <a href="https://wa.me/6288296642919" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
-        <a href="mailto:caella1705@gmail.com" aria-label="Email">Email</a>
+        <a href="#contact" aria-label="Email">Email</a>
       </div>
     </div>
   </footer>
 
   <script src="script.js"></script>
-
-<script id="inline-slider-fix">
-// inline slider fix v16
-(function () {
-  const s = document.getElementById('headerSlider');
-  if (!s) return;
-  const track = s.querySelector('.slides');
-  const slides = Array.from(s.querySelectorAll('.slide'));
-  let i = 0, timer;
-  function go(n){ i=(n+slides.length)%slides.length;
-    track.style.transform=`translateX(-${i*100}%)`; restart(); }
-  function next(){ go(i+1); } function prev(){ go(i-1); }
-  function restart(){ clearInterval(timer); timer=setInterval(next,4000); }
-  s.querySelector('.next').addEventListener('click', next);
-  s.querySelector('.prev').addEventListener('click', prev);
-  go(0);
-})();
-</script>
 </body>
 </html>
