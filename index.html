@@ -1,219 +1,172 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jenii Design — Portfolio Jennifer Calluella Gavrila Bacas</title>
-  <meta name="description" content="Portfolio desain grafis (dark maroon) dengan case study, galeri lightbox, dan form kontak serverless."/>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Jenii Design — Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-  <!-- NAV -->
-  <header class="site-header">
-    <div class="container nav">
-      <a href="#home" class="brand">
-        <img src="assets/logo.svg" alt="Jenii Design logo" />
-        <span class="brand-name">Jenii Design</span>
+  <!-- Social rail -->
+  <aside class="social-rail">
+    <a href="https://www.linkedin.com" aria-label="LinkedIn">in</a>
+    <a href="https://github.com" aria-label="GitHub">gh</a>
+    <a href="https://instagram.com/jenfornaren" aria-label="Instagram">ig</a>
+    <a href="mailto:caella1705@gmail.com" aria-label="Email">@</a>
+  </aside>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="wrap">
+      <a class="brand" href="#home">
+        <img src="assets/logo.png" alt="Jenii Design" width="36" height="36">
+        <span>JENII DESIGN</span>
       </a>
-      <button class="hamburger" id="hamburger" aria-label="Buka menu">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="menu" id="menu">
-        <a href="#home">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="case-study.html">Case Studies</a>
-        <a href="#skills">Skills</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a href="#contact" class="btn small primary cta">Hire Me</a>
+      <nav class="nav" id="nav">
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#projects">PROJECTS</a>
+        <a href="#contact">CONTACT</a>
       </nav>
+      <button id="menuBtn" class="menu-btn" aria-label="toggle menu">☰</button>
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- Hero -->
   <section id="home" class="hero">
-    <div class="slides">
-      <div class="slide active" style="--bg: url('assets/hero1.jpg')">
-        <div class="overlay">
-          <h1 class="title">Meningkatkan nilai brand <span>dengan desain</span> yang konsisten</h1>
-          <p class="subtitle">Saya Jennifer — desainer grafis yang fokus pada identitas visual & merchandise.</p>
-          <div class="cta-row">
-            <a href="#projects" class="btn primary">Lihat Projects</a>
-            <a href="case-study.html" class="btn outline">Baca Case Studies</a>
+    <div class="wrap hero-inner">
+      <h1>HEY, I'M <span>JENNIFER</span></h1>
+      <p class="lead">A Result‑Oriented Graphic Designer building and managing brand visuals & merchandise that lead to the success of the overall product.</p>
+      <a class="btn" href="#projects">PROJECTS</a>
+      <img class="hero-bg" src="assets/hero.jpg" alt="Hero">
+      <div class="scroll-indicator">○</div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <div class="wrap">
+      <h2 class="center">ABOUT ME</h2>
+      <div class="underline"></div>
+      <p class="center sub">Here you will find more information about me, what I do, and my current skills.</p>
+      <div class="about-grid">
+        <div>
+          <h3>Get to know me!</h3>
+          <p>I'm a <b>Graphic Designer</b> building and managing <b>branding & merchandise</b> that lead to product success. I enjoy sharing what I've learned in design so it can help others.</p>
+          <p>I'm open to <b>Job</b> opportunities where I can contribute, learn and grow. If you have a good opportunity that matches my skills and experience then don't hesitate to contact me.</p>
+          <a class="btn ghost" href="#contact">CONTACT</a>
+        </div>
+        <div>
+          <h3>My Skills</h3>
+          <div class="chips">
+            <span>Photoshop</span><span>Illustrator</span><span>After Effects</span><span>Figma</span>
+            <span>Blender</span><span>Canva</span><span>Alight Motion</span><span>Ibis Paint X</span><span>CapCut</span><span>Word</span><span>Excel</span>
           </div>
         </div>
       </div>
-      <div class="slide" style="--bg: url('assets/hero2.jpg')">
-        <div class="overlay">
-          <h1 class="title">Dari ide ke produksi <span>siap cetak</span></h1>
-          <p class="subtitle">Konsep → style guide → mockup → QC.</p>
-          <div class="cta-row">
-            <a href="#skills" class="btn">Keahlian</a>
-            <a href="#contact" class="btn outline">Kontak</a>
-          </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="projects">
+    <div class="wrap">
+      <h2 class="center">PROJECTS</h2>
+      <div class="underline"></div>
+      <p class="center sub">Here you will find some of the personal and client projects that I created. Each project contains its own short case study.</p>
+
+      <article class="proj">
+        <img src="assets/project1.jpg" alt="Project 1">
+        <div class="proj-text">
+          <h3>Baju Custom</h3>
+          <p>Open-source template untuk apparel brand. Fokus pada tipografi & produksi massal.</p>
+          <a class="btn small" href="case-study.html#p1">CASE STUDY</a>
         </div>
-      </div>
-      <div class="slide" style="--bg: url('assets/hero3.jpg')">
-        <div class="overlay">
-          <h1 class="title">Profesional, on-time, <span>kolaboratif</span></h1>
-          <p class="subtitle">Terbiasa kerja tim dengan marketing, produksi, dan stakeholder.</p>
-          <div class="cta-row">
-            <a href="#about" class="btn">Tentang Saya</a>
-            <a href="#contact" class="btn primary">Ayo Kolaborasi</a>
-          </div>
+      </article>
+
+      <article class="proj">
+        <img src="assets/project2.jpg" alt="Project 2">
+        <div class="proj-text">
+          <h3>Goodiebag</h3>
+          <p>Paket branding event/UMKM dengan bahan ekonomis & visual konsisten.</p>
+          <a class="btn small" href="case-study.html#p2">CASE STUDY</a>
         </div>
-      </div>
-    </div>
-    <div class="dots" id="dots"></div>
-  </section>
+      </article>
 
-  <!-- INTRO -->
-  <section class="intro container reveal">
-    <div class="intro-grid">
-      <div class="intro-copy">
-        <h3>Halo! 👋 Saya Jennifer</h3>
-        <p>Saya membantu brand tampil lebih meyakinkan melalui desain yang rapi, konsisten, dan siap produksi. Berpengalaman membuat <em>Baju, Mug, Selimut, Bantal, Banner, Cover Novel, Hoodie, Goodiebag, Tumbler</em>, dan lainnya.</p>
-        <div class="intro-actions">
-          <a href="#projects" class="btn small primary">Jelajahi Karya</a>
-          <a href="#contact" class="btn small outline">Diskusi Proyek</a>
+      <article class="proj">
+        <img src="assets/project3.jpg" alt="Project 3">
+        <div class="proj-text">
+          <h3>Banner</h3>
+          <p>Key visual untuk peluncuran produk. Penekanan pada hierarki teks yang kuat.</p>
+          <a class="btn small" href="case-study.html#p3">CASE STUDY</a>
         </div>
-      </div>
-      <ul class="intro-facts">
-        <li><span>80+</span> Proyek selesai</li>
-        <li><span>25+</span> Kategori produk</li>
-        <li><span>5★</span> Kepuasan klien</li>
-      </ul>
+      </article>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="about container reveal">
-    <div class="about-grid">
-      <div>
-        <h2 class="section-title">About Me</h2>
-        <p>Saya adalah <strong>Graphic Designer</strong> dengan pendekatan user-first dan perhatian pada detail produksi (warna, bahan, teknik cetak, finishing). Saya nyaman kolaborasi lintas peran dan terbiasa menjaga timeline.</p>
-        <p>Prinsip kerja saya: <strong>profesional, komunikatif, dan berorientasi hasil</strong>. Saya memprioritaskan konsistensi brand, kejelasan visual, dan kemudahan implementasi di berbagai media.</p>
-      </div>
-      <div class="about-card">
-        <h3>Ketersediaan</h3>
-        <ul>
-          <li>Freelance / Kontrak</li>
-          <li>Remote-friendly</li>
-          <li>Revisi cepat & terjadwal</li>
-        </ul>
-        <a class="btn primary" href="#contact">Ajak Kolaborasi</a>
-      </div>
-    </div>
-  </section>
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2 class="center">CONTACT</h2>
+      <div class="underline"></div>
+      <p class="center sub">Feel free to contact me by submitting the form below and I will get back to you as soon as possible</p>
 
-  <!-- SKILLS -->
-  <section id="skills" class="skills container reveal">
-    <h2 class="section-title">My Skill</h2>
-    <div class="skills-grid">
-      <div class="skill">
-        <h4>Aplikasi Desain</h4>
-        <p class="tags">
-          <span>Canva</span><span>Adobe After Effects</span><span>Adobe Photoshop</span>
-          <span>Figma</span><span>Blender</span><span>Adobe Illustrator</span>
-          <span>Alight Motion</span><span>Ibis Paint X</span><span>CapCut</span>
-          <span>Microsoft Word</span><span>Microsoft Excel</span>
-        </p>
-      </div>
-      <div class="skill">
-        <h4>Soft Skills</h4>
-        <ul class="bullets">
-          <li>Profesional & konsisten pada kualitas.</li>
-          <li>Kolaboratif dan komunikatif dalam tim.</li>
-          <li>Manajemen waktu & prioritas yang baik.</li>
-          <li>Kreatif problem-solving dari ide ke eksekusi.</li>
-        </ul>
-      </div>
-      <div class="skill">
-        <h4>Produksi & Teknis</h4>
-        <ul class="bullets">
-          <li>File siap cetak (bleed, margin, CMYK/RGB).</li>
-          <li>Optimasi aset web & sosial media.</li>
-          <li>Moodboard, mockup & style documentation.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="projects container reveal">
-    <h2 class="section-title">Projects</h2>
-    <p class="section-subtitle">Beberapa contoh karya — gambar bisa Anda ganti di folder <code>/assets</code>.</p>
-    <div class="grid">
-      <article class="card"><div class="thumb"><img src="assets/proj1.jpg" alt="Baju Custom"/></div><div class="card-body"><h3>Baju Custom</h3><p>Identitas brand yang kuat pada apparel.</p><a class="btn small" href="case-study.html#baju">Lihat Case Study</a></div></article>
-      <article class="card"><div class="thumb"><img src="assets/proj2.jpg" alt="Mug"/></div><div class="card-body"><h3>Mug</h3><p>Desain dan mockup untuk produk promosi.</p><a class="btn small" href="case-study.html#mug">Lihat Case Study</a></div></article>
-      <article class="card"><div class="thumb"><img src="assets/proj3.jpg" alt="Selimut"/></div><div class="card-body"><h3>Selimut</h3><p>Motif eksklusif, nyaman & estetik.</p><a class="btn small" href="case-study.html#selimut">Lihat Case Study</a></div></article>
-      <article class="card"><div class="thumb"><img src="assets/proj4.jpg" alt="Bantal"/></div><div class="card-body"><h3>Bantal</h3><p>Foto printing & dekoratif.</p><a class="btn small" href="case-study.html#bantal">Lihat Case Study</a></div></article>
-      <article class="card"><div class="thumb"><img src="assets/proj5.jpg" alt="Banner"/></div><div class="card-body"><h3>Banner</h3><p>Tipografi tegas untuk promosi.</p><a class="btn small" href="case-study.html#banner">Lihat Case Study</a></div></article>
-      <article class="card"><div class="thumb"><img src="assets/proj6.jpg" alt="Cover Novel"/></div><div class="card-body"><h3>Cover Novel</h3><p>Visual yang memikat pembaca.</p><a class="btn small" href="case-study.html#cover">Lihat Case Study</a></div></article>
-      <article class="card"><div class="thumb"><img src="assets/proj7.jpg" alt="Hoodie"/></div><div class="card-body"><h3>Hoodie</h3><p>Ilustrasi & lettering khas.</p><a class="btn small" href="case-study.html#hoodie">Lihat Case Study</a></div></article>
-      <article class="card"><div class="thumb"><img src="assets/proj8.jpg" alt="Goodiebag"/></div><div class="card-body"><h3>Goodiebag</h3><p>Eye-catching dan fungsional.</p><a class="btn small" href="case-study.html#goodiebag">Lihat Case Study</a></div></article>
-      <article class="card"><div class="thumb"><img src="assets/proj9.jpg" alt="Tumbler"/></div><div class="card-body"><h3>Tumbler</h3><p>Visual bersih & modern.</p><a class="btn small" href="case-study.html#tumbler">Lihat Case Study</a></div></article>
-    </div>
-  </section>
-
-  <!-- GALLERY with Lightbox -->
-  <section class="gallery container reveal">
-    <h2 class="section-title">Gallery</h2>
-    <p class="section-subtitle">Klik gambar untuk membesarkan (lightbox). Ganti file di <code>/assets/gallery*.jpg</code>.</p>
-    <div class="gallery-grid">
-      <a href="assets/gallery1.jpg" class="lightbox"><img src="assets/gallery1.jpg" alt="Gallery 1"/></a>
-      <a href="assets/gallery2.jpg" class="lightbox"><img src="assets/gallery2.jpg" alt="Gallery 2"/></a>
-      <a href="assets/gallery3.jpg" class="lightbox"><img src="assets/gallery3.jpg" alt="Gallery 3"/></a>
-      <a href="assets/gallery4.jpg" class="lightbox"><img src="assets/gallery4.jpg" alt="Gallery 4"/></a>
-      <a href="assets/gallery5.jpg" class="lightbox"><img src="assets/gallery5.jpg" alt="Gallery 5"/></a>
-      <a href="assets/gallery6.jpg" class="lightbox"><img src="assets/gallery6.jpg" alt="Gallery 6"/></a>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="contact container reveal">
-    <h2 class="section-title">Contact</h2>
-    <div class="contact-grid">
-      <div class="contact-cards">
-        <a class="contact-card" target="_blank" rel="noopener" href="https://www.instagram.com/jenfornaren?igsh=MXJmdXBoeDNkODU4MA==">
-          <div class="icon">📷</div><div><h4>Instagram</h4><p>@jenfornaren</p></div>
-        </a>
-        <a class="contact-card" target="_blank" rel="noopener" href="https://wa.me/6288296642919">
-          <div class="icon">💬</div><div><h4>WhatsApp</h4><p>+62 882-9664-2919</p></div>
-        </a>
-        <div class="contact-card">
-          <div class="icon">✉️</div><div><h4>Email</h4><p>caella1705@gmail.com</p></div>
-        </div>
-      </div>
-
-      <form id="emailForm" class="email-form">
-        <div class="row">
-          <label>Nama<input required name="name" placeholder="Nama Anda"/></label>
-          <label>Email<input required name="email" type="email" placeholder="email@domain.com"/></label>
-        </div>
-        <label>Pesan<textarea required name="message" rows="6" placeholder="Tulis pesan Anda…"></textarea></label>
-        <button class="btn primary" type="submit">Kirim via Serverless</button>
-        <p class="note">Form ini mengirim ke fungsi serverless <code>/api/contact</code>. Set environment SMTP di Vercel.</p>
-        <div id="formStatus" role="status" aria-live="polite"></div>
+      <form id="emailForm" class="card">
+        <label> Name
+          <input name="name" required placeholder="Enter Your Name">
+        </label>
+        <label> Email
+          <input type="email" name="email" required placeholder="Enter Your Email">
+        </label>
+        <label> Message
+          <textarea name="message" rows="6" required placeholder="Enter Your Message"></textarea>
+        </label>
+        <button class="btn" type="submit">SUBMIT</button>
+        <div id="status"></div>
       </form>
     </div>
   </section>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <p>© <span id="year"></span> Jenii Design — Jennifer C. G. Bacas</p>
-      <div class="social">
-        <a href="https://www.instagram.com/jenfornaren?igsh=MXJmdXBoeDNkODU4MA==" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://wa.me/6288296642919" target="_blank" rel="noopener">WhatsApp</a>
-        <a href="#contact">Email</a>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="wrap footer-row">
+      <div class="left">
+        <h4>JENII DESIGN</h4>
+        <p>A Graphic Designer focused on brand visuals & merchandise.</p>
+      </div>
+      <div class="right">
+        <h4>SOCIAL</h4>
+        <div class="social-links">
+          <a href="https://www.linkedin.com">in</a>
+          <a href="https://github.com">gh</a>
+          <a href="https://twitter.com">tw</a>
+          <a href="https://youtube.com">yt</a>
+        </div>
       </div>
     </div>
+    <div class="copy">© 2025 Jenii Design — Jennifer C. G. Bacas</div>
   </footer>
 
-  <script src="lightbox.js"></script>
-  <script src="script.js"></script>
+  <script>
+  // Mobile nav toggle
+  const btn = document.getElementById('menuBtn');
+  btn.addEventListener('click', ()=> document.getElementById('nav').classList.toggle('open'));
+
+  // Dummy submit (hook to serverless later)
+  const f = document.getElementById('emailForm');
+  const s = document.getElementById('status');
+  f.addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    s.textContent = 'Mengirim…';
+    try{
+      const res = await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(f).entries()))});
+      const data = await res.json();
+      s.textContent = res.ok ? 'Terkirim!' : 'Gagal: ' + (data.error || res.statusText);
+      if(res.ok) f.reset();
+    }catch(err){ s.textContent = 'Gagal: ' + err.message; }
+  });
+  </script>
 </body>
 </html>

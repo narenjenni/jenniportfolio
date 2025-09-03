@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
   <meta charset="utf-8"/>
@@ -6,73 +6,46 @@
   <title>Case Studies — Jenii Design</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a href="index.html#home" class="brand">
-        <img src="assets/logo.svg" alt="Jenii Design" />
-        <span class="brand-name">Jenii Design</span>
-      </a>
-      <nav class="menu menu-inline">
-        <a href="index.html#projects">Projects</a>
-        <a href="#top">Case Studies</a>
-        <a href="index.html#skills">Skills</a>
-        <a href="index.html#contact" class="btn small primary">Hire Me</a>
-      </nav>
+  <header class="header">
+    <div class="wrap">
+      <a class="brand" href="index.html#home"><img src="assets/logo.png" width="36" height="36" alt="Jenii Design"><span>JENII DESIGN</span></a>
+      <nav class="nav"><a href="index.html#about">ABOUT</a><a href="index.html#projects">PROJECTS</a><a href="index.html#contact">CONTACT</a></nav>
     </div>
   </header>
-
-  <main class="container page reveal">
-    <h1 class="section-title">Case Studies</h1>
-    <p class="section-subtitle">Contoh format studi kasus. Duplikasikan blok dan sesuaikan.</p>
-
-    <article id="baju" class="cs">
-      <h2>Baju Custom — Identitas Brand</h2>
-      <div class="cs-meta">
-        <span><strong>Peran:</strong> Desainer</span>
-        <span><strong>Tools:</strong> Ai, Ps, Mockup</span>
-        <span><strong>Durasi:</strong> 1–2 minggu</span>
-      </div>
-      <h3>Tujuan</h3>
-      <p>Menciptakan kaos promosi yang konsisten dengan pedoman brand dan nyaman diproduksi massal.</p>
-      <h3>Proses</h3>
-      <ol>
-        <li>Kickoff & brief brand</li>
-        <li>Moodboard, sketsa, dan eksplorasi tipografi</li>
-        <li>Mockup produksi & pemilihan bahan</li>
-        <li>Finalisasi file siap cetak (ukur, bleed, CMYK)</li>
-      </ol>
-      <h3>Hasil</h3>
-      <p>Penjualan merch meningkat dan brand lebih mudah dikenali.</p>
-      <div class="cs-gallery">
-        <a href="assets/proj1.jpg" class="lightbox"><img src="assets/proj1.jpg" alt="Baju Custom"/></a>
-        <a href="assets/gallery2.jpg" class="lightbox"><img src="assets/gallery2.jpg" alt="Detail"/></a>
+  <main class="wrap" style="padding:2rem 0">
+    <h1 class="center">CASE STUDIES</h1>
+    <div class="underline"></div>
+    <article id="p1" class="proj" style="grid-template-columns:1fr 1fr">
+      <img src="assets/project1.jpg" alt="Baju Custom">
+      <div class="proj-text">
+        <h3>Baju Custom — Identitas Brand</h3>
+        <p><b>Tujuan:</b> Merchandise yang konsisten dengan pedoman brand.</p>
+        <p><b>Proses:</b> brief → moodboard → eksplorasi tipografi → mockup → file siap cetak (CMYK/bleed).</p>
+        <p><b>Hasil:</b> visual konsisten, penjualan merch meningkat.</p>
       </div>
     </article>
-
-    <article id="mug" class="cs">
-      <h2>Mug — Merchandise Promosi</h2>
-      <div class="cs-meta"><span><strong>Peran:</strong> Desainer</span><span><strong>Tools:</strong> Ai, Ps</span></div>
-      <p>Desain mug untuk souvenir event; fokus pada keterbacaan di area kecil dan kontras warna.</p>
-      <div class="cs-gallery">
-        <a href="assets/proj2.jpg" class="lightbox"><img src="assets/proj2.jpg" alt="Mug"/></a>
+    <article id="p2" class="proj" style="grid-template-columns:1fr 1fr">
+      <img src="assets/project2.jpg" alt="Goodiebag">
+      <div class="proj-text">
+        <h3>Goodiebag — Paket Event</h3>
+        <p>Fokus pada biaya efisien & brand recall tinggi. Pengujian bahan & warna dilakukan sebelum produksi.</p>
+      </div>
+    </article>
+    <article id="p3" class="proj" style="grid-template-columns:1fr 1fr">
+      <img src="assets/project3.jpg" alt="Banner">
+      <div class="proj-text">
+        <h3>Banner — Peluncuran Produk</h3>
+        <p>Hierarchy teks dibuat jelas agar terbaca dari jarak jauh, warna disesuaikan dengan guideline.</p>
       </div>
     </article>
   </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <p>© <span id="year"></span> Jenii Design</p>
-      <div class="social">
-        <a href="index.html#contact">Kontak</a>
-      </div>
-    </div>
+  <footer class="footer">
+    <div class="wrap footer-row"><div class="left"><h4>JENII DESIGN</h4></div><div class="right"><h4><a style="color:#fff;text-decoration:none" href="index.html#contact">Contact</a></h4></div></div>
+    <div class="copy">© 2025 Jenii Design</div>
   </footer>
-
-  <script src="lightbox.js"></script>
-  <script src="script.js"></script>
 </body>
 </html>
