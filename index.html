@@ -1,337 +1,208 @@
-<!DOCTYPE html><html lang="en"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <title>Jennifer Calluella Gavrila Bacas | Jenii Design | Graphic Designer</title>
-    <meta name="description" content="A Frontend focused Web Developer building the Frontend of Websites and Web Applications that leads to the success of the overall product">
-    <meta name="author" content="Jennifer Calluella Gavrila Bacas">
-    <meta name="google-site-verification" content="wX2xdkxqjrC4rA2EM-9bbaVpiEEFG8ae5azgeZDd-oo">
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Jennifer Calluella Gavrila Bacas — Jenii Design</title>
+  <meta name="description" content="Portfolio Jennifer Calluella Gavrila Bacas — Graphic Designer (brand & merchandise)."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <!-- Social rail -->
+  <aside class="social-rail" aria-label="Social links">
+    <a href="https://www.instagram.com/jenfornaren?igsh=MXJmdXBoeDNkODU4MA==" target="_blank" rel="noopener" aria-label="Instagram">
+      <img src="assets/icon-instagram.svg" alt="" />
+    </a>
+    <a href="https://wa.me/6288296642919" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <img src="assets/icon-whatsapp.svg" alt="" />
+    </a>
+    <a href="mailto:caella1705@gmail.com" aria-label="Email">
+      <img src="assets/icon-mail.svg" alt="" />
+    </a>
+  </aside>
 
-    <meta property="og:title" content="Jennifer Calluella Gavrila Bacas | Jenii Design | Graphic Designer">
-    <meta property="og:site_name" content="Jenii Design Portfolio Website">
-    <meta property="og:url" content="#">
-    <meta property="og:description" content="A Frontend focused Web Developer building the Frontend of Websites and Web Applications that leads to the success of the overall product">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="images/pretty-snap-2022-3-29-16-11.png">
+  <!-- Header -->
+  <header class="header">
+    <div class="wrap row">
+      <a class="brand" href="#home"><img src="assets/logo.png" alt="Jenii Design"><span>JENII DESIGN</span></a>
+      <nav class="nav" id="nav">
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#projects">PROJECTS</a>
+        <a href="#contact">CONTACT</a>
+      </nav>
+      <button id="menuBtn" class="menu-btn" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
 
-    <link rel="stylesheet" href="css/style.css">
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="wrap hero-inner">
+      <h1>HEY, I'M <span>JENNIFER</span></h1>
+      <p class="lead">Graphic Designer yang berfokus pada <b>identitas visual</b> & <b>merchandise</b>. Saya membantu brand tampil meyakinkan lewat desain yang rapi, konsisten, dan <b>siap produksi</b>—dari konsep, mockup, hingga file siap cetak.</p>
+      <a class="btn" href="#projects">PROJECTS</a>
+      <img class="hero-bg" src="assets/hero.jpg" alt="Jenii Design hero">
+    </div>
+  </section>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap" rel="stylesheet">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QD9ESD1D9K"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-QD9ESD1D9K");
-    </script>
-  </head>
-
-  <body>
-    <header class="header">
-      <div class="header__content">
-        <div class="header__logo-container">
-          <div class="header__logo-img-cont">
-            <img src="images/profile-pic-8.png" alt="Jennifer Calluella Gavrila Bacas Logo Image" class="header__logo-img">
-          </div>
-          <span class="header__logo-sub">Jenii Design</span>
+  <!-- About -->
+  <section id="about" class="about">
+    <div class="wrap">
+      <h2 class="center">ABOUT ME</h2>
+      <div class="underline"></div>
+      <p class="center sub">Lebih dekat tentang saya, cara kerja, dan skill yang saya gunakan sehari-hari.</p>
+      <div class="about-grid">
+        <div>
+          <h3>Get to know me!</h3>
+          <p>Saya <b>Jennifer Calluella Gavrila Bacas</b>, seorang desainer grafis dengan pendekatan <i>user-first</i> dan perhatian tinggi pada detail produksi (warna, bahan, teknik cetak, finishing). Saya nyaman berkolaborasi lintas peran, menjaga timeline, dan terbuka pada feedback.</p>
+          <p>Prinsip kerja: <b>profesional</b>, <b>komunikatif</b>, dan <b>berorientasi hasil</b>. Target saya sederhana—membuat brand Anda terlihat meyakinkan dan membantu penjualan melalui visual yang rapi & konsisten.</p>
+          <a class="btn ghost" href="#contact">CONTACT</a>
         </div>
-        <div class="header__main">
-          <ul class="header__links">
-            <li class="header__link-wrapper">
-              <a href="./" class="header__link"> Home </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="./#about" class="header__link">About </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="./#projects" class="header__link"> Projects </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="./#contact" class="header__link"> Contact </a>
-            </li>
-          </ul>
-          <div class="header__main-ham-menu-cont">
-            <img src="images/ham-menu.svg" alt="hamburger menu" class="header__main-ham-menu">
-            <img src="images/ham-menu-close.svg" alt="hamburger menu close" class="header__main-ham-menu-close d-none">
-          </div>
-        </div>
-      </div>
-      <div class="header__sm-menu">
-        <div class="header__sm-menu-content">
-          <ul class="header__sm-menu-links">
-            <li class="header__sm-menu-link">
-              <a href="./"> Home </a>
-            </li>
-
-            <li class="header__sm-menu-link">
-              <a href="./#about"> About </a>
-            </li>
-
-            <li class="header__sm-menu-link">
-              <a href="./#projects"> Projects </a>
-            </li>
-
-            <li class="header__sm-menu-link">
-              <a href="./#contact"> Contact </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </header>
-    <section class="home-hero">
-      <div class="home-hero__content">
-        <h1 class="heading-primary">Hey, I'm Jennifer Calluella Gavrila Bacas</h1>
-        <div class="home-hero__info">
-          <p class="text-primary">
-            A Result-Oriented Web Developer building and managing Websites and
-            Web Applications that leads to the success of the overall product
-          </p>
-        </div>
-        <div class="home-hero__cta">
-          <a href="./#projects" class="btn btn--bg">My Project</a>
-        </div>
-      </div>
-      <div class="home-hero__socials">
-        <div class="home-hero__social">
-          <a href="https://www.instagram.com/jenfornaren?igsh=MXJmdXBoeDNkODU4MA==" class="home-hero__social-icon-link" rel="noreferrer" target="_blank">
-            <img src="images/linkedin-dark.svg" alt="Jennifer Calluella Gavrila Bacas Linkedin Profile" class="home-hero__social-icon">
-          </a>
-        </div>
-        <div class="home-hero__social">
-          <a href="https://twitter.com/rammcodes" class="home-hero__social-icon-link" rel="noreferrer" target="_blank">
-            <img src="images/twitter-dark.svg" alt="RammCodes Twitter Profile" class="home-hero__social-icon">
-          </a>
-        </div>
-        <div class="home-hero__social">
-          <a href="https://www.youtube.com/channel/UCIb8_J9lqtiWGMIOdQ5DVsg" class="home-hero__social-icon-link home-hero__social-icon-link--bd-none" rel="noreferrer" target="_blank">
-            <img src="images/yt-dark.svg" alt="RammCodes Youtube Channel" class="home-hero__social-icon">
-          </a>
-        </div>
-        <div class="home-hero__social">
-          <a href="https://wa.me/6288296642919" class="home-hero__social-icon-link" rel="noreferrer" target="_blank">
-            <img src="images/github-dark.svg" alt="RammCodes Github Profile" class="home-hero__social-icon">
-          </a>
-        </div>
-
-        <div class="home-hero__social">
-          <a href="mailto:caella1705@gmail.com" class="home-hero__social-icon-link" rel="noreferrer" target="_blank">
-            <img src="images/book-dark.svg" alt="RammCodes DEV.to Blog Profile" class="home-hero__social-icon">
-          </a>
-        </div>
-      </div>
-      <div class="home-hero__mouse-scroll-cont">
-        <div class="mouse"></div>
-      </div>
-    </section>
-    <section id="about" class="about sec-pad">
-      <div class="main-container">
-        <h2 class="heading heading-sec heading-sec__mb-med">
-          <span class="heading-sec__main">About Me</span>
-          <span class="heading-sec__sub">
-            Here you will find more information about me, what I do, and my
-            current skills mostly in terms of programming and technology
-          </span>
-        </h2>
-        <div class="about__content">
-          <div class="about__content-main">
-            <h3 class="about__content-title">Get to know me!</h3>
-            <div class="about__content-details">
-              <p class="about__content-details-para">
-                I'm a <strong>Frontend Focused Web Developer</strong> building
-                and managing the Front-end of Websites and Web Applications that
-                leads to the success of the overall product. Check out some of
-                my work in the <strong>My Project</strong> section.
-              </p>
-              <p class="about__content-details-para">
-                Saya bekerja <strong>profesional</strong>, komunikatif, dan terbiasa <strong>kolaborasi tim</strong> lintas peran (marketing, produksi).
-                <a rel="noreferrer" href="https://www.instagram.com/jenfornaren?igsh=MXJmdXBoeDNkODU4MA==" target="_blank">Linkedin</a>
-                and
-                <a rel="noreferrer" href="https://instagram.com/rammcodes_" target="_blank">Instagram</a>
-                Kamu bisa lihat portofolio & update karya saya di Instagram.
-              </p>
-              <p class="about__content-details-para">
-                Saya terbuka untuk <strong>freelance/kontrak</strong>. Jika ada kesempatan yang sesuai, jangan ragu untuk <strong>menghubungi</strong> saya.
-              </p>
-            </div>
-            <a href="./#contact" class="btn btn--med btn--theme dynamicBgClr">Contact Me</a>
-          </div>
-          <div class="about__content-skills">
-            <h3 class="about__content-title">My Skills</h3>
-            <div class="skills"><div class="skills__skill">Canva</div><div class="skills__skill">Adobe After Effects</div><div class="skills__skill">Adobe Photoshop</div><div class="skills__skill">Figma</div><div class="skills__skill">Blender</div><div class="skills__skill">Adobe Illustrator</div><div class="skills__skill">Alight Motion</div><div class="skills__skill">Ibis Paint X</div><div class="skills__skill">CapCut</div><div class="skills__skill">Microsoft Word</div><div class="skills__skill">Microsoft Excel</div><div class="skills__skill">Kolaborasi Tim</div><div class="skills__skill">Manajemen Waktu</div><div class="skills__skill">Profesional</div></div>
-              <div class="skills__skill">CSS</div>
-              <div class="skills__skill">JavaScript</div>
-              <div class="skills__skill">React</div>
-              <div class="skills__skill">Wordpress</div>
-              <div class="skills__skill">PHP</div>
-              <div class="skills__skill">SASS</div>
-              <div class="skills__skill">GIT</div>
-              <div class="skills__skill">Github</div>
-              <div class="skills__skill">Responsive Design</div>
-              <div class="skills__skill">SEO</div>
-              <div class="skills__skill">Terminal</div>
-            </div>
+        <div>
+          <h3>My Skills</h3>
+          <div class="chips">
+            <span>Adobe Photoshop</span><span>Adobe Illustrator</span><span>Adobe After Effects</span><span>Figma</span>
+            <span>Blender</span><span>Canva</span><span>Alight Motion</span><span>Ibis Paint X</span><span>CapCut</span><span>Microsoft Word</span><span>Microsoft Excel</span>
+            <span>Kolaborasi Tim</span><span>Manajemen Waktu</span><span>Quality Control</span>
           </div>
         </div>
       </div>
-    </section>
-    <section id="projects" class="projects sec-pad">
-      <div class="main-container">
-        <h2 class="heading heading-sec heading-sec__mb-bg">
-          <span class="heading-sec__main">My Project</span>
-          <span class="heading-sec__sub">
-            Here you will find some of the personal and clients projects that I
-            created with each project containing its own case study
-          </span>
-        </h2>
+    </div>
+  </section>
 
-        <div class="projects__content">
-          <div class="projects__row">
-            <div class="projects__row-img-cont">
-              <img src="images/dopefolio.jpeg" alt="Software Screenshot" class="projects__row-img" loading="lazy">
-            </div>
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">Baju Custom</h3>
-              <p class="projects__row-content-desc">
-                Baju Custom is a successful Open-Source project that I created
-                which have been featured on some of the biggest tech sites like
-                CSS-Tricks, Hostinger, etc & used by thousands of developers
-                globally
-              </p>
-              <a class="btn btn--med btn--theme dynamicBgClr" href="/project-1" target="_blank">Case Study</a>
-            </div>
-          </div>
-          <div class="projects__row">
-            <div class="projects__row-img-cont">
-              <img src="images/wilsonport.jpeg" alt="Software Screenshot" class="projects__row-img" loading="lazy">
-            </div>
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">Mug Custom</h3>
-              <p class="projects__row-content-desc">
-                Mug Custom is a multiservice logistics and transport company and
-                I created their website from scratch using the frontend tools I
-                know.
-              </p>
-              <a class="btn btn--med btn--theme dynamicBgClr" href="/project-2" target="_blank">Case Study</a>
-            </div>
-          </div>
-          <div class="projects__row">
-            <div class="projects__row-img-cont">
-              <img src="images/boreal-coffee-clone.jpeg" alt="Software Screenshot" class="projects__row-img" loading="lazy">
-            </div>
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">Selimut Motif</h3>
-              <p class="projects__row-content-desc">
-                I re-created the frontend of Boreal Coffee's official web app
-                because I got attracted to their beautiful UI. It was a great
-                experience for me to build the entire frontend.
-              </p>
-              <a class="btn btn--med btn--theme dynamicBgClr" href="/project-3" target="_blank">Case Study</a>
-            </div>
-          </div>
-          <div class="projects__row">
-            <div class="projects__row-img-cont">
-              <img src="images/crown-template.jpeg" alt="Software Screenshot" class="projects__row-img" loading="lazy">
-            </div>
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">Banner & Media</h3>
-              <p class="projects__row-content-desc">
-                Crown is a web template that I created targeting the restaurant
-                and food industry which anyone can use to present their business
-                online.
-              </p>
-              <a class="btn btn--med btn--theme dynamicBgClr" href="/project-4" target="_blank">Case Study</a>
-            </div>
-          </div>
+  <!-- Projects -->
+  <section id="projects" class="projects">
+    <div class="wrap">
+      <h2 class="center">PROJECTS</h2>
+      <div class="underline"></div>
+      <p class="center sub">Beberapa kategori karya. Klik CASE STUDY untuk melihat proses & hasilnya.</p>
+      
+      <article class="proj">
+        <a href="assets/baju-custom.jpg" data-lightbox><img src="assets/baju-custom.jpg" alt="Baju Custom"></a>
+        <div class="proj-text">
+          <h3>Baju Custom</h3>
+          <p>Desain kaos/jersey/tee dengan identitas brand kuat dan siap produksi massal.</p>
+          <a class="btn small" href="case-studies/baju-custom.html">CASE STUDY</a>
         </div>
+      </article>
+      
+      <article class="proj">
+        <a href="assets/mug-custom.jpg" data-lightbox><img src="assets/mug-custom.jpg" alt="Mug Custom"></a>
+        <div class="proj-text">
+          <h3>Mug Custom</h3>
+          <p>Desain & mockup mug untuk merchandise dan hadiah promosi.</p>
+          <a class="btn small" href="case-studies/mug-custom.html">CASE STUDY</a>
+        </div>
+      </article>
+      
+      <article class="proj">
+        <a href="assets/selimut-motif.jpg" data-lightbox><img src="assets/selimut-motif.jpg" alt="Selimut Motif"></a>
+        <div class="proj-text">
+          <h3>Selimut Motif</h3>
+          <p>Motif eksklusif yang nyaman dipakai dan estetik difoto.</p>
+          <a class="btn small" href="case-studies/selimut-motif.html">CASE STUDY</a>
+        </div>
+      </article>
+      
+      <article class="proj">
+        <a href="assets/bantal-dekoratif.jpg" data-lightbox><img src="assets/bantal-dekoratif.jpg" alt="Bantal Dekoratif"></a>
+        <div class="proj-text">
+          <h3>Bantal Dekoratif</h3>
+          <p>Ilustrasi/foto printing untuk bantal dekor, cocok untuk interior brand.</p>
+          <a class="btn small" href="case-studies/bantal-dekoratif.html">CASE STUDY</a>
+        </div>
+      </article>
+      
+      <article class="proj">
+        <a href="assets/banner-media.jpg" data-lightbox><img src="assets/banner-media.jpg" alt="Banner & Media"></a>
+        <div class="proj-text">
+          <h3>Banner & Media</h3>
+          <p>Key visual event/toko/produk dengan hierarki teks yang tegas.</p>
+          <a class="btn small" href="case-studies/banner-media.html">CASE STUDY</a>
+        </div>
+      </article>
+      
+      <article class="proj">
+        <a href="assets/cover-novel.jpg" data-lightbox><img src="assets/cover-novel.jpg" alt="Cover Novel"></a>
+        <div class="proj-text">
+          <h3>Cover Novel</h3>
+          <p>Sampul buku/novel yang memikat dan konsisten dengan genre.</p>
+          <a class="btn small" href="case-studies/cover-novel.html">CASE STUDY</a>
+        </div>
+      </article>
+      
+      <article class="proj">
+        <a href="assets/hoodie-illustration.jpg" data-lightbox><img src="assets/hoodie-illustration.jpg" alt="Hoodie Illustration"></a>
+        <div class="proj-text">
+          <h3>Hoodie Illustration</h3>
+          <p>Ilustrasi & lettering khas untuk hoodie/streetwear.</p>
+          <a class="btn small" href="case-studies/hoodie-illustration.html">CASE STUDY</a>
+        </div>
+      </article>
+      
+      <article class="proj">
+        <a href="assets/goodiebag.jpg" data-lightbox><img src="assets/goodiebag.jpg" alt="Goodiebag"></a>
+        <div class="proj-text">
+          <h3>Goodiebag</h3>
+          <p>Packaging & desain untuk event/perusahaan, eye-catching & fungsional.</p>
+          <a class="btn small" href="case-studies/goodiebag.html">CASE STUDY</a>
+        </div>
+      </article>
+      
+      <article class="proj">
+        <a href="assets/tumbler-custom.jpg" data-lightbox><img src="assets/tumbler-custom.jpg" alt="Tumbler Custom"></a>
+        <div class="proj-text">
+          <h3>Tumbler Custom</h3>
+          <p>Visual bersih & modern, tahan di cetak dan di produksi massal.</p>
+          <a class="btn small" href="case-studies/tumbler-custom.html">CASE STUDY</a>
+        </div>
+      </article>
+      
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2 class="center">CONTACT</h2>
+      <div class="underline"></div>
+      <p class="center sub">Hubungi saya melalui form berikut—saya akan membalas secepatnya.</p>
+
+      <form id="emailForm" class="card">
+        <label> Name
+          <input name="name" required placeholder="Enter Your Name">
+        </label>
+        <label> Email
+          <input type="email" name="email" required placeholder="Enter Your Email">
+        </label>
+        <label> Message
+          <textarea name="message" rows="6" required placeholder="Enter Your Message"></textarea>
+        </label>
+        <button class="btn" type="submit">SUBMIT</button>
+        <div id="status"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="wrap footer-row">
+      <div>
+        <h4>JENII DESIGN</h4>
+        <p>Graphic Designer — identitas visual & merchandise.</p>
       </div>
-    </section>
-    <section id="contact" class="contact sec-pad dynamicBg">
-      <div class="main-container">
-        <h2 class="heading heading-sec heading-sec__mb-med">
-          <span class="heading-sec__main heading-sec__main--lt">Contact Me</span>
-          <span class="heading-sec__sub heading-sec__sub--lt">
-            Hubungi saya lewat form berikut — saya akan membalas secepatnya. Atau DM Instagram / WhatsApp di bagian header.
-          </span>
-        </h2>
-        <div class="contact__form-container">
-          <form action="#" class="contact__form" method="post"><input type="hidden" name="form-name" value="form 1">
-            <div class="contact__form-field">
-              <label class="contact__form-label" for="name">Name</label>
-              <input required="" placeholder="Enter Your Name" type="text" class="contact__form-input" name="name" id="name">
-            </div>
-            <div class="contact__form-field">
-              <label class="contact__form-label" for="email">Email</label>
-              <input required="" placeholder="Enter Your Email" type="email" class="contact__form-input" name="email" id="email">
-            </div>
-            <div class="contact__form-field">
-              <label class="contact__form-label" for="message">Message</label>
-              <textarea required="" cols="30" rows="10" class="contact__form-input" placeholder="Enter Your Message" name="message" id="message"></textarea>
-            </div>
-            <button type="submit" class="btn btn--theme contact__btn">
-              Submit
-            </button>
-          </form>
-        </div>
+      <div class="social">
+        <a href="https://www.instagram.com/jenfornaren?igsh=MXJmdXBoeDNkODU4MA==" target="_blank" rel="noopener" aria-label="Instagram"><img src="assets/icon-instagram.svg" alt=""></a>
+        <a href="https://wa.me/6288296642919" target="_blank" rel="noopener" aria-label="WhatsApp"><img src="assets/icon-whatsapp.svg" alt=""></a>
+        <a href="mailto:caella1705@gmail.com" aria-label="Email"><img src="assets/icon-mail.svg" alt=""></a>
       </div>
-    </section>
-    <footer class="main-footer">
-      <div class="main-container">
-        <div class="main-footer__upper">
-          <div class="main-footer__row main-footer__row-1">
-            <h2 class="heading heading-sm main-footer__heading-sm">
-              <span>Social</span>
-            </h2>
-            <div class="main-footer__social-cont">
-              <a target="_blank" rel="noreferrer" href="https://www.instagram.com/jenfornaren?igsh=MXJmdXBoeDNkODU4MA==">
-                <img class="main-footer__icon" src="images/linkedin-ico.png" alt="Jennifer Calluella Gavrila Bacas Linkedin Profile">
-              </a>
-              <a target="_blank" rel="noreferrer" href="https://wa.me/6288296642919">
-                <img class="main-footer__icon" src="images/github-ico.png" alt="RammCodes Github Profile">
-              </a>
-              <a target="_blank" rel="noreferrer" href="https://twitter.com/rammcodes">
-                <img class="main-footer__icon" src="images/twitter-ico.png" alt="RammCodes Twitter Profile">
-              </a>
+    </div>
+    <div class="copy">© 2025 Jenii Design — Jennifer C. G. Bacas</div>
+  </footer>
 
-              <a target="_blank" rel="noreferrer" href="mailto:caella1705@gmail.com">
-                <img class="main-footer__icon" src="images/blog-ico.png" alt="RammCodes DEV.to Blog Profile">
-              </a>
-              <a target="_blank" rel="noreferrer" href="https://www.youtube.com/channel/UCIb8_J9lqtiWGMIOdQ5DVsg">
-                <img class="main-footer__icon main-footer__icon--mr-none" src="images/yt-ico.png" alt="RammCodes Youtube Channel">
-              </a>
-            </div>
-          </div>
-          <div class="main-footer__row main-footer__row-2">
-            <h2 class="heading heading-sm text-lt">Jennifer Calluella Gavrila Bacas</h2>
-            <p class="main-footer__short-desc">
-              A Frontend focused Web Developer building the Frontend of Websites
-              and Web Applications that leads to the success of the overall
-              product
-            </p>
-          </div>
-        </div>
-
-        <!-- If you give me some credit or shoutout here by linking to my website, then it will be a big thing for me and will help me a lot :) -->
-        <div class="main-footer__lower">
-          © Copyright
-          <script>
-            document.write(new Date().getFullYear());
-          </script>2025
-          . Made by
-          <a rel="noreferrer" target="_blank" href="https://rammaheshwari.com">Jennifer Calluella Gavrila Bacas</a>
-        </div>
-      </div>
-    </footer>
-
-    <script src="js/index.js"></script>
-    <script src="js/render.517d92759206c5ae03c7.js" async=""></script>
-  
-
-</body></html>
+  <script src="script.js"></script>
+</body>
+</html>
