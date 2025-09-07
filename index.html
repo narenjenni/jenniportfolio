@@ -3,107 +3,94 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio — Jennifer Calluella Gavrila Bacas</title>
-  <meta name="description" content="Portfolio desain grafis Jennifer Calluella Gavrila Bacas: apparel, merchandise, banner, cover novel, dan lainnya.">
+  <title>Jennifer Calluella — Portfolio</title>
+  <meta name="description" content="Portfolio desain grafis Jennifer: apparel, merchandise, banner, cover novel, dan lainnya. Fokus hasil & kolaborasi." />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/hero1.svg" as="image">
-  <link rel="preload" href="assets/hero2.svg" as="image">
-  <link rel="preload" href="assets/hero3.svg" as="image">
+  <link rel="preload" href="assets/hero-abstract.svg" as="image">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="aurora" aria-hidden="true"></div>
-  <header class="site-header">
+  <a class="skip" href="#main">Lewati ke konten</a>
+  <header class="hdr">
     <div class="container nav">
-      <a href="#home" class="brand" aria-label="Beranda">
-        <span class="logo">&lt;/&gt;</span>
-        <div class="brand-wrap">
-          <span class="brand-text">Jennifer Calluella</span>
+      <a class="brand" href="#home" aria-label="Beranda">
+        <img src="assets/mark.svg" alt="" width="28" height="28" />
+        <div>
+          <strong>Jennifer Calluella</strong>
           <small>Graphic Designer</small>
         </div>
       </a>
-      <div class="nav-right">
-        <div class="theme-toggle" id="themeToggle" title="Toggle contrast">◎</div>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+
       <nav class="menu" id="menu">
+        <a href="#selected">Selected Work</a>
         <a href="#projects">My Project</a>
         <a href="#skills">My Skill</a>
-        <a href="#about">About Me</a>
-        <a href="#contact">Contact Me</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
       </nav>
-    </div>
 
-    <div class="hero" id="home" aria-label="Hero slider">
-      <div class="slides kenburns" id="slides">
-        <div class="slide" style="--bg: url('assets/hero1.svg')">
-          <div class="overlay">
-            <h1>Desain yang <span class="accent">Berbicara</span></h1>
-            <p>Branding, merchandise, dan visual promosi untuk hasil yang nyata.</p>
-          </div>
-        </div>
-        <div class="slide" style="--bg: url('assets/hero2.svg')">
-          <div class="overlay">
-            <h1>Produk <span class="accent">Kustom</span></h1>
-            <p>Baju, mug, hoodie, goodiebag, tumbler, dan banyak lagi.</p>
-          </div>
-        </div>
-        <div class="slide" style="--bg: url('assets/hero3.svg')">
-          <div class="overlay">
-            <h1>Estetis & <span class="accent">Strategis</span></h1>
-            <p>Indah dilihat, efektif untuk tujuan brand Anda.</p>
-          </div>
-        </div>
-      </div>
-      <div class="hero-controls">
-        <button class="ctrl prev" id="prev" aria-label="Slide sebelumnya">‹</button>
-        <button class="ctrl next" id="next" aria-label="Slide berikutnya">›</button>
-        <div class="dots" id="dots" aria-label="Indikator slide"></div>
-      </div>
+      <button class="hamburger" id="hamburger" aria-label="Buka menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <section class="intro container fade-in">
-    <div class="intro-card">
-      <div class="intro-avatar" aria-hidden="true">J</div>
-      <div>
-        <h2>Hai, saya <span class="accent">Jennifer Calluella Gavrila Bacas</span>.</h2>
-        <p>
-          Saya seorang <strong>desain grafis</strong> yang membantu brand dan UMKM tampil lebih menonjol
-          melalui identitas visual, kemasan, dan materi promosi yang konsisten. Saya terbiasa bekerja
-          <strong>profesional</strong>, <strong>kolaboratif</strong>, dan berorientasi pada <strong>hasil</strong>.
-        </p>
+  <section id="home" class="hero container">
+    <div class="hero-copy">
+      <h1>
+        Desain <span class="accent">berdampak</span> untuk
+        <span id="rotator" class="rotator" aria-live="polite">merchandise</span>
+      </h1>
+      <p class="lede">
+        Saya membantu brand & UMKM tampil konsisten lewat visual yang jelas, rapi, dan siap produksi.
+        Hasil akhir berfokus pada tujuan bisnis, bukan hanya estetika.
+      </p>
+      <ul class="bullets">
+        <li>File siap cetak/produksi (AI/PDF/PNG/SVG)</li>
+        <li>Revisi terarah & komunikasi rutin</li>
+        <li>Dokumentasi singkat untuk tim internal</li>
+      </ul>
+      <div class="cta-row">
+        <a class="btn cta" href="#selected">Lihat Karya Unggulan</a>
+        <a class="btn ghost" href="#contact">Diskusikan Proyek</a>
       </div>
-      <a href="#projects" class="btn cta">Lihat Proyek</a>
+    </div>
+    <div class="hero-art" role="img" aria-label="Ilustrasi abstrak maroon">
+      <img src="assets/hero-abstract.svg" alt="" />
     </div>
   </section>
 
-  <section class="stats container section" aria-label="Ringkasan">
-    <div class="stat">
-      <div class="stat-num" data-count="9">0</div>
-      <div class="stat-label">Kategori Proyek</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num" id="statProjects">0</div>
-      <div class="stat-label">Proyek Ditampilkan</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num" data-count="12">0</div>
-      <div class="stat-label">Tools & Apps</div>
-    </div>
+  <section class="metrics container" aria-label="Ringkasan singkat">
+    <div class="metric"><b id="m1">0</b><span>Kategori</span></div>
+    <div class="metric"><b id="m2">0</b><span>Proyek</span></div>
+    <div class="metric"><b>Ready</b><span>File Produksi</span></div>
+    <div class="metric"><b>On-time</b><span>Delivery</span></div>
   </section>
 
-  <main>
-    <section id="projects" class="container section">
-      <div class="section-head with-actions">
+  <main id="main">
+    <!-- Selected Work (carousel-lite) -->
+    <section id="selected" class="section container">
+      <div class="section-head">
+        <h2>Selected Work</h2>
+        <p>Cuplikan proyek dengan konteks singkat & KPI yang bisa kamu isi.</p>
+      </div>
+      <div class="selected" id="selectedWrap">
+        <!-- injected -->
+      </div>
+    </section>
+
+    <!-- Projects (all) -->
+    <section id="projects" class="section container">
+      <div class="section-head row">
         <div>
           <h2>My Project</h2>
-          <p>Telusuri karya berdasarkan kategori atau kata kunci.</p>
+          <p>Filter kategori atau cari judul/kata kunci.</p>
         </div>
-        <div class="actions-row">
-          <div class="filters" id="filters">
+        <div class="controls">
+          <div class="chips" id="filters">
             <button class="chip active" data-filter="all">All</button>
             <button class="chip" data-filter="Apparel">Apparel</button>
             <button class="chip" data-filter="Merch">Merch</button>
@@ -111,121 +98,161 @@
             <button class="chip" data-filter="Promo">Promo</button>
             <button class="chip" data-filter="Publishing">Publishing</button>
           </div>
-          <input id="search" class="search" type="search" placeholder="Cari judul proyek..." aria-label="Cari proyek" />
+          <input id="search" class="search" type="search" placeholder="Cari proyek…" aria-label="Cari proyek" />
+          <select id="sort" class="sort" aria-label="Urutkan">
+            <option value="az">A → Z</option>
+            <option value="za">Z → A</option>
+            <option value="cat">Kategori</option>
+          </select>
         </div>
       </div>
       <div class="grid cards" id="projectGrid"></div>
     </section>
 
-    <section id="skills" class="container section alt">
+    <!-- Skills -->
+    <section id="skills" class="section container">
       <div class="section-head">
         <h2>My Skill</h2>
-        <p>Teknis & soft-skill untuk mendukung kolaborasi dan eksekusi proyek.</p>
+        <p>Teknis & soft skill yang mendukung kolaborasi lintas tim.</p>
       </div>
-      <div class="skills">
-        <div class="skill-badges">
-          <span class="badge">Canva</span>
-          <span class="badge">Adobe After Effects</span>
-          <span class="badge">Adobe Photoshop</span>
-          <span class="badge">Figma</span>
-          <span class="badge">Blender</span>
-          <span class="badge">Adobe Illustrator</span>
-          <span class="badge">Alight Motion</span>
-          <span class="badge">Ibis Paint X</span>
-          <span class="badge">CapCut</span>
-          <span class="badge">Microsoft Word</span>
-          <span class="badge">Microsoft Excel</span>
-        </div>
-        <ul class="skill-notes">
-          <li><strong>Profesional & Tepat Waktu</strong> — terbiasa mengikuti brief, WBS, dan revisi bertahap.</li>
-          <li><strong>Kolaborasi Lancar</strong> — nyaman bekerja dengan tim marketing, produksi, dan sales.</li>
-          <li><strong>Detail-Oriented</strong> — teliti pada tipografi, grid, dan konsistensi brand guideline.</li>
-          <li><strong>Problem-Solving</strong> — proaktif mencari solusi desain yang efektif dan efisien.</li>
-        </ul>
-      </div>
-      <div class="process-steps" aria-label="Proses kerja">
-        <div class="process-step"><div class="step-number">1</div><h3>Brief & Riset</h3><p>Diskusi tujuan, target audiens, dan referensi; kumpulkan aset brand.</p></div>
-        <div class="process-step"><div class="step-number">2</div><h3>Konsep & Moodboard</h3><p>Rangka visual: palet warna, tipografi, style frame, & sketsa awal.</p></div>
-        <div class="process-step"><div class="step-number">3</div><h3>Desain & Iterasi</h3><p>Produksi desain + 1–2 putaran revisi terarah sampai sesuai brief.</p></div>
-        <div class="process-step"><div class="step-number">4</div><h3>Final & Handoff</h3><p>File produksi (AI/PDF/PNG), mockup, dan panduan penggunaan singkat.</p></div>
-      </div>
-    </section>
-
-    <section id="about" class="container section">
-      <div class="section-head">
-        <h2>About Me</h2>
-        <p>Ringkasan perjalanan dan pendekatan kerja saya.</p>
-      </div>
-      <div class="about grid-2">
+      <div class="skill-wrap">
         <div class="panel">
-          <p>Saya memulai karier dari ketertarikan pada <em>brand identity</em> dan produksi merchandise. Kini saya fokus pada desain yang tidak hanya indah, namun juga <strong>berfungsi</strong>: meningkatkan keterbacaan, memperkuat brand recall, dan mendorong konversi.</p>
-          <p>Workflow saya mencakup <strong>riset singkat</strong>, moodboard, sketsa konsep, iterasi desain, dan <strong>handoff</strong> yang rapi (file terstruktur, warna/typography scale, serta panduan penggunaan). Saya siap membantu Anda dari <em>ide</em> hingga <em>produksi</em>.</p>
+          <h3>Tools</h3>
+          <div class="badges">
+            <span>Canva</span><span>Adobe After Effects</span><span>Adobe Photoshop</span>
+            <span>Figma</span><span>Blender</span><span>Adobe Illustrator</span>
+            <span>Alight Motion</span><span>Ibis Paint X</span><span>CapCut</span>
+            <span>Microsoft Word</span><span>Microsoft Excel</span>
+          </div>
         </div>
         <div class="panel">
-          <h3>Nilai Kerja</h3>
+          <h3>Cara Kerja</h3>
+          <ol class="steps">
+            <li><b>Brief & Riset</b> — tujuan, audiens, referensi, dan aset.</li>
+            <li><b>Konsep</b> — moodboard, sketsa, style frame.</li>
+            <li><b>Produksi</b> — desain utama + iterasi terarah.</li>
+            <li><b>Handoff</b> — file final & panduan singkat.</li>
+          </ol>
+        </div>
+        <div class="panel">
+          <h3>Profesional</h3>
           <ul class="list">
-            <li>Komunikasi jelas & rutin update progres.</li>
-            <li>Desain modular: mudah diadaptasi ke berbagai media.</li>
-            <li>File final terstruktur & siap cetak/produksi.</li>
-            <li>Fokus pada tujuan bisnis & audiens.</li>
+            <li>Komunikasi jelas, update rutin (chat/meet).</li>
+            <li>File terstruktur & siap cetak/produksi.</li>
+            <li>Fokus pada hasil bisnis & konsistensi brand.</li>
           </ul>
-          <a href="#contact" class="btn ghost">Ajak Kolaborasi</a>
         </div>
       </div>
     </section>
 
-    <section class="cta section">
-      <div class="container cta-inner">
-        <h2>Ingin visual yang lebih <span class="accent">berdampak</span>?</h2>
-        <p>Saya siap membantu dari ide hingga file produksi siap cetak.</p>
-        <a href="#contact" class="btn cta">Diskusikan Proyek</a>
+    <!-- Services (lebih informatif) -->
+    <section id="services" class="section container">
+      <div class="section-head">
+        <h2>Services</h2>
+        <p>Paket ringkas agar mudah memilih sesuai kebutuhanmu.</p>
+      </div>
+      <div class="services">
+        <article class="svc">
+          <h3>Merch Starter</h3>
+          <ul>
+            <li>2 konsep + 1 revisi</li>
+            <li>1 kategori (mis. Mug/Tumbler)</li>
+            <li>File AI/PDF/PNG</li>
+          </ul>
+          <a href="#contact" class="btn small">Tanya Detail</a>
+        </article>
+        <article class="svc">
+          <h3>Promo Pack</h3>
+          <ul>
+            <li>Banner + Poster + Feed</li>
+            <li>3 ukuran (X-banner/roll-up/custom)</li>
+            <li>Panduan ukuran & bleed</li>
+          </ul>
+          <a href="#contact" class="btn small">Tanya Detail</a>
+        </article>
+        <article class="svc">
+          <h3>Apparel Pro</h3>
+          <ul>
+            <li>Kaos/Hoodie 2–3 varian</li>
+            <li>Mockup lookbook sederhana</li>
+            <li>File vector siap sablon</li>
+          </ul>
+          <a href="#contact" class="btn small">Tanya Detail</a>
+        </article>
       </div>
     </section>
 
-    <section id="contact" class="container section alt">
+    <!-- Process (visual timeline) -->
+    <section id="process" class="section container">
       <div class="section-head">
-        <h2>Contact Me</h2>
-        <p>Koneksi cepat melalui media sosial atau kirimkan pesan via email.</p>
+        <h2>Process</h2>
+        <p>Timeline visual dari brief sampai file final.</p>
       </div>
-      <div class="contact-grid">
-        <a class="contact-card" href="https://www.instagram.com/jenfornaren?igsh=MXJmdXBoeDNkODU4MA==" target="_blank" rel="noopener">
-          <div class="icon instagram" aria-hidden="true"></div>
-          <div>
-            <h3>Instagram</h3>
-            <p>@jenfornaren</p>
-          </div>
+      <div class="timeline">
+        <div class="t-item"><span>1</span><b>Brief</b><p>Kebutuhan, tujuan, batasan produksi.</p></div>
+        <div class="t-item"><span>2</span><b>Konsep</b><p>Moodboard, palet, tipografi, sketsa.</p></div>
+        <div class="t-item"><span>3</span><b>Desain</b><p>Iterasi cepat dengan feedback terarah.</p></div>
+        <div class="t-item"><span>4</span><b>Handoff</b><p>File AI/PDF/PNG/SVG + panduan.</p></div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section container">
+      <div class="section-head">
+        <h2>About</h2>
+        <p>Sekilas perjalanan dan pendekatan.</p>
+      </div>
+      <div class="about">
+        <p>Saya fokus pada desain yang fungsional untuk bisnis: mudah diproduksi, konsisten, dan kuat secara komunikasi.
+           Bekerja dengan klien berarti kolaborasi—saya mengutamakan diskusi singkat namun jelas, agar keputusan desain
+           tetap selaras dengan target audiens & tujuan brand.</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section container">
+      <div class="section-head"><h2>FAQ</h2><p>Pertanyaan umum.</p></div>
+      <details class="faq"><summary>Berapa lama pengerjaan?</summary><p>Tergantung ruang lingkup. Contoh: banner 2–3 hari, apparel 3–5 hari, cover 5–7 hari.</p></details>
+      <details class="faq"><summary>Revisi berapa kali?</summary><p>Umumnya 1–2 putaran revisi terarah untuk menjaga efisiensi dan kualitas.</p></details>
+      <details class="faq"><summary>File yang diberikan?</summary><p>AI/PDF/PNG/SVG sesuai kebutuhan produksi, ditambah mockup untuk presentasi.</p></details>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section container">
+      <div class="section-head">
+        <h2>Contact</h2>
+        <p>Hubungi via media sosial atau email.</p>
+      </div>
+      <div class="contact">
+        <a class="card social" href="https://www.instagram.com/jenfornaren?igsh=MXJmdXBoeDNkODU4MA==" target="_blank" rel="noopener">
+          <i class="icon ig" aria-hidden="true"></i>
+          <div><b>Instagram</b><span>@jenfornaren</span></div>
         </a>
-        <a class="contact-card" href="https://wa.me/6288296642919" target="_blank" rel="noopener">
-          <div class="icon whatsapp" aria-hidden="true"></div>
-          <div>
-            <h3>WhatsApp</h3>
-            <p>+62 882-9664-2919</p>
-          </div>
+        <a class="card social" href="https://wa.me/6288296642919" target="_blank" rel="noopener">
+          <i class="icon wa" aria-hidden="true"></i>
+          <div><b>WhatsApp</b><span>+62 882-9664-2919</span></div>
         </a>
-        <div class="contact-card">
-          <div class="icon email" aria-hidden="true"></div>
-          <div class="card-body">
-            <h3>Email</h3>
-            <p>caella1705@gmail.com</p>
-            <form id="contactForm" class="contact-form" aria-label="Form kontak email">
-              <div class="row">
-                <input required type="text" name="name" placeholder="Nama" />
-                <input required type="email" name="email" placeholder="Email Anda" />
-              </div>
-              <textarea required name="message" rows="4" placeholder="Pesan Anda"></textarea>
-              <button type="submit" class="btn">Kirim via Serverless</button>
-              <small id="formMsg" role="status" aria-live="polite"></small>
-            </form>
+        <div class="card email">
+          <i class="icon mail" aria-hidden="true"></i>
+          <div class="grow">
+            <b>Email</b><span>caella1705@gmail.com</span>
           </div>
+          <form id="contactForm" class="form">
+            <input type="text" name="name" placeholder="Nama" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" rows="3" placeholder="Pesan…" required></textarea>
+            <button class="btn" type="submit">Kirim via Serverless</button>
+            <small id="formMsg" role="status" aria-live="polite"></small>
+          </form>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer">
-      <p>© <span id="year"></span> Jennifer Calluella Gavrila Bacas. All rights reserved.</p>
-      <a href="#home" class="btn ghost">Back to top</a>
+  <footer class="ftr">
+    <div class="container ftr-row">
+      <span>© <span id="year"></span> Jennifer Calluella. All rights reserved.</span>
+      <a class="btn ghost" href="#home">Back to top</a>
     </div>
   </footer>
 

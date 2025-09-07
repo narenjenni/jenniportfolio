@@ -1,164 +1,122 @@
-// ====== Helpers ======
+// ===== Redesign V3 JS =====
 const $ = (q, ctx=document) => ctx.querySelector(q);
 const $$ = (q, ctx=document) => [...ctx.querySelectorAll(q)];
 
-// ====== Navbar & Theme ======
+// Mobile menu
 const hamburger = $('#hamburger');
 const menu = $('#menu');
-const themeToggle = $('#themeToggle');
 hamburger.addEventListener('click', () => {
   const open = menu.classList.toggle('open');
   hamburger.setAttribute('aria-expanded', String(open));
 });
-themeToggle.addEventListener('click', () => {
-  document.body.classList.toggle('contrast');
-});
-
-// Smooth scroll
-$$('.menu a').forEach(a => a.addEventListener('click', e => {
-  e.preventDefault();
-  const id = a.getAttribute('href');
-  menu.classList.remove('open');
-  document.querySelector(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
-}));
 
 // Year
 $('#year').textContent = new Date().getFullYear();
 
-// ====== Hero Slider (Ken Burns) ======
-const slidesEl = $('#slides');
-const dotsEl = $('#dots');
-const slides = $$('.slide', slidesEl);
-let idx = 0;
-let autoTimer;
-function go(i) {
-  idx = (i + slides.length) % slides.length;
-  slidesEl.style.transform = `translateX(-${idx * 100}%)`;
-  [...dotsEl.children].forEach((d, j) => d.classList.toggle('active', j === idx));
-  restartAuto();
-}
-function makeDots() {
-  slides.forEach((_, i) => {
-    const b = document.createElement('button');
-    if (i === 0) b.classList.add('active');
-    b.addEventListener('click', () => go(i));
-    dotsEl.appendChild(b);
-  });
-}
-function next() { go(idx + 1); }
-function prev() { go(idx - 1); }
-$('#next').addEventListener('click', next);
-$('#prev').addEventListener('click', prev);
-function startAuto(){ autoTimer = setInterval(next, 5000); }
-function stopAuto(){ clearInterval(autoTimer); }
-function restartAuto(){ stopAuto(); startAuto(); }
-makeDots(); startAuto();
-let startX = 0;
-slidesEl.addEventListener('touchstart', e => { startX = e.touches[0].clientX; stopAuto(); }, {passive:true});
-slidesEl.addEventListener('touchend', e => { const dx = e.changedTouches[0].clientX - startX; if (dx > 40) prev(); else if (dx < -40) next(); startAuto(); });
+// Rotator
+const words = ['merchandise', 'apparel', 'banner', 'cover novel', 'goodiebag'];
+const rotator = $('#rotator');
+let wi = 0;
+setInterval(() => {
+  wi = (wi + 1) % words.length;
+  rotator.textContent = words[wi];
+}, 2200);
 
-// Pause animation on hover (desktop)
-slidesEl.addEventListener('mouseenter', stopAuto);
-slidesEl.addEventListener('mouseleave', startAuto);
-
-// ====== Projects Data ======
+// Data
 const projects = [
-  { id:'baju',      title:'Desain Baju',     tag:'Apparel',    thumb:'assets/ph-apparel.svg',  desc:'Kaos tipografi/logo untuk komunitas & brand lokal.' },
-  { id:'mug',       title:'Desain Mug',      tag:'Merch',      thumb:'assets/ph-mug.svg',      desc:'Ilustrasi & slogan tematik siap produksi.' },
-  { id:'selimut',   title:'Desain Selimut',  tag:'Home',       thumb:'assets/ph-blanket.svg',  desc:'Motif geometrik & floral untuk suasana cozy.' },
-  { id:'bantal',    title:'Desain Bantal',   tag:'Home',       thumb:'assets/ph-pillow.svg',   desc:'Bantal dekoratif sesuai palet brand.' },
-  { id:'banner',    title:'Banner',          tag:'Promo',      thumb:'assets/ph-banner.svg',   desc:'Spanduk event/promosi dengan visual kuat.' },
-  { id:'cover',     title:'Cover Novel',     tag:'Publishing', thumb:'assets/ph-book.svg',     desc:'Cover naratif yang menarik perhatian.' },
-  { id:'hoodie',    title:'Desain Hoodie',   tag:'Apparel',    thumb:'assets/ph-hoodie.svg',   desc:'Streetwear look dengan identitas brand.' },
-  { id:'goodiebag', title:'Goodiebag',       tag:'Merch',      thumb:'assets/ph-bag.svg',      desc:'Tote & goody bag untuk campaign & event.' },
-  { id:'tumbler',   title:'Tumbler',         tag:'Merch',      thumb:'assets/ph-tumbler.svg',  desc:'Desain clean, mudah diaplikasi ke produk.' },
+  { id:'baju',      title:'Desain Baju',     tag:'Apparel',    thumb:'assets/ph-apparel.svg',  desc:'Kaos tipografi/logo—komunikasi jelas & siap sablon.' },
+  { id:'mug',       title:'Desain Mug',      tag:'Merch',      thumb:'assets/ph-mug.svg',      desc:'Ilustrasi & slogan tematik—layout 360°.' },
+  { id:'selimut',   title:'Desain Selimut',  tag:'Home',       thumb:'assets/ph-blanket.svg',  desc:'Motif geometrik & floral—varian warna.' },
+  { id:'bantal',    title:'Desain Bantal',   tag:'Home',       thumb:'assets/ph-pillow.svg',   desc:'Dekoratif—pattern ringan & ikonografi sederhana.' },
+  { id:'banner',    title:'Banner',          tag:'Promo',      thumb:'assets/ph-banner.svg',   desc:'Hierarki tegas, CTA jelas, jarak baca aman.' },
+  { id:'cover',     title:'Cover Novel',     tag:'Publishing', thumb:'assets/ph-book.svg',     desc:'Komposisi naratif, warna emosional, tipografi tematik.' },
+  { id:'hoodie',    title:'Desain Hoodie',   tag:'Apparel',    thumb:'assets/ph-hoodie.svg',   desc:'Streetwear look—front/back/sleeve placement.' },
+  { id:'goodiebag', title:'Goodiebag',       tag:'Merch',      thumb:'assets/ph-bag.svg',      desc:'Media event/brand—high contrast untuk sablon.' },
+  { id:'tumbler',   title:'Tumbler',         tag:'Merch',      thumb:'assets/ph-tumbler.svg',  desc:'Wrap 360°—keterbacaan dari berbagai sudut.' },
 ];
 
-// ====== Project Rendering + Filter/Search ======
+const selected = [
+  { link:'case.html#banner',  media:'assets/ph-banner.svg',  title:'Banner Campaign', kpis:['↑ Reach', '↑ CTR', 'On-time'] },
+  { link:'case.html#cover',   media:'assets/ph-book.svg',    title:'Cover Novel',     kpis:['↑ Preorder', 'Brand-fit', 'Rapi'] },
+  { link:'case.html#hoodie',  media:'assets/ph-hoodie.svg',  title:'Hoodie Street',   kpis:['Mockup', 'Siap sablon', 'Variasi'] },
+  { link:'case.html#mug',     media:'assets/ph-mug.svg',     title:'Mug Series',      kpis:['4 desain', 'CMYK OK', 'Wrap 360°'] },
+];
+
+// Render selected
+const selWrap = $('#selectedWrap');
+selWrap.innerHTML = selected.map(s => `
+  <article class="sel-card">
+    <div class="sel-media" style="background-image:url('${s.media}')"></div>
+    <div class="sel-body">
+      <h3>${s.title}</h3>
+      <div class="kpis">${s.kpis.map(k => `<span class="kpi">${k}</span>`).join('')}</div>
+      <div class="sel-actions">
+        <a href="${s.link}" class="btn small">Buka Case</a>
+        <a href="#contact" class="btn small ghost">Pesan Desain</a>
+      </div>
+    </div>
+  </article>
+`).join('');
+
+// Metrics
+$('#m1').textContent = new Set(projects.map(p => p.tag)).size;
+$('#m2').textContent = projects.length;
+
+// Projects grid
 const grid = $('#projectGrid');
 const filters = $('#filters');
-const searchInput = $('#search');
+const search = $('#search');
+const sort = $('#sort');
 
-let activeFilter = 'all';
-function renderCards() {
-  grid.innerHTML = '';
-  const kw = (searchInput.value || '').toLowerCase();
-  const filtered = projects.filter(p => (activeFilter === 'all' || p.tag === activeFilter) && (p.title.toLowerCase().includes(kw) || p.desc.toLowerCase().includes(kw)));
-  filtered.forEach((p, i) => {
-    const card = document.createElement('article');
-    card.className = 'card reveal';
-    card.style.animationDelay = (i * 70) + 'ms';
-    card.innerHTML = `
+function render(list){
+  grid.innerHTML = list.map(p => `
+    <article class="card">
       <div class="thumb" style="background-image:url('${p.thumb}')"></div>
       <div class="body">
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;">
+        <div class="row">
           <h3>${p.title}</h3>
           <span class="tag">${p.tag}</span>
         </div>
         <p>${p.desc}</p>
-        <div class="actions">
-          <a href="case.html#${p.id}" class="btn small">Lihat Case Study</a>
-          <a href="#contact" class="btn small ghost">Pesan Desain</a>
+        <div class="row">
+          <a class="btn small" href="case.html#${p.id}">Case Study</a>
+          <a class="btn small ghost" href="#contact">Pesan</a>
         </div>
-      </div>`;
-    grid.appendChild(card);
-  });
-  // update stat
-  const statEl = document.getElementById('statProjects');
-  statEl.dataset.count = String(filtered.length);
-  countUp(statEl);
+      </div>
+    </article>
+  `).join('');
 }
-filters.addEventListener('click', (e) => {
-  const btn = e.target.closest('.chip');
-  if (!btn) return;
-  $$('.chip', filters).forEach(c => c.classList.remove('active'));
-  btn.classList.add('active');
-  activeFilter = btn.dataset.filter;
-  renderCards();
+
+let filterVal = 'all';
+function getList(){
+  let list = projects.filter(p => filterVal==='all' || p.tag===filterVal);
+  const q = (search.value||'').toLowerCase();
+  if(q) list = list.filter(p => p.title.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q));
+  if (sort.value==='az') list.sort((a,b)=>a.title.localeCompare(b.title));
+  if (sort.value==='za') list.sort((a,b)=>b.title.localeCompare(a.title));
+  if (sort.value==='cat') list.sort((a,b)=>a.tag.localeCompare(b.tag) || a.title.localeCompare(b.title));
+  return list;
+}
+
+filters.addEventListener('click', e => {
+  const btn = e.target.closest('.chip'); if(!btn) return;
+  $$('.chip', filters).forEach(c=>c.classList.remove('active')); btn.classList.add('active');
+  filterVal = btn.dataset.filter; render(getList());
 });
-searchInput.addEventListener('input', renderCards);
+search.addEventListener('input', ()=>render(getList()));
+sort.addEventListener('change', ()=>render(getList()));
 
-// Reveal animation on scroll
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('show');
-  });
-}, { threshold: .1 });
-function observeReveals(){ $$('.card.reveal').forEach(el => io.observe(el)); }
-new MutationObserver(observeReveals).observe(grid, { childList: true });
-renderCards(); observeReveals();
+render(getList());
 
-// ====== Counters ======
-function countUp(el) {
-  const target = +el.dataset.count || 0;
-  let n = 0; const step = Math.max(1, Math.round(target / 30));
-  const timer = setInterval(() => {
-    n += step;
-    if (n >= target) { n = target; clearInterval(timer); }
-    el.textContent = n;
-  }, 30);
-}
-$$('.stat-num').forEach(countUp);
-
-// ====== Contact Form (Serverless) ======
-const form = $('#contactForm');
-const formMsg = $('#formMsg');
-form.addEventListener('submit', async (e) => {
+// Contact form
+const form = $('#contactForm'); const formMsg = $('#formMsg');
+form.addEventListener('submit', async (e)=>{
   e.preventDefault();
   formMsg.textContent = 'Mengirim...';
   const data = Object.fromEntries(new FormData(form).entries());
-  try {
-    const res = await fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    });
-    const json = await res.json();
-    if (!res.ok) throw new Error(json.error || 'Gagal mengirim.');
-    formMsg.textContent = 'Terkirim! Saya akan membalas segera.';
-    form.reset();
-  } catch (err) {
-    formMsg.textContent = 'Gagal mengirim. Coba lagi atau kirim ke email langsung.';
-    console.error(err);
-  }
+  try{
+    const r = await fetch('/api/contact', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data) });
+    const j = await r.json(); if(!r.ok) throw new Error(j.error||'Gagal');
+    formMsg.textContent = 'Terkirim! Saya akan membalas segera.'; form.reset();
+  }catch(err){ formMsg.textContent = 'Gagal mengirim. Coba lagi atau email langsung.'; console.error(err); }
 });
