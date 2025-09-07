@@ -113,6 +113,20 @@ slides.addEventListener('mouseleave', () => {
 });
 
 // ====== Project Cards ======
+
+// Map titles to case slugs
+const slugMap = {
+  "Pakaian": "baju",
+  "Mug": "mug",
+  "Selimut": "selimut",
+  "Bantal": "bantal",
+  "Banner": "banner",
+  "Cover Novel": "cover",
+  "Hoodie": "hoodie",
+  "Goodiebag": "goodiebag",
+  "Tumbler": "tumbler"
+};
+
 const projects = [
   {
     title: "Pakaian",
