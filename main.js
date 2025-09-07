@@ -55,14 +55,14 @@ const selected = [
 // Render Selected
 const selWrap = document.getElementById('selectedWrap');
 selWrap.innerHTML = selected.map(s => `
-  <article class="glass rounded-xl border border-white/10 overflow-hidden grid grid-cols-1 md:grid-cols-2">
+  <article class="interactive-card relative overflow-hidden rounded-2xl bg-gradient-to-b from-brand-600/50 to-brand-700/60 border border-white/20 shadow-soft hover:shadow-hard hover:-translate-y-0.5 transition-all duration-300 grid grid-cols-1 md:grid-cols-2 focus-within:ring-2 focus-within:ring-accent-300/40">
     <div class="aspect-[16/10] bg-center bg-cover" style="background-image:url('${s.media}')"></div>
     <div class="p-4 grid content-start gap-2">
       <h3 class="font-semibold text-lg">${s.title}</h3>
       <div class="flex flex-wrap gap-2">${s.kpis.map(k=>`<span class="px-2 py-1 rounded-full glass border border-white/10 text-sm">${k}</span>`).join('')}</div>
       <div class="mt-1 flex gap-2 flex-wrap">
-        <a href="${s.link}" class="px-3 py-2 rounded-full bg-accent-300 text-brand-900 font-semibold">Buka Case</a>
-        <a href="#contact" class="px-3 py-2 rounded-full glass border border-white/10">Pesan Desain</a>
+        <a href="${s.link}" class="px-3 py-2 rounded-full bg-accent-300 text-brand-900 font-semibold transition-transform active:scale-95">Buka Case</a>
+        <a href="#contact" class="px-3 py-2 rounded-full glass border border-white/10 transition-transform active:scale-95">Pesan Desain</a>
       </div>
     </div>
   </article>
@@ -80,7 +80,7 @@ const sort = document.getElementById('sort');
 
 function render(list){
   grid.innerHTML = list.map(p => `
-    <article class="glass rounded-xl border border-white/10 overflow-hidden">
+    <article class="interactive-card relative overflow-hidden rounded-2xl bg-gradient-to-b from-brand-600/50 to-brand-700/60 border border-white/20 shadow-soft hover:shadow-hard hover:-translate-y-0.5 transition-all duration-300 focus-within:ring-2 focus-within:ring-accent-300/40">
       <div class="aspect-[4/3] bg-center bg-cover" style="background-image:url('${p.thumb}')"></div>
       <div class="p-4 grid gap-2">
         <div class="flex items-center justify-between gap-2">
@@ -89,8 +89,8 @@ function render(list){
         </div>
         <p class="text-white/80">${p.desc}</p>
         <div class="flex gap-2">
-          <a href="case.html#${p.id}" class="px-3 py-2 rounded-full bg-accent-300 text-brand-900 font-semibold">Case Study</a>
-          <a href="#contact" class="px-3 py-2 rounded-full glass border border-white/10">Pesan</a>
+          <a href="case.html#${p.id}" class="px-3 py-2 rounded-full bg-accent-300 text-brand-900 font-semibold transition-transform active:scale-95">Case Study</a>
+          <a href="#contact" class="px-3 py-2 rounded-full glass border border-white/10 transition-transform active:scale-95">Pesan</a>
         </div>
       </div>
     </article>
@@ -130,3 +130,16 @@ form.addEventListener('submit', async (e)=>{
     formMsg.textContent = 'Terkirim! Saya akan membalas segera.'; form.reset();
   }catch(err){ formMsg.textContent = 'Gagal mengirim. Coba lagi atau email langsung.'; console.error(err); }
 });
+
+
+// Press/active animation on cards
+function wireCards(){
+  document.querySelectorAll('.interactive-card').forEach(el=>{
+    const down = ()=>{ el.style.transform = (el.style.transform||'') + ' scale(0.98) translateY(1px)'; };
+    const up = ()=>{ el.style.transform = el.style.transform.replace(' scale(0.98) translateY(1px)',''); };
+    el.addEventListener('pointerdown', down);
+    window.addEventListener('pointerup', up);
+    el.addEventListener('mouseleave', up);
+  });
+}
+wireCards();
