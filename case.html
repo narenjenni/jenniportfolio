@@ -5,66 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Case Study — Jennifer</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: {
+      'brand-900':'#16060b','brand-800':'#210810','brand-700':'#2b0b14','brand-600':'#3a0f1b','brand-500':'#4a1323',
+      'accent-300':'#ff9fb6','ink':'#f4ecf1','muted':'#c7b7be'} } } }
+  </script>
   <style>
-    .wrap{max-width:1040px;margin:0 auto;padding:0 20px 40px}
-    .top{display:flex;gap:10px;align-items:center;padding:18px 0}
-    .top a{margin-right:auto}
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;align-items:start}
-    .mock{aspect-ratio:16/9;background:center/cover no-repeat;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}
-    .meta{background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));border:1px solid var(--line);border-radius:16px;padding:12px}
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    .panel{background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));border:1px solid var(--line);border-radius:16px;padding:12px}
-    .kpis{display:flex;gap:8px;flex-wrap:wrap}
-    .kpi{font-size:12px;padding:6px 8px;border-radius:999px;background:var(--glass);border:1px solid var(--line)}
-    .list{margin:0;padding-left:18px}
-    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    .gallery div{aspect-ratio:16/10;border-radius:12px;background:center/cover no-repeat;border:1px solid var(--line)}
-    @media (max-width:900px){ .hero{grid-template-columns:1fr} .grid-2{grid-template-columns:1fr} .gallery{grid-template-columns:1fr 1fr} }
-    @media (max-width:560px){ .gallery{grid-template-columns:1fr} }
+    .glass { background: rgba(255,255,255,.06); backdrop-filter: blur(10px); }
+    .bg-aurora { background:
+      radial-gradient(40% 50% at 80% 10%, rgba(255,159,182,.15), transparent),
+      radial-gradient(30% 40% at 20% 80%, rgba(255,159,182,.12), transparent),
+      linear-gradient(180deg, #16060b, #210810); }
   </style>
 </head>
-<body>
-  <div class="wrap">
-    <div class="top">
-      <a href="index.html#projects" class="btn ghost">← Kembali</a>
-      <a id="prev" class="btn">← Sebelumnya</a>
-      <a id="next" class="btn">Berikutnya →</a>
+<body class="text-ink bg-aurora">
+  <div class="container mx-auto px-4 py-4">
+    <div class="flex items-center gap-2 mb-4">
+      <a href="index.html#projects" class="px-3 py-2 rounded-lg glass border border-white/10">← Kembali</a>
+      <a id="prev" class="px-3 py-2 rounded-lg glass border border-white/10">← Sebelumnya</a>
+      <a id="next" class="px-3 py-2 rounded-lg glass border border-white/10">Berikutnya →</a>
     </div>
 
-    <header class="hero">
+    <header class="grid md:grid-cols-2 gap-3 items-start mb-4">
       <div>
-        <h1 id="title">Judul Proyek</h1>
-        <p id="tag" class="muted"></p>
-        <div class="kpis" id="kpis"></div>
-        <div class="panel" style="margin-top:10px">
-          <h3>Ringkasan</h3>
+        <h1 id="title" class="text-2xl md:text-3xl font-bold">Judul Proyek</h1>
+        <p id="tag" class="text-white/70"></p>
+        <div id="kpis" class="flex flex-wrap gap-2 mt-2"></div>
+        <div class="glass rounded-xl border border-white/10 p-4 mt-3">
+          <h3 class="font-semibold mb-1">Ringkasan</h3>
           <p id="summary"></p>
         </div>
       </div>
-      <div id="mock" class="mock"></div>
+      <div id="mock" class="aspect-video rounded-xl border border-white/10 bg-center bg-cover"></div>
     </header>
 
-    <section class="grid-2" style="margin-top:14px">
-      <div class="panel">
-        <h3>Masalah → Solusi</h3>
-        <ul id="solution" class="list"></ul>
-        <h3>Proses</h3>
-        <ul id="process" class="list"></ul>
+    <section class="grid md:grid-cols-2 gap-3 mb-4">
+      <div class="glass rounded-xl border border-white/10 p-4">
+        <h3 class="font-semibold mb-1">Masalah → Solusi</h3>
+        <ul id="solution" class="list-disc pl-5 space-y-1"></ul>
+        <h3 class="font-semibold mt-3 mb-1">Proses</h3>
+        <ul id="process" class="list-disc pl-5 space-y-1"></ul>
       </div>
-      <aside class="panel">
-        <h3>Detail Proyek</h3>
-        <ul id="details" class="list"></ul>
-        <h3 style="margin-top:10px">Peran & Tools</h3>
-        <ul id="roles" class="list"></ul>
-        <h3 style="margin-top:10px">Deliverables</h3>
-        <ul id="deliverables" class="list"></ul>
+      <aside class="glass rounded-xl border border-white/10 p-4">
+        <h3 class="font-semibold mb-1">Detail Proyek</h3>
+        <ul id="details" class="list-disc pl-5 space-y-1"></ul>
+        <h3 class="font-semibold mt-3 mb-1">Peran & Tools</h3>
+        <ul id="roles" class="list-disc pl-5 space-y-1"></ul>
+        <h3 class="font-semibold mt-3 mb-1">Deliverables</h3>
+        <ul id="deliverables" class="list-disc pl-5 space-y-1"></ul>
       </aside>
     </section>
 
-    <section style="margin-top:14px">
-      <h3>Galeri</h3>
-      <div id="gallery" class="gallery"></div>
+    <section class="mb-6">
+      <h3 class="font-semibold mb-2">Galeri</h3>
+      <div id="gallery" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3"></div>
     </section>
   </div>
 
@@ -72,7 +67,7 @@
     const cases = {
       'baju': {
         title:'Desain Baju', tag:'Apparel · Identitas Komunitas', mock:'assets/ph-apparel.svg',
-        kpis:['Isi KPI: penjualan, pre-order, engagement'],
+        kpis:['Isi KPI: penjualan/preorder','On-time'],
         summary:'Kaos identitas komunitas dengan pesan ringkas dan kontras kuat. Fokus tipografi & grid modular.',
         solution:[
           'Masalah: identitas belum konsisten → Solusi: sistem tipografi & warna tunggal.',
@@ -86,12 +81,9 @@
       },
       'mug': {
         title:'Desain Mug', tag:'Merch · Ilustrasi & Slogan', mock:'assets/ph-mug.svg',
-        kpis:['Isi KPI: sales bundle, gift set'],
+        kpis:['KPI: sales bundle','CMYK proof'],
         summary:'Ilustrasi tematik dan slogan singkat dengan layout wrap 360°.',
-        solution:[
-          'Masalah: layout terpotong → Solusi: template wrap 360°.',
-          'Masalah: warna pudar → Solusi: file CMYK & proof.'
-        ],
+        solution:['Masalah: layout terpotong → Solusi: template wrap 360°.', 'Masalah: warna pudar → Solusi: file CMYK & proof.'],
         process:['Layout 360°','2 style (minimal & ilustratif)','Versi terang/gelap','Mockup silinder'],
         details:['Tahun: 2025','Timeline: 2–4 hari','Revisi: 1–2 putaran','Metode: sublim/sablon'],
         roles:['Peran: Desainer','Tools: Illustrator, Photoshop, Canva'],
@@ -100,7 +92,7 @@
       },
       'selimut': {
         title:'Desain Selimut', tag:'Home · Motif Cozy', mock:'assets/ph-blanket.svg',
-        kpis:['Isi KPI: varian terjual'],
+        kpis:['KPI: varian terjual'],
         summary:'Motif geometrik & floral, dua palet warna agar serasi dengan interior.',
         solution:['Masalah: motif tidak seamless → Solusi: pattern berulang','Masalah: skala tidak pas → Solusi: panduan ukuran'],
         process:['Moodboard ambience','Eksplor motif berulang','Uji skala produksi','Varian warna & dokumentasi'],
@@ -111,7 +103,7 @@
       },
       'bantal': {
         title:'Desain Bantal', tag:'Home · Dekoratif', mock:'assets/ph-pillow.svg',
-        kpis:['Isi KPI: penjualan set bundle'],
+        kpis:['KPI: penjualan bundle'],
         summary:'Aksen dekoratif menyatu dengan identitas brand.',
         solution:['Masalah: visual terlalu ramai → Solusi: pattern ringan','Masalah: tidak konsisten → Solusi: palet & grid'],
         process:['Palet & aset brand','Eksplor ikon/pattern','Mockup ruang tamu','File produksi'],
@@ -122,7 +114,7 @@
       },
       'banner': {
         title:'Banner', tag:'Promo · Event & Penjualan', mock:'assets/ph-banner.svg',
-        kpis:['Isi KPI: reach, CTR'],
+        kpis:['KPI: reach/CTR'],
         summary:'Materi promosi dengan hierarki tegas dan CTA jelas.',
         solution:['Masalah: sulit dibaca dari jauh → Solusi: hierarki & kontras','Masalah: ukuran variatif → Solusi: sistem ukuran'],
         process:['Analisis venue','Rancang hierarki & CTA','Ukuran X/roll-up','Proof warna & bleed'],
@@ -133,7 +125,7 @@
       },
       'cover': {
         title:'Cover Novel', tag:'Publishing · Naratif', mock:'assets/ph-book.svg',
-        kpis:['Isi KPI: pre-order, konversi'],
+        kpis:['KPI: pre-order'],
         summary:'Cover yang menyampaikan nuansa cerita: komposisi naratif, warna emosional, tipografi tematik.',
         solution:['Masalah: judul kurang terbaca → Solusi: tipografi & kontras','Masalah: nuansa tidak tepat → Solusi: palet emosional'],
         process:['Ringkas sinopsis & tone','2–3 konsep visual','Uji judul/spine','Final front–spine–back'],
@@ -144,7 +136,7 @@
       },
       'hoodie': {
         title:'Desain Hoodie', tag:'Apparel · Streetwear', mock:'assets/ph-hoodie.svg',
-        kpis:['Isi KPI: penjualan varian'],
+        kpis:['KPI: varian terjual'],
         summary:'Statement grafis dengan monogram/logotype; penempatan di dada/punggung/lengan.',
         solution:['Masalah: ukuran sablon kurang pas → Solusi: proof skala','Masalah: produksi terlambat → Solusi: file siap sablon'],
         process:['Eksplor logo/monogram','Uji penempatan','Proof ukuran','Final file & mockup'],
@@ -155,7 +147,7 @@
       },
       'goodiebag': {
         title:'Goodiebag', tag:'Merch · Campaign', mock:'assets/ph-bag.svg',
-        kpis:['Isi KPI: jumlah paket event'],
+        kpis:['KPI: paket event'],
         summary:'Media promosi ramah pakai untuk campaign & event.',
         solution:['Masalah: cetak 1 warna → Solusi: desain kontras tinggi','Masalah: area cetak terbatas → Solusi: panduan area'],
         process:['Definisi pesan & logo','2 opsi: teks & ikon','Uji kontras 1-warna','Final sablon'],
@@ -166,9 +158,9 @@
       },
       'tumbler': {
         title:'Tumbler', tag:'Merch · Wrap 360°', mock:'assets/ph-tumbler.svg',
-        kpis:['Isi KPI: repeat order'],
+        kpis:['KPI: repeat order'],
         summary:'Desain clean dengan layout wrap 360°—keterbacaan dari berbagai sudut.',
-        solution:['Masalah: logo terputus → Solusi: panduan zona aman','Masalah: warna tidak konsisten → Solusi: file CMYK'],
+        solution:['Masalah: logo terputus → Solusi: zona aman','Masalah: warna tidak konsisten → Solusi: file CMYK'],
         process:['Template wrap 360°','Posisi logo & pattern','Proof mockup silinder','Final CMYK/SVG'],
         details:['Tahun: 2025','Timeline: 2–4 hari','Revisi: 1–2 putaran'],
         roles:['Peran: Desainer','Tools: Illustrator, Photoshop'],
@@ -177,7 +169,6 @@
       }
     };
     const order = Object.keys(cases);
-
     function render(){
       const id = location.hash.slice(1) || order[0];
       const d = cases[id]; if(!d) return;
@@ -185,14 +176,14 @@
       document.getElementById('title').textContent = d.title;
       document.getElementById('tag').textContent = d.tag;
       document.getElementById('mock').style.backgroundImage = `url('${d.mock}')`;
-      const kpis = document.getElementById('kpis'); kpis.innerHTML = d.kpis.map(x=>`<span class="kpi">${x}</span>`).join('');
+      const kpis = document.getElementById('kpis'); kpis.innerHTML = d.kpis.map(x=>`<span class="px-2 py-1 rounded-full glass border border-white/10 text-sm">${x}</span>`).join('');
       document.getElementById('summary').textContent = d.summary;
       const sol = document.getElementById('solution'); sol.innerHTML = d.solution.map(x=>`<li>${x}</li>`).join('');
       const proc = document.getElementById('process'); proc.innerHTML = d.process.map(x=>`<li>${x}</li>`).join('');
       const det = document.getElementById('details'); det.innerHTML = d.details.map(x=>`<li>${x}</li>`).join('');
       const rol = document.getElementById('roles'); rol.innerHTML = d.roles.map(x=>`<li>${x}</li>`).join('');
       const del = document.getElementById('deliverables'); del.innerHTML = d.deliverables.map(x=>`<li>${x}</li>`).join('');
-      const gal = document.getElementById('gallery'); gal.innerHTML = d.gallery.map(src=>`<div style="background-image:url('${src}')"></div>`).join('');
+      const gal = document.getElementById('gallery'); gal.innerHTML = d.gallery.map(src=>`<div class="aspect-video rounded-lg border border-white/10 bg-center bg-cover" style="background-image:url('${src}')"></div>`).join('');
       const i = order.indexOf(id);
       document.getElementById('prev').href = '#' + order[(i-1+order.length)%order.length];
       document.getElementById('next').href = '#' + order[(i+1)%order.length];

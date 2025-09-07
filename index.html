@@ -4,139 +4,216 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jennifer Calluella — Portfolio</title>
-  <meta name="description" content="Portfolio desain grafis Jennifer: apparel, merchandise, banner, cover novel, dan lainnya. Fokus hasil & kolaborasi." />
+  <meta name="description" content="Portfolio Tailwind: apparel, merchandise, banner, cover novel, dan lainnya. Fokus hasil & kolaborasi." />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/hero-abstract.svg" as="image">
-  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-900': '#16060b',
+            'brand-800': '#210810',
+            'brand-700': '#2b0b14',
+            'brand-600': '#3a0f1b',
+            'brand-500': '#4a1323',
+            'accent-200': '#ffb3c4',
+            'accent-300': '#ff9fb6',
+            'ink': '#f4ecf1',
+            'muted': '#c7b7be'
+          },
+          boxShadow: {
+            'soft': '0 10px 30px rgba(0,0,0,.35)',
+            'hard': '0 20px 50px rgba(0,0,0,.5)'
+          },
+          borderRadius: {
+            'xl2': '1.25rem'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass { background: rgba(255,255,255,.06); backdrop-filter: blur(10px); }
+    .glass-strong { background: rgba(255,255,255,.12); backdrop-filter: blur(12px); }
+    .bg-aurora { background:
+      radial-gradient(40% 50% at 80% 10%, rgba(255,159,182,.15), transparent),
+      radial-gradient(30% 40% at 20% 80%, rgba(255,159,182,.12), transparent),
+      linear-gradient(180deg, #16060b, #210810); }
+    .reveal { opacity: 0; transform: translateY(10px); transition: all .5s cubic-bezier(.2,.7,.2,1); }
+    .reveal.show { opacity: 1; transform: none; }
+  </style>
 </head>
-<body>
-  <a class="skip" href="#main">Lewati ke konten</a>
-  <header class="hdr">
-    <div class="container nav">
-      <a class="brand" href="#home" aria-label="Beranda">
-        <img src="assets/mark.svg" alt="" width="28" height="28" />
-        <div>
-          <strong>Jennifer Calluella</strong>
-          <small>Graphic Designer</small>
+<body class="text-ink bg-aurora selection:bg-accent-300/30">
+  <a class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 bg-white text-black px-3 py-1 rounded" href="#main">Lewati ke konten</a>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-brand-900/80 backdrop-blur-xl">
+    <div class="container mx-auto px-4 py-3 flex items-center gap-3">
+      <a href="#home" class="flex items-center gap-3">
+        <img src="assets/mark.svg" alt="" class="w-8 h-8 drop-shadow" />
+        <div class="leading-tight">
+          <span class="font-semibold">Jennifer Calluella</span>
+          <small class="block text-white/70 -mt-0.5">Graphic Designer</small>
         </div>
       </a>
-
-      <nav class="menu" id="menu">
-        <a href="#selected">Selected Work</a>
-        <a href="#projects">My Project</a>
-        <a href="#skills">My Skill</a>
-        <a href="#services">Services</a>
-        <a href="#process">Process</a>
-        <a href="#about">About</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
+      <nav id="menu" class="ml-auto hidden md:flex gap-3">
+        <a class="px-3 py-2 rounded-full hover:glass" href="#selected">Selected</a>
+        <a class="px-3 py-2 rounded-full hover:glass" href="#projects">My Project</a>
+        <a class="px-3 py-2 rounded-full hover:glass" href="#skills">My Skill</a>
+        <a class="px-3 py-2 rounded-full hover:glass" href="#services">Services</a>
+        <a class="px-3 py-2 rounded-full hover:glass" href="#process">Process</a>
+        <a class="px-3 py-2 rounded-full hover:glass" href="#about">About</a>
+        <a class="px-3 py-2 rounded-full hover:glass" href="#faq">FAQ</a>
+        <a class="px-3 py-2 rounded-full hover:glass" href="#contact">Contact</a>
       </nav>
-
-      <button class="hamburger" id="hamburger" aria-label="Buka menu" aria-expanded="false">
-        <span></span><span></span><span></span>
+      <button id="hamburger" class="md:hidden ml-auto rounded-xl p-2 glass border border-white/10" aria-label="Buka menu" aria-expanded="false">
+        <span class="block w-6 h-0.5 bg-white mb-1"></span>
+        <span class="block w-6 h-0.5 bg-white mb-1"></span>
+        <span class="block w-6 h-0.5 bg-white"></span>
       </button>
     </div>
+    <nav id="menuMobile" class="md:hidden hidden px-4 pb-3">
+      <div class="grid gap-2">
+        <a class="px-3 py-2 rounded-lg glass border border-white/10" href="#selected">Selected</a>
+        <a class="px-3 py-2 rounded-lg glass border border-white/10" href="#projects">My Project</a>
+        <a class="px-3 py-2 rounded-lg glass border border-white/10" href="#skills">My Skill</a>
+        <a class="px-3 py-2 rounded-lg glass border border-white/10" href="#services">Services</a>
+        <a class="px-3 py-2 rounded-lg glass border border-white/10" href="#process">Process</a>
+        <a class="px-3 py-2 rounded-lg glass border border-white/10" href="#about">About</a>
+        <a class="px-3 py-2 rounded-lg glass border border-white/10" href="#faq">FAQ</a>
+        <a class="px-3 py-2 rounded-lg glass border border-white/10" href="#contact">Contact</a>
+      </div>
+    </nav>
   </header>
 
-  <section id="home" class="hero container">
-    <div class="hero-copy">
-      <h1>
-        Desain <span class="accent">berdampak</span> untuk
-        <span id="rotator" class="rotator" aria-live="polite">merchandise</span>
-      </h1>
-      <p class="lede">
-        Saya membantu brand & UMKM tampil konsisten lewat visual yang jelas, rapi, dan siap produksi.
-        Hasil akhir berfokus pada tujuan bisnis, bukan hanya estetika.
-      </p>
-      <ul class="bullets">
-        <li>File siap cetak/produksi (AI/PDF/PNG/SVG)</li>
-        <li>Revisi terarah & komunikasi rutin</li>
-        <li>Dokumentasi singkat untuk tim internal</li>
-      </ul>
-      <div class="cta-row">
-        <a class="btn cta" href="#selected">Lihat Karya Unggulan</a>
-        <a class="btn ghost" href="#contact">Diskusikan Proyek</a>
+  <!-- HERO SLIDER -->
+  <section id="home" class="container mx-auto px-4 pt-8">
+    <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-hard">
+      <div id="slides" class="whitespace-nowrap transition-transform duration-700 ease-[cubic-bezier(.2,.7,.2,1)]">
+        <div class="inline-block w-full align-top bg-[url('assets/hero-abstract.svg')] bg-cover bg-center">
+          <div class="bg-brand-700/50">
+            <div class="max-w-5xl mx-auto px-6 py-16 md:py-24">
+              <h1 class="text-3xl md:text-5xl font-bold leading-tight">Desain yang <span class="text-accent-300">Berbicara</span></h1>
+              <p class="text-white/80 mt-2 max-w-2xl">Branding, merchandise, dan visual promosi untuk hasil yang nyata.</p>
+            </div>
+          </div>
+        </div>
+        <div class="inline-block w-full align-top bg-[url('assets/hero-abstract.svg')] bg-cover bg-center">
+          <div class="bg-brand-600/50">
+            <div class="max-w-5xl mx-auto px-6 py-16 md:py-24">
+              <h2 class="text-3xl md:text-5xl font-bold leading-tight">Produk <span class="text-accent-300">Kustom</span></h2>
+              <p class="text-white/80 mt-2 max-w-2xl">Baju, mug, hoodie, goodiebag, tumbler, dan banyak lagi.</p>
+            </div>
+          </div>
+        </div>
+        <div class="inline-block w-full align-top bg-[url('assets/hero-abstract.svg')] bg-cover bg-center">
+          <div class="bg-brand-500/50">
+            <div class="max-w-5xl mx-auto px-6 py-16 md:py-24">
+              <h2 class="text-3xl md:text-5xl font-bold leading-tight">Estetis & <span class="text-accent-300">Strategis</span></h2>
+              <p class="text-white/80 mt-2 max-w-2xl">Indah dilihat, efektif untuk tujuan brand Anda.</p>
+            </div>
+          </div>
+        </div>
       </div>
+      <div class="absolute inset-0 flex items-end justify-between px-3 py-3 pointer-events-none">
+        <button id="prev" class="pointer-events-auto w-10 h-10 rounded-full glass border border-white/10">&lsaquo;</button>
+        <button id="next" class="pointer-events-auto w-10 h-10 rounded-full glass border border-white/10">&rsaquo;</button>
+      </div>
+      <div id="dots" class="absolute inset-x-0 bottom-3 flex items-center justify-center gap-2"></div>
     </div>
-    <div class="hero-art" role="img" aria-label="Ilustrasi abstrak maroon">
-      <img src="assets/hero-abstract.svg" alt="" />
+    <!-- Intro under hero -->
+    <div class="mt-4 md:mt-6 p-4 md:p-5 glass rounded-xl border border-white/10 flex items-start gap-3 reveal">
+      <div class="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-brand-600 grid place-items-center font-bold">J</div>
+      <div class="grow">
+        <p class="text-white/90"><b>Hai, saya Jennifer Calluella Gavrila Bacas</b> — desain grafis yang membantu brand & UMKM tampil menonjol melalui visual yang rapi, konsisten, dan siap produksi. Terbiasa bekerja <b>profesional</b>, <b>kolaboratif</b>, dan berorientasi <b>hasil</b>.</p>
+      </div>
+      <a href="#projects" class="px-4 py-2 rounded-full bg-accent-300 text-brand-900 font-semibold border border-transparent">Lihat Proyek</a>
     </div>
   </section>
 
-  <section class="metrics container" aria-label="Ringkasan singkat">
-    <div class="metric"><b id="m1">0</b><span>Kategori</span></div>
-    <div class="metric"><b id="m2">0</b><span>Proyek</span></div>
-    <div class="metric"><b>Ready</b><span>File Produksi</span></div>
-    <div class="metric"><b>On-time</b><span>Delivery</span></div>
+  <!-- METRICS -->
+  <section class="container mx-auto px-4 py-6 grid grid-cols-2 md:grid-cols-4 gap-3">
+    <div class="glass rounded-xl border border-white/10 p-4 text-center reveal"><div id="m1" class="text-2xl md:text-3xl font-extrabold">0</div><div class="text-white/70">Kategori</div></div>
+    <div class="glass rounded-xl border border-white/10 p-4 text-center reveal"><div id="m2" class="text-2xl md:text-3xl font-extrabold">0</div><div class="text-white/70">Proyek</div></div>
+    <div class="glass rounded-xl border border-white/10 p-4 text-center reveal"><div class="text-xl md:text-2xl font-extrabold">Ready</div><div class="text-white/70">File Produksi</div></div>
+    <div class="glass rounded-xl border border-white/10 p-4 text-center reveal"><div class="text-xl md:text-2xl font-extrabold">On‑time</div><div class="text-white/70">Delivery</div></div>
   </section>
 
   <main id="main">
-    <!-- Selected Work (carousel-lite) -->
-    <section id="selected" class="section container">
-      <div class="section-head">
-        <h2>Selected Work</h2>
-        <p>Cuplikan proyek dengan konteks singkat & KPI yang bisa kamu isi.</p>
+    <!-- SELECTED WORK -->
+    <section id="selected" class="container mx-auto px-4 py-10">
+      <div class="flex items-end justify-between gap-3 flex-wrap mb-4">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold">Selected Work</h2>
+          <p class="text-white/70">Cuplikan karya dengan konteks & KPI.</p>
+        </div>
       </div>
-      <div class="selected" id="selectedWrap">
-        <!-- injected -->
-      </div>
+      <div id="selectedWrap" class="grid md:grid-cols-2 gap-3"></div>
     </section>
 
-    <!-- Projects (all) -->
-    <section id="projects" class="section container">
-      <div class="section-head row">
+    <!-- PROJECTS -->
+    <section id="projects" class="container mx-auto px-4 py-10 border-t border-white/10">
+      <div class="flex items-end justify-between gap-3 flex-wrap mb-4">
         <div>
-          <h2>My Project</h2>
-          <p>Filter kategori atau cari judul/kata kunci.</p>
+          <h2 class="text-2xl md:text-3xl font-bold">My Project</h2>
+          <p class="text-white/70">Filter kategori atau cari judul/kata kunci.</p>
         </div>
-        <div class="controls">
-          <div class="chips" id="filters">
-            <button class="chip active" data-filter="all">All</button>
-            <button class="chip" data-filter="Apparel">Apparel</button>
-            <button class="chip" data-filter="Merch">Merch</button>
-            <button class="chip" data-filter="Home">Home</button>
-            <button class="chip" data-filter="Promo">Promo</button>
-            <button class="chip" data-filter="Publishing">Publishing</button>
+        <div class="flex items-center gap-2 flex-wrap">
+          <div id="filters" class="flex flex-wrap gap-2">
+            <button class="chip active px-3 py-1.5 rounded-full glass border border-white/10" data-filter="all">All</button>
+            <button class="chip px-3 py-1.5 rounded-full glass border border-white/10" data-filter="Apparel">Apparel</button>
+            <button class="chip px-3 py-1.5 rounded-full glass border border-white/10" data-filter="Merch">Merch</button>
+            <button class="chip px-3 py-1.5 rounded-full glass border border-white/10" data-filter="Home">Home</button>
+            <button class="chip px-3 py-1.5 rounded-full glass border border-white/10" data-filter="Promo">Promo</button>
+            <button class="chip px-3 py-1.5 rounded-full glass border border-white/10" data-filter="Publishing">Publishing</button>
           </div>
-          <input id="search" class="search" type="search" placeholder="Cari proyek…" aria-label="Cari proyek" />
-          <select id="sort" class="sort" aria-label="Urutkan">
+          <input id="search" type="search" placeholder="Cari proyek…" class="px-3 py-2 rounded-full border border-white/10 bg-black/20 focus:outline-none" />
+          <select id="sort" class="px-3 py-2 rounded-full border border-white/10 bg-black/20">
             <option value="az">A → Z</option>
             <option value="za">Z → A</option>
             <option value="cat">Kategori</option>
           </select>
         </div>
       </div>
-      <div class="grid cards" id="projectGrid"></div>
+      <div id="projectGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3"></div>
     </section>
 
-    <!-- Skills -->
-    <section id="skills" class="section container">
-      <div class="section-head">
-        <h2>My Skill</h2>
-        <p>Teknis & soft skill yang mendukung kolaborasi lintas tim.</p>
+    <!-- SKILLS -->
+    <section id="skills" class="container mx-auto px-4 py-10 border-t border-white/10">
+      <div class="mb-4">
+        <h2 class="text-2xl md:text-3xl font-bold">My Skill</h2>
+        <p class="text-white/70">Teknis & soft skill yang mendukung kolaborasi lintas tim.</p>
       </div>
-      <div class="skill-wrap">
-        <div class="panel">
-          <h3>Tools</h3>
-          <div class="badges">
-            <span>Canva</span><span>Adobe After Effects</span><span>Adobe Photoshop</span>
-            <span>Figma</span><span>Blender</span><span>Adobe Illustrator</span>
-            <span>Alight Motion</span><span>Ibis Paint X</span><span>CapCut</span>
-            <span>Microsoft Word</span><span>Microsoft Excel</span>
+      <div class="grid md:grid-cols-3 gap-3">
+        <div class="glass rounded-xl border border-white/10 p-4 reveal">
+          <h3 class="font-semibold mb-2">Tools</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full glass border border-white/10">Canva</span>
+            <span class="px-3 py-1 rounded-full glass border border-white/10">Adobe After Effects</span>
+            <span class="px-3 py-1 rounded-full glass border border-white/10">Adobe Photoshop</span>
+            <span class="px-3 py-1 rounded-full glass border border-white/10">Figma</span>
+            <span class="px-3 py-1 rounded-full glass border border-white/10">Blender</span>
+            <span class="px-3 py-1 rounded-full glass border border-white/10">Adobe Illustrator</span>
+            <span class="px-3 py-1 rounded-full glass border border-white/10">Alight Motion</span>
+            <span class="px-3 py-1 rounded-full glass border border-white/10">Ibis Paint X</span>
+            <span class="px-3 py-1 rounded-full glass border border-white/10">CapCut</span>
+            <span class="px-3 py-1 rounded-full glass border border-white/10">Microsoft Word</span>
+            <span class="px-3 py-1 rounded-full glass border border-white/10">Microsoft Excel</span>
           </div>
         </div>
-        <div class="panel">
-          <h3>Cara Kerja</h3>
-          <ol class="steps">
-            <li><b>Brief & Riset</b> — tujuan, audiens, referensi, dan aset.</li>
+        <div class="glass rounded-xl border border-white/10 p-4 reveal">
+          <h3 class="font-semibold mb-2">Cara Kerja</h3>
+          <ol class="list-decimal pl-5 space-y-1">
+            <li><b>Brief & Riset</b> — tujuan, audiens, referensi, aset.</li>
             <li><b>Konsep</b> — moodboard, sketsa, style frame.</li>
             <li><b>Produksi</b> — desain utama + iterasi terarah.</li>
             <li><b>Handoff</b> — file final & panduan singkat.</li>
           </ol>
         </div>
-        <div class="panel">
-          <h3>Profesional</h3>
-          <ul class="list">
+        <div class="glass rounded-xl border border-white/10 p-4 reveal">
+          <h3 class="font-semibold mb-2">Profesional</h3>
+          <ul class="list-disc pl-5 space-y-1">
             <li>Komunikasi jelas, update rutin (chat/meet).</li>
             <li>File terstruktur & siap cetak/produksi.</li>
             <li>Fokus pada hasil bisnis & konsistensi brand.</li>
@@ -145,114 +222,109 @@
       </div>
     </section>
 
-    <!-- Services (lebih informatif) -->
-    <section id="services" class="section container">
-      <div class="section-head">
-        <h2>Services</h2>
-        <p>Paket ringkas agar mudah memilih sesuai kebutuhanmu.</p>
+    <!-- SERVICES -->
+    <section id="services" class="container mx-auto px-4 py-10 border-t border-white/10">
+      <div class="mb-4">
+        <h2 class="text-2xl md:text-3xl font-bold">Services</h2>
+        <p class="text-white/70">Paket ringkas agar mudah memilih.</p>
       </div>
-      <div class="services">
-        <article class="svc">
-          <h3>Merch Starter</h3>
-          <ul>
-            <li>2 konsep + 1 revisi</li>
-            <li>1 kategori (mis. Mug/Tumbler)</li>
-            <li>File AI/PDF/PNG</li>
+      <div class="grid md:grid-cols-3 gap-3">
+        <article class="glass rounded-xl border border-white/10 p-4 reveal">
+          <h3 class="font-semibold text-lg">Merch Starter</h3>
+          <ul class="list-disc pl-5 my-2 space-y-1">
+            <li>2 konsep + 1 revisi</li><li>1 kategori (mis. Mug/Tumbler)</li><li>File AI/PDF/PNG</li>
           </ul>
-          <a href="#contact" class="btn small">Tanya Detail</a>
+          <a href="#contact" class="inline-block px-3 py-2 rounded-full glass border border-white/10">Tanya Detail</a>
         </article>
-        <article class="svc">
-          <h3>Promo Pack</h3>
-          <ul>
-            <li>Banner + Poster + Feed</li>
-            <li>3 ukuran (X-banner/roll-up/custom)</li>
-            <li>Panduan ukuran & bleed</li>
+        <article class="glass rounded-xl border border-white/10 p-4 reveal">
+          <h3 class="font-semibold text-lg">Promo Pack</h3>
+          <ul class="list-disc pl-5 my-2 space-y-1">
+            <li>Banner + Poster + Feed</li><li>3 ukuran (X-banner/Roll-up/custom)</li><li>Panduan ukuran & bleed</li>
           </ul>
-          <a href="#contact" class="btn small">Tanya Detail</a>
+          <a href="#contact" class="inline-block px-3 py-2 rounded-full glass border border-white/10">Tanya Detail</a>
         </article>
-        <article class="svc">
-          <h3>Apparel Pro</h3>
-          <ul>
-            <li>Kaos/Hoodie 2–3 varian</li>
-            <li>Mockup lookbook sederhana</li>
-            <li>File vector siap sablon</li>
+        <article class="glass rounded-xl border border-white/10 p-4 reveal">
+          <h3 class="font-semibold text-lg">Apparel Pro</h3>
+          <ul class="list-disc pl-5 my-2 space-y-1">
+            <li>Kaos/Hoodie 2–3 varian</li><li>Mockup lookbook sederhana</li><li>File vector siap sablon</li>
           </ul>
-          <a href="#contact" class="btn small">Tanya Detail</a>
+          <a href="#contact" class="inline-block px-3 py-2 rounded-full glass border border-white/10">Tanya Detail</a>
         </article>
       </div>
     </section>
 
-    <!-- Process (visual timeline) -->
-    <section id="process" class="section container">
-      <div class="section-head">
-        <h2>Process</h2>
-        <p>Timeline visual dari brief sampai file final.</p>
+    <!-- PROCESS -->
+    <section id="process" class="container mx-auto px-4 py-10 border-t border-white/10">
+      <div class="mb-4">
+        <h2 class="text-2xl md:text-3xl font-bold">Process</h2>
+        <p class="text-white/70">Timeline dari brief sampai file final.</p>
       </div>
-      <div class="timeline">
-        <div class="t-item"><span>1</span><b>Brief</b><p>Kebutuhan, tujuan, batasan produksi.</p></div>
-        <div class="t-item"><span>2</span><b>Konsep</b><p>Moodboard, palet, tipografi, sketsa.</p></div>
-        <div class="t-item"><span>3</span><b>Desain</b><p>Iterasi cepat dengan feedback terarah.</p></div>
-        <div class="t-item"><span>4</span><b>Handoff</b><p>File AI/PDF/PNG/SVG + panduan.</p></div>
+      <div class="grid md:grid-cols-4 gap-3">
+        <div class="glass rounded-xl border border-white/10 p-4 text-center reveal"><div class="w-8 h-8 grid place-items-center bg-white text-brand-900 font-extrabold rounded-lg mx-auto mb-2">1</div><b>Brief</b><p class="text-white/70">Kebutuhan & tujuan.</p></div>
+        <div class="glass rounded-xl border border-white/10 p-4 text-center reveal"><div class="w-8 h-8 grid place-items-center bg-white text-brand-900 font-extrabold rounded-lg mx-auto mb-2">2</div><b>Konsep</b><p class="text-white/70">Moodboard & sketsa.</p></div>
+        <div class="glass rounded-xl border border-white/10 p-4 text-center reveal"><div class="w-8 h-8 grid place-items-center bg-white text-brand-900 font-extrabold rounded-lg mx-auto mb-2">3</div><b>Desain</b><p class="text-white/70">Iterasi terarah.</p></div>
+        <div class="glass rounded-xl border border-white/10 p-4 text-center reveal"><div class="w-8 h-8 grid place-items-center bg-white text-brand-900 font-extrabold rounded-lg mx-auto mb-2">4</div><b>Handoff</b><p class="text-white/70">File final & panduan.</p></div>
       </div>
     </section>
 
-    <!-- About -->
-    <section id="about" class="section container">
-      <div class="section-head">
-        <h2>About</h2>
-        <p>Sekilas perjalanan dan pendekatan.</p>
+    <!-- ABOUT -->
+    <section id="about" class="container mx-auto px-4 py-10 border-t border-white/10">
+      <div class="mb-4">
+        <h2 class="text-2xl md:text-3xl font-bold">About</h2>
+        <p class="text-white/70">Sekilas perjalanan & pendekatan.</p>
       </div>
-      <div class="about">
-        <p>Saya fokus pada desain yang fungsional untuk bisnis: mudah diproduksi, konsisten, dan kuat secara komunikasi.
-           Bekerja dengan klien berarti kolaborasi—saya mengutamakan diskusi singkat namun jelas, agar keputusan desain
-           tetap selaras dengan target audiens & tujuan brand.</p>
+      <div class="glass rounded-xl border border-white/10 p-4 reveal">
+        <p>Saya fokus pada desain yang fungsional untuk bisnis: mudah diproduksi, konsisten, dan kuat secara komunikasi. Kolaborasi adalah kunci—saya mengutamakan diskusi ringkas namun jelas, agar keputusan desain tetap selaras dengan target audiens & tujuan brand.</p>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="section container">
-      <div class="section-head"><h2>FAQ</h2><p>Pertanyaan umum.</p></div>
-      <details class="faq"><summary>Berapa lama pengerjaan?</summary><p>Tergantung ruang lingkup. Contoh: banner 2–3 hari, apparel 3–5 hari, cover 5–7 hari.</p></details>
-      <details class="faq"><summary>Revisi berapa kali?</summary><p>Umumnya 1–2 putaran revisi terarah untuk menjaga efisiensi dan kualitas.</p></details>
-      <details class="faq"><summary>File yang diberikan?</summary><p>AI/PDF/PNG/SVG sesuai kebutuhan produksi, ditambah mockup untuk presentasi.</p></details>
+    <section id="faq" class="container mx-auto px-4 py-10 border-t border-white/10">
+      <div class="mb-4">
+        <h2 class="text-2xl md:text-3xl font-bold">FAQ</h2>
+        <p class="text-white/70">Pertanyaan umum.</p>
+      </div>
+      <details class="glass rounded-xl border border-white/10 p-4 mb-2 reveal"><summary class="cursor-pointer font-semibold">Berapa lama pengerjaan?</summary><p class="mt-2 text-white/80">Tergantung ruang lingkup: banner 2–3 hari, apparel 3–5 hari, cover 5–7 hari.</p></details>
+      <details class="glass rounded-xl border border-white/10 p-4 mb-2 reveal"><summary class="cursor-pointer font-semibold">Revisi berapa kali?</summary><p class="mt-2 text-white/80">Umumnya 1–2 putaran revisi terarah untuk menjaga efisiensi & kualitas.</p></details>
+      <details class="glass rounded-xl border border-white/10 p-4 reveal"><summary class="cursor-pointer font-semibold">File yang diberikan?</summary><p class="mt-2 text-white/80">AI/PDF/PNG/SVG sesuai kebutuhan produksi + mockup presentasi.</p></details>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section container">
-      <div class="section-head">
-        <h2>Contact</h2>
-        <p>Hubungi via media sosial atau email.</p>
+    <!-- CONTACT -->
+    <section id="contact" class="container mx-auto px-4 py-10 border-t border-white/10">
+      <div class="mb-4">
+        <h2 class="text-2xl md:text-3xl font-bold">Contact</h2>
+        <p class="text-white/70">Hubungi via media sosial atau email.</p>
       </div>
-      <div class="contact">
-        <a class="card social" href="https://www.instagram.com/jenfornaren?igsh=MXJmdXBoeDNkODU4MA==" target="_blank" rel="noopener">
-          <i class="icon ig" aria-hidden="true"></i>
-          <div><b>Instagram</b><span>@jenfornaren</span></div>
+      <div class="grid md:grid-cols-3 gap-3">
+        <a class="glass rounded-xl border border-white/10 p-4 flex items-center gap-3 reveal" href="https://www.instagram.com/jenfornaren?igsh=MXJmdXBoeDNkODU4MA==" target="_blank" rel="noopener">
+          <div class="w-10 h-10 rounded-xl bg-white/10 grid place-items-center"><img src="assets/instagram.svg" alt="" class="w-5 h-5" /></div>
+          <div><b>Instagram</b><div class="text-white/70">@jenfornaren</div></div>
         </a>
-        <a class="card social" href="https://wa.me/6288296642919" target="_blank" rel="noopener">
-          <i class="icon wa" aria-hidden="true"></i>
-          <div><b>WhatsApp</b><span>+62 882-9664-2919</span></div>
+        <a class="glass rounded-xl border border-white/10 p-4 flex items-center gap-3 reveal" href="https://wa.me/6288296642919" target="_blank" rel="noopener">
+          <div class="w-10 h-10 rounded-xl bg-white/10 grid place-items-center"><img src="assets/whatsapp.svg" alt="" class="w-5 h-5" /></div>
+          <div><b>WhatsApp</b><div class="text-white/70">+62 882-9664-2919</div></div>
         </a>
-        <div class="card email">
-          <i class="icon mail" aria-hidden="true"></i>
+        <div class="glass rounded-xl border border-white/10 p-4 flex items-start gap-3 reveal">
+          <div class="w-10 h-10 rounded-xl bg-white/10 grid place-items-center"><img src="assets/mail.svg" alt="" class="w-5 h-5" /></div>
           <div class="grow">
-            <b>Email</b><span>caella1705@gmail.com</span>
+            <b>Email</b><div class="text-white/70">caella1705@gmail.com</div>
+            <form id="contactForm" class="grid gap-2 mt-2">
+              <input class="px-3 py-2 rounded-lg border border-white/10 bg-black/20" name="name" placeholder="Nama" required />
+              <input class="px-3 py-2 rounded-lg border border-white/10 bg-black/20" name="email" type="email" placeholder="Email" required />
+              <textarea class="px-3 py-2 rounded-lg border border-white/10 bg-black/20" name="message" rows="3" placeholder="Pesan…" required></textarea>
+              <button class="px-4 py-2 rounded-full bg-accent-300 text-brand-900 font-semibold" type="submit">Kirim via Serverless</button>
+              <small id="formMsg" class="text-accent-300 min-h-[18px]"></small>
+            </form>
           </div>
-          <form id="contactForm" class="form">
-            <input type="text" name="name" placeholder="Nama" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <textarea name="message" rows="3" placeholder="Pesan…" required></textarea>
-            <button class="btn" type="submit">Kirim via Serverless</button>
-            <small id="formMsg" role="status" aria-live="polite"></small>
-          </form>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="ftr">
-    <div class="container ftr-row">
-      <span>© <span id="year"></span> Jennifer Calluella. All rights reserved.</span>
-      <a class="btn ghost" href="#home">Back to top</a>
+  <footer class="border-t border-white/10 py-6">
+    <div class="container mx-auto px-4 flex items-center justify-between gap-3">
+      <span class="text-white/70">© <span id="year"></span> Jennifer Calluella. All rights reserved.</span>
+      <a href="#home" class="px-3 py-2 rounded-full glass border border-white/10">Back to top</a>
     </div>
   </footer>
 

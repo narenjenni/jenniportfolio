@@ -1,26 +1,36 @@
-// ===== Redesign V3 JS =====
+// ===== Tailwind V4 JS =====
 const $ = (q, ctx=document) => ctx.querySelector(q);
 const $$ = (q, ctx=document) => [...ctx.querySelectorAll(q)];
 
 // Mobile menu
 const hamburger = $('#hamburger');
-const menu = $('#menu');
+const menuMobile = $('#menuMobile');
 hamburger.addEventListener('click', () => {
-  const open = menu.classList.toggle('open');
+  const open = menuMobile.classList.toggle('hidden') === false;
   hamburger.setAttribute('aria-expanded', String(open));
 });
 
 // Year
 $('#year').textContent = new Date().getFullYear();
 
-// Rotator
-const words = ['merchandise', 'apparel', 'banner', 'cover novel', 'goodiebag'];
-const rotator = $('#rotator');
-let wi = 0;
-setInterval(() => {
-  wi = (wi + 1) % words.length;
-  rotator.textContent = words[wi];
-}, 2200);
+// Hero slider
+const slidesEl = $('#slides');
+const dotsEl = $('#dots');
+const slides = slidesEl.children;
+let idx = 0;
+function go(i){ idx=(i+slides.length)%slides.length; slidesEl.style.transform=`translateX(-${idx*100}%)`; [...dotsEl.children].forEach((d,j)=>d.classList.toggle('bg-white', j===idx)); [...dotsEl.children].forEach((d,j)=>d.classList.toggle('bg-white/40', j!==idx)); }
+function next(){ go(idx+1); }
+function prev(){ go(idx-1); }
+$('#next').addEventListener('click', next);
+$('#prev').addEventListener('click', prev);
+for(let i=0;i<slides.length;i++){ const b=document.createElement('button'); b.className='w-2.5 h-2.5 rounded-full bg-white/40'; if(i===0) b.classList.add('bg-white'); b.addEventListener('click',()=>go(i)); dotsEl.appendChild(b); }
+let timer = setInterval(next, 5000);
+slidesEl.addEventListener('mouseenter', ()=>clearInterval(timer));
+slidesEl.addEventListener('mouseleave', ()=>timer=setInterval(next, 5000));
+
+// Reveal on scroll
+const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); }); }, {threshold:.1});
+$$('.reveal').forEach(el=>io.observe(el));
 
 // Data
 const projects = [
@@ -42,45 +52,45 @@ const selected = [
   { link:'case.html#mug',     media:'assets/ph-mug.svg',     title:'Mug Series',      kpis:['4 desain', 'CMYK OK', 'Wrap 360°'] },
 ];
 
-// Render selected
-const selWrap = $('#selectedWrap');
+// Render Selected
+const selWrap = document.getElementById('selectedWrap');
 selWrap.innerHTML = selected.map(s => `
-  <article class="sel-card">
-    <div class="sel-media" style="background-image:url('${s.media}')"></div>
-    <div class="sel-body">
-      <h3>${s.title}</h3>
-      <div class="kpis">${s.kpis.map(k => `<span class="kpi">${k}</span>`).join('')}</div>
-      <div class="sel-actions">
-        <a href="${s.link}" class="btn small">Buka Case</a>
-        <a href="#contact" class="btn small ghost">Pesan Desain</a>
+  <article class="glass rounded-xl border border-white/10 overflow-hidden grid grid-cols-1 md:grid-cols-2">
+    <div class="aspect-[16/10] bg-center bg-cover" style="background-image:url('${s.media}')"></div>
+    <div class="p-4 grid content-start gap-2">
+      <h3 class="font-semibold text-lg">${s.title}</h3>
+      <div class="flex flex-wrap gap-2">${s.kpis.map(k=>`<span class="px-2 py-1 rounded-full glass border border-white/10 text-sm">${k}</span>`).join('')}</div>
+      <div class="mt-1 flex gap-2 flex-wrap">
+        <a href="${s.link}" class="px-3 py-2 rounded-full bg-accent-300 text-brand-900 font-semibold">Buka Case</a>
+        <a href="#contact" class="px-3 py-2 rounded-full glass border border-white/10">Pesan Desain</a>
       </div>
     </div>
   </article>
 `).join('');
 
 // Metrics
-$('#m1').textContent = new Set(projects.map(p => p.tag)).size;
-$('#m2').textContent = projects.length;
+document.getElementById('m1').textContent = new Set(projects.map(p=>p.tag)).size;
+document.getElementById('m2').textContent = projects.length;
 
 // Projects grid
-const grid = $('#projectGrid');
-const filters = $('#filters');
-const search = $('#search');
-const sort = $('#sort');
+const grid = document.getElementById('projectGrid');
+const filters = document.getElementById('filters');
+const search = document.getElementById('search');
+const sort = document.getElementById('sort');
 
 function render(list){
   grid.innerHTML = list.map(p => `
-    <article class="card">
-      <div class="thumb" style="background-image:url('${p.thumb}')"></div>
-      <div class="body">
-        <div class="row">
-          <h3>${p.title}</h3>
-          <span class="tag">${p.tag}</span>
+    <article class="glass rounded-xl border border-white/10 overflow-hidden">
+      <div class="aspect-[4/3] bg-center bg-cover" style="background-image:url('${p.thumb}')"></div>
+      <div class="p-4 grid gap-2">
+        <div class="flex items-center justify-between gap-2">
+          <h3 class="font-semibold">${p.title}</h3>
+          <span class="text-sm text-white/80">${p.tag}</span>
         </div>
-        <p>${p.desc}</p>
-        <div class="row">
-          <a class="btn small" href="case.html#${p.id}">Case Study</a>
-          <a class="btn small ghost" href="#contact">Pesan</a>
+        <p class="text-white/80">${p.desc}</p>
+        <div class="flex gap-2">
+          <a href="case.html#${p.id}" class="px-3 py-2 rounded-full bg-accent-300 text-brand-900 font-semibold">Case Study</a>
+          <a href="#contact" class="px-3 py-2 rounded-full glass border border-white/10">Pesan</a>
         </div>
       </div>
     </article>
@@ -100,16 +110,16 @@ function getList(){
 
 filters.addEventListener('click', e => {
   const btn = e.target.closest('.chip'); if(!btn) return;
-  $$('.chip', filters).forEach(c=>c.classList.remove('active')); btn.classList.add('active');
+  $$('.chip', filters).forEach(c=>c.classList.remove('bg-white','text-brand-900')); 
+  btn.classList.add('bg-white','text-brand-900');
   filterVal = btn.dataset.filter; render(getList());
 });
 search.addEventListener('input', ()=>render(getList()));
 sort.addEventListener('change', ()=>render(getList()));
-
 render(getList());
 
 // Contact form
-const form = $('#contactForm'); const formMsg = $('#formMsg');
+const form = document.getElementById('contactForm'); const formMsg = document.getElementById('formMsg');
 form.addEventListener('submit', async (e)=>{
   e.preventDefault();
   formMsg.textContent = 'Mengirim...';
