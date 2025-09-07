@@ -1,208 +1,190 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Jennifer Calluella Gavrila Bacas — Jenii Design</title>
-  <meta name="description" content="Portfolio Jennifer Calluella Gavrila Bacas — Graphic Designer (brand & merchandise)."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio — Jennifer Calluella Gavrila Bacas</title>
+  <meta name="description" content="Portfolio desain grafis Jennifer Calluella Gavrila Bacas: pakaian, mug, selimut, bantal, banner, cover novel, hoodie, goodiebag, tumbler, dan lainnya.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/hero1.svg" as="image">
+  <link rel="preload" href="assets/hero2.svg" as="image">
+  <link rel="preload" href="assets/hero3.svg" as="image">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Social rail -->
-  <aside class="social-rail" aria-label="Social links">
-    <a href="https://www.instagram.com/jenfornaren?igsh=MXJmdXBoeDNkODU4MA==" target="_blank" rel="noopener" aria-label="Instagram">
-      <img src="assets/icon-instagram.svg" alt="" />
-    </a>
-    <a href="https://wa.me/6288296642919" target="_blank" rel="noopener" aria-label="WhatsApp">
-      <img src="assets/icon-whatsapp.svg" alt="" />
-    </a>
-    <a href="mailto:caella1705@gmail.com" aria-label="Email">
-      <img src="assets/icon-mail.svg" alt="" />
-    </a>
-  </aside>
-
-  <!-- Header -->
-  <header class="header">
-    <div class="wrap row">
-      <a class="brand" href="#home"><img src="assets/logo.png" alt="Jenii Design"><span>JENII DESIGN</span></a>
-      <nav class="nav" id="nav">
-        <a href="#home">HOME</a>
-        <a href="#about">ABOUT</a>
-        <a href="#projects">PROJECTS</a>
-        <a href="#contact">CONTACT</a>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#home" class="brand" aria-label="Beranda">
+        <span class="logo">&lt;/&gt;</span>
+        <span class="brand-text">Jennifer Calluella</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="menu" id="menu">
+        <a href="#projects">My Project</a>
+        <a href="#skills">My Skill</a>
+        <a href="#about">About Me</a>
+        <a href="#contact">Contact Me</a>
       </nav>
-      <button id="menuBtn" class="menu-btn" aria-label="Toggle menu">☰</button>
     </div>
-  </header>
-
-  <!-- Hero -->
-  <section id="home" class="hero">
-    <div class="wrap hero-inner">
-      <h1>HEY, I'M <span>JENNIFER</span></h1>
-      <p class="lead">Graphic Designer yang berfokus pada <b>identitas visual</b> & <b>merchandise</b>. Saya membantu brand tampil meyakinkan lewat desain yang rapi, konsisten, dan <b>siap produksi</b>—dari konsep, mockup, hingga file siap cetak.</p>
-      <a class="btn" href="#projects">PROJECTS</a>
-      <img class="hero-bg" src="assets/hero.jpg" alt="Jenii Design hero">
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="about">
-    <div class="wrap">
-      <h2 class="center">ABOUT ME</h2>
-      <div class="underline"></div>
-      <p class="center sub">Lebih dekat tentang saya, cara kerja, dan skill yang saya gunakan sehari-hari.</p>
-      <div class="about-grid">
-        <div>
-          <h3>Get to know me!</h3>
-          <p>Saya <b>Jennifer Calluella Gavrila Bacas</b>, seorang desainer grafis dengan pendekatan <i>user-first</i> dan perhatian tinggi pada detail produksi (warna, bahan, teknik cetak, finishing). Saya nyaman berkolaborasi lintas peran, menjaga timeline, dan terbuka pada feedback.</p>
-          <p>Prinsip kerja: <b>profesional</b>, <b>komunikatif</b>, dan <b>berorientasi hasil</b>. Target saya sederhana—membuat brand Anda terlihat meyakinkan dan membantu penjualan melalui visual yang rapi & konsisten.</p>
-          <a class="btn ghost" href="#contact">CONTACT</a>
+    <div class="hero" id="home" aria-label="Hero slider">
+      <div class="slides" id="slides">
+        <div class="slide" style="--bg: url('assets/hero1.svg')">
+          <div class="overlay">
+            <h1>Graphic Designer</h1>
+            <p>Branding, merchandise, dan visual yang berbicara.</p>
+          </div>
         </div>
-        <div>
-          <h3>My Skills</h3>
-          <div class="chips">
-            <span>Adobe Photoshop</span><span>Adobe Illustrator</span><span>Adobe After Effects</span><span>Figma</span>
-            <span>Blender</span><span>Canva</span><span>Alight Motion</span><span>Ibis Paint X</span><span>CapCut</span><span>Microsoft Word</span><span>Microsoft Excel</span>
-            <span>Kolaborasi Tim</span><span>Manajemen Waktu</span><span>Quality Control</span>
+        <div class="slide" style="--bg: url('assets/hero2.svg')">
+          <div class="overlay">
+            <h1>Produk Kustom</h1>
+            <p>Baju, mug, bantal, hoodie, goodiebag, dan lainnya.</p>
+          </div>
+        </div>
+        <div class="slide" style="--bg: url('assets/hero3.svg')">
+          <div class="overlay">
+            <h1>Desain yang Efektif</h1>
+            <p>Menggabungkan kreativitas & strategi untuk hasil berdampak.</p>
           </div>
         </div>
       </div>
+      <div class="hero-controls">
+        <button class="ctrl prev" id="prev" aria-label="Slide sebelumnya">‹</button>
+        <button class="ctrl next" id="next" aria-label="Slide berikutnya">›</button>
+        <div class="dots" id="dots" aria-label="Indikator slide"></div>
+      </div>
     </div>
-  </section>
+  </header>
 
-  <!-- Projects -->
-  <section id="projects" class="projects">
-    <div class="wrap">
-      <h2 class="center">PROJECTS</h2>
-      <div class="underline"></div>
-      <p class="center sub">Beberapa kategori karya. Klik CASE STUDY untuk melihat proses & hasilnya.</p>
-      
-      <article class="proj">
-        <a href="assets/baju-custom.jpg" data-lightbox><img src="assets/baju-custom.jpg" alt="Baju Custom"></a>
-        <div class="proj-text">
-          <h3>Baju Custom</h3>
-          <p>Desain kaos/jersey/tee dengan identitas brand kuat dan siap produksi massal.</p>
-          <a class="btn small" href="case-studies/baju-custom.html">CASE STUDY</a>
-        </div>
-      </article>
-      
-      <article class="proj">
-        <a href="assets/mug-custom.jpg" data-lightbox><img src="assets/mug-custom.jpg" alt="Mug Custom"></a>
-        <div class="proj-text">
-          <h3>Mug Custom</h3>
-          <p>Desain & mockup mug untuk merchandise dan hadiah promosi.</p>
-          <a class="btn small" href="case-studies/mug-custom.html">CASE STUDY</a>
-        </div>
-      </article>
-      
-      <article class="proj">
-        <a href="assets/selimut-motif.jpg" data-lightbox><img src="assets/selimut-motif.jpg" alt="Selimut Motif"></a>
-        <div class="proj-text">
-          <h3>Selimut Motif</h3>
-          <p>Motif eksklusif yang nyaman dipakai dan estetik difoto.</p>
-          <a class="btn small" href="case-studies/selimut-motif.html">CASE STUDY</a>
-        </div>
-      </article>
-      
-      <article class="proj">
-        <a href="assets/bantal-dekoratif.jpg" data-lightbox><img src="assets/bantal-dekoratif.jpg" alt="Bantal Dekoratif"></a>
-        <div class="proj-text">
-          <h3>Bantal Dekoratif</h3>
-          <p>Ilustrasi/foto printing untuk bantal dekor, cocok untuk interior brand.</p>
-          <a class="btn small" href="case-studies/bantal-dekoratif.html">CASE STUDY</a>
-        </div>
-      </article>
-      
-      <article class="proj">
-        <a href="assets/banner-media.jpg" data-lightbox><img src="assets/banner-media.jpg" alt="Banner & Media"></a>
-        <div class="proj-text">
-          <h3>Banner & Media</h3>
-          <p>Key visual event/toko/produk dengan hierarki teks yang tegas.</p>
-          <a class="btn small" href="case-studies/banner-media.html">CASE STUDY</a>
-        </div>
-      </article>
-      
-      <article class="proj">
-        <a href="assets/cover-novel.jpg" data-lightbox><img src="assets/cover-novel.jpg" alt="Cover Novel"></a>
-        <div class="proj-text">
-          <h3>Cover Novel</h3>
-          <p>Sampul buku/novel yang memikat dan konsisten dengan genre.</p>
-          <a class="btn small" href="case-studies/cover-novel.html">CASE STUDY</a>
-        </div>
-      </article>
-      
-      <article class="proj">
-        <a href="assets/hoodie-illustration.jpg" data-lightbox><img src="assets/hoodie-illustration.jpg" alt="Hoodie Illustration"></a>
-        <div class="proj-text">
-          <h3>Hoodie Illustration</h3>
-          <p>Ilustrasi & lettering khas untuk hoodie/streetwear.</p>
-          <a class="btn small" href="case-studies/hoodie-illustration.html">CASE STUDY</a>
-        </div>
-      </article>
-      
-      <article class="proj">
-        <a href="assets/goodiebag.jpg" data-lightbox><img src="assets/goodiebag.jpg" alt="Goodiebag"></a>
-        <div class="proj-text">
-          <h3>Goodiebag</h3>
-          <p>Packaging & desain untuk event/perusahaan, eye-catching & fungsional.</p>
-          <a class="btn small" href="case-studies/goodiebag.html">CASE STUDY</a>
-        </div>
-      </article>
-      
-      <article class="proj">
-        <a href="assets/tumbler-custom.jpg" data-lightbox><img src="assets/tumbler-custom.jpg" alt="Tumbler Custom"></a>
-        <div class="proj-text">
-          <h3>Tumbler Custom</h3>
-          <p>Visual bersih & modern, tahan di cetak dan di produksi massal.</p>
-          <a class="btn small" href="case-studies/tumbler-custom.html">CASE STUDY</a>
-        </div>
-      </article>
-      
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <div class="wrap">
-      <h2 class="center">CONTACT</h2>
-      <div class="underline"></div>
-      <p class="center sub">Hubungi saya melalui form berikut—saya akan membalas secepatnya.</p>
-
-      <form id="emailForm" class="card">
-        <label> Name
-          <input name="name" required placeholder="Enter Your Name">
-        </label>
-        <label> Email
-          <input type="email" name="email" required placeholder="Enter Your Email">
-        </label>
-        <label> Message
-          <textarea name="message" rows="6" required placeholder="Enter Your Message"></textarea>
-        </label>
-        <button class="btn" type="submit">SUBMIT</button>
-        <div id="status"></div>
-      </form>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="wrap footer-row">
+  <!-- Intro card just below hero -->
+  <section class="intro container fade-in">
+    <div class="intro-card">
+      <div class="intro-avatar" aria-hidden="true">J</div>
       <div>
-        <h4>JENII DESIGN</h4>
-        <p>Graphic Designer — identitas visual & merchandise.</p>
+        <h2>Hai, saya <span class="accent">Jennifer Calluella Gavrila Bacas</span>.</h2>
+        <p>
+          Saya seorang <strong>desain grafis</strong> yang membantu brand dan UMKM tampil lebih menonjol
+          melalui identitas visual, kemasan, dan materi promosi yang konsisten. Saya terbiasa bekerja
+          <strong>profesional</strong>, <strong>kolaboratif</strong> dalam tim lintas divisi, dan berorientasi pada <strong>hasil</strong>.
+        </p>
       </div>
-      <div class="social">
-        <a href="https://www.instagram.com/jenfornaren?igsh=MXJmdXBoeDNkODU4MA==" target="_blank" rel="noopener" aria-label="Instagram"><img src="assets/icon-instagram.svg" alt=""></a>
-        <a href="https://wa.me/6288296642919" target="_blank" rel="noopener" aria-label="WhatsApp"><img src="assets/icon-whatsapp.svg" alt=""></a>
-        <a href="mailto:caella1705@gmail.com" aria-label="Email"><img src="assets/icon-mail.svg" alt=""></a>
-      </div>
+      <a href="#projects" class="btn cta">Lihat Proyek</a>
     </div>
-    <div class="copy">© 2025 Jenii Design — Jennifer C. G. Bacas</div>
+  </section>
+
+  <main>
+    <!-- Projects -->
+    <section id="projects" class="container section">
+      <div class="section-head">
+        <h2>My Project</h2>
+        <p>Beberapa karya pilihan dari lini produk yang pernah saya kerjakan.</p>
+      </div>
+      <div class="grid cards" id="projectGrid">
+        <!-- Cards injected by JS -->
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="container section alt">
+      <div class="section-head">
+        <h2>My Skill</h2>
+        <p>Teknis & soft-skill untuk mendukung kolaborasi dan eksekusi proyek.</p>
+      </div>
+      <div class="skills">
+        <div class="skill-badges">
+          <span class="badge">Canva</span>
+          <span class="badge">Adobe After Effects</span>
+          <span class="badge">Adobe Photoshop</span>
+          <span class="badge">Figma</span>
+          <span class="badge">Blender</span>
+          <span class="badge">Adobe Illustrator</span>
+          <span class="badge">Alight Motion</span>
+          <span class="badge">Ibis Paint X</span>
+          <span class="badge">CapCut</span>
+          <span class="badge">Microsoft Word</span>
+          <span class="badge">Microsoft Excel</span>
+        </div>
+        <ul class="skill-notes">
+          <li><strong>Profesional & Tepat Waktu</strong> — terbiasa mengikuti brief, WBS, dan revisi bertahap.</li>
+          <li><strong>Kolaborasi Lancar</strong> — nyaman bekerja dengan tim marketing, produksi, dan sales.</li>
+          <li><strong>Detail-Oriented</strong> — teliti pada tipografi, grid, dan konsistensi brand guideline.</li>
+          <li><strong>Problem-Solving</strong> — proaktif mencari solusi desain yang efektif dan efisien.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="container section">
+      <div class="section-head">
+        <h2>About Me</h2>
+        <p>Ringkasan perjalanan dan pendekatan kerja saya.</p>
+      </div>
+      <div class="about">
+        <p>
+          Saya memulai karier dari ketertarikan pada <em>brand identity</em> dan produksi merchandise. 
+          Kini saya fokus pada desain yang tidak hanya indah, namun juga <strong>berfungsi</strong>: 
+          meningkatkan keterbacaan, memperkuat brand recall, dan mendorong konversi.
+        </p>
+        <p>
+          Workflow saya mencakup <strong>riset singkat</strong>, moodboard, sketsa konsep, 
+          iterasi desain, dan <strong>handoff</strong> yang rapi (file terstruktur, warna/typography scale, 
+          serta panduan penggunaan). Saya siap membantu Anda dari <em>ide</em> hingga <em>produksi</em>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="container section alt">
+      <div class="section-head">
+        <h2>Contact Me</h2>
+        <p>Koneksi cepat melalui media sosial atau kirimkan pesan via email.</p>
+      </div>
+
+      <div class="contact-grid">
+        <a class="contact-card" href="https://www.instagram.com/jenfornaren?igsh=MXJmdXBoeDNkODU4MA==" target="_blank" rel="noopener">
+          <div class="icon instagram" aria-hidden="true"></div>
+          <div>
+            <h3>Instagram</h3>
+            <p>@jenfornaren</p>
+          </div>
+        </a>
+
+        <a class="contact-card" href="https://wa.me/6288296642919" target="_blank" rel="noopener">
+          <div class="icon whatsapp" aria-hidden="true"></div>
+          <div>
+            <h3>WhatsApp</h3>
+            <p>+62 882-9664-2919</p>
+          </div>
+        </a>
+
+        <div class="contact-card">
+          <div class="icon email" aria-hidden="true"></div>
+          <div class="card-body">
+            <h3>Email</h3>
+            <p>caella1705@gmail.com</p>
+            <form id="contactForm" class="contact-form" aria-label="Form kontak email">
+              <div class="row">
+                <input required type="text" name="name" placeholder="Nama" />
+                <input required type="email" name="email" placeholder="Email Anda" />
+              </div>
+              <textarea required name="message" rows="4" placeholder="Pesan Anda"></textarea>
+              <button type="submit" class="btn">Kirim via Serverless</button>
+              <small id="formMsg" role="status" aria-live="polite"></small>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer">
+      <p>© <span id="year"></span> Jennifer Calluella Gavrila Bacas. All rights reserved.</p>
+      <a href="#home" class="btn ghost">Back to top</a>
+    </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>

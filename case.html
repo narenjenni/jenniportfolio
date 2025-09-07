@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case Study — Jennifer Calluella</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .case-hero { padding: 40px 0 10px; }
+    .case-hero h1 { margin:0; }
+    .meta { color: var(--muted); }
+    .mock { aspect-ratio: 16/9; border-radius: 20px; overflow:hidden; border:1px solid rgba(255,255,255,.08);
+            background: center/cover no-repeat var(--maroon-600); box-shadow: var(--shadow);}
+    .body { display:grid; gap: 12px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav class="menu" style="justify-content:flex-start; gap:10px; padding:12px 0;">
+      <a href="index.html#projects" class="btn ghost">← Kembali</a>
+      <a href="#next" id="nextLink" class="btn">Project Berikutnya</a>
+    </nav>
+
+    <header class="case-hero">
+      <h1 id="title">Case Study</h1>
+      <p id="meta" class="meta"></p>
+    </header>
+
+    <div id="mock" class="mock"></div>
+
+    <section class="section">
+      <div class="body" id="body"></div>
+    </section>
+  </div>
+
+  <script>
+    const data = {
+      'baju': {
+        title: 'Desain Baju',
+        tag: 'Apparel',
+        mock: 'assets/ph-apparel.svg',
+        body: [
+          'Tujuan: menciptakan kaos identitas komunitas dengan pesan yang ringkas dan kuat.',
+          'Pendekatan: eksplorasi tipografi dan grid modular untuk fleksibilitas ukuran sablon.',
+          'Hasil: 3 opsi desain final + file produksi (AI, PDF, PNG) & mockup siap katalog.'
+        ]
+      },
+      'mug': {
+        title: 'Desain Mug',
+        tag: 'Merch',
+        mock: 'assets/ph-mug.svg',
+        body: [
+          'Tujuan: merchandise harian dengan pesan brand yang mudah diingat.',
+          'Pendekatan: ilustrasi tematik dan slogan singkat; optimasi area cetak melingkar.',
+          'Hasil: set 4 desain tematik + template produksi CMYK.'
+        ]
+      },
+      'selimut': {
+        title: 'Desain Selimut',
+        tag: 'Home',
+        mock: 'assets/ph-blanket.svg',
+        body: [
+          'Tujuan: motif cozy untuk ambience interior yang hangat.',
+          'Pendekatan: pola geometrik dan floral dalam 2 palet warna.',
+          'Hasil: 2 motif utama + variasi warna + panduan skala cetak.'
+        ]
+      },
+      'bantal': {
+        title: 'Desain Bantal',
+        tag: 'Home',
+        mock: 'assets/ph-pillow.svg',
+        body: [
+          'Tujuan: aksen dekoratif yang menyatu dengan identitas brand.',
+          'Pendekatan: pattern ringan & ikonografi sederhana.',
+          'Hasil: 3 desain bantal + mockup ruang tamu untuk presentasi.'
+        ]
+      },
+      'banner': {
+        title: 'Banner',
+        tag: 'Promo',
+        mock: 'assets/ph-banner.svg',
+        body: [
+          'Tujuan: visibilitas maksimal pada acara & promo.',
+          'Pendekatan: hierarchy tegas, CTA jelas, jarak baca aman.',
+          'Hasil: ukuran fleksibel (X-banner, spanduk, roll-up) + file siap cetak.'
+        ]
+      },
+      'cover': {
+        title: 'Cover Novel',
+        tag: 'Publishing',
+        mock: 'assets/ph-book.svg',
+        body: [
+          'Tujuan: menarik minat pembaca sejak pandangan pertama.',
+          'Pendekatan: komposisi naratif, warna emosional, tipografi tematik.',
+          'Hasil: cover depan + spine + belakang + mockup 3D.'
+        ]
+      },
+      'hoodie': {
+        title: 'Desain Hoodie',
+        tag: 'Apparel',
+        mock: 'assets/ph-hoodie.svg',
+        body: [
+          'Tujuan: gaya kasual dengan statement grafis.',
+          'Pendekatan: ikon monogram/logotype + penempatan saku/kapu.',
+          'Hasil: 2 varian (front/back print) + file produksi.'
+        ]
+      },
+      'goodiebag': {
+        title: 'Goodiebag',
+        tag: 'Merch',
+        mock: 'assets/ph-bag.svg',
+        body: [
+          'Tujuan: media promosi ramah pakai untuk event/brand.',
+          'Pendekatan: desain minimal high-contrast untuk cetak sablon.',
+          'Hasil: 2 desain + panduan area cetak & ukuran bahan.'
+        ]
+      },
+      'tumbler': {
+        title: 'Tumbler',
+        tag: 'Merch',
+        mock: 'assets/ph-tumbler.svg',
+        body: [
+          'Tujuan: merchandise fungsional yang memperkuat brand recall.',
+          'Pendekatan: layout wrap 360° & tipografi bersih.',
+          'Hasil: file vector siap produksi + panduan material.'
+        ]
+      }
+    };
+    const order = Object.keys(data);
+    function render() {
+      let id = location.hash.slice(1) || order[0];
+      const d = data[id];
+      if (!d) return;
+      document.title = d.title + ' — Case Study';
+      document.getElementById('title').textContent = d.title;
+      document.getElementById('meta').textContent = d.tag;
+      document.getElementById('mock').style.backgroundImage = `url('${d.mock}')`;
+      const body = document.getElementById('body');
+      body.innerHTML = '';
+      d.body.forEach(p => {
+        const el = document.createElement('p'); el.textContent = p; body.appendChild(el);
+      });
+      const nextId = order[(order.indexOf(id)+1) % order.length];
+      document.getElementById('nextLink').setAttribute('href', '#' + nextId);
+    }
+    window.addEventListener('hashchange', render);
+    render();
+  </script>
+</body>
+</html>
