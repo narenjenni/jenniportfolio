@@ -142,40 +142,46 @@ const projects = [
     title: "Banner",
     desc: "Desain banner untuk promosi dan event.",
     thumb: "assets/project5.svg",
-    tags: ["Promo", "Event"]
+    tags: ["Marketing", "Event"]
   },
   {
     title: "Cover Novel",
     desc: "Desain cover novel yang menarik.",
     thumb: "assets/project6.svg",
-    tags: ["Book", "Publishing"]
+    tags: ["Publishing", "Book"]
+  },
+  {
+    title: "Hoodie",
+    desc: "Desain hoodie dengan berbagai gaya.",
+    thumb: "assets/project7.svg",
+    tags: ["Apparel", "Fashion"]
   },
   {
     title: "Goodiebag",
-    desc: "Desain goodiebag untuk event.",
-    thumb: "assets/project7.svg",
-    tags: ["Event", "Merch"]
+    desc: "Desain goodiebag untuk event dan souvenir.",
+    thumb: "assets/project8.svg",
+    tags: ["Event", "Merchandise"]
   },
   {
     title: "Tumbler",
     desc: "Desain tumbler untuk minuman.",
-    thumb: "assets/project8.svg",
-    tags: ["Drinkware", "Eco"]
+    thumb: "assets/project9.svg",
+    tags: ["Drinkware", "Lifestyle"]
   }
 ];
 
 const projectGrid = $('#projectGrid');
-projects.forEach((project, i) => {
-  const card = document.createElement('article');
+projects.forEach((proj, i) => {
+  const card = document.createElement('div');
   card.className = 'card';
-  card.style.animationDelay = `${i * 100}ms`;
+  card.style.animationDelay = `${i * 0.08}s`;
   card.innerHTML = `
-    <div class="thumb" style="--bg: url('${project.thumb}')"></div>
+    <div class="thumb" style="--bg: url('${proj.thumb}')"></div>
     <div class="body">
-      <h3>${project.title}</h3>
-      <p>${project.desc}</p>
+      <h3>${proj.title}</h3>
+      <p>${proj.desc}</p>
       <div class="actions">
-        ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+        ${proj.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
       </div>
     </div>
   `;
@@ -186,26 +192,25 @@ projects.forEach((project, i) => {
 const contactForm = $('#contactForm');
 const formMsg = $('#formMsg');
 
-contactForm.addEventListener('submit', async e => {
+contactForm.addEventListener('submit', async (e) => {
   e.preventDefault();
-  const formData = new FormData(contactForm);
-  const data = Object.fromEntries(formData);
+  const data = new FormData(contactForm);
+  const payload = Object.fromEntries(data);
   
-  // Simple validation
-  if (!data.name || !data.email || !data.message) {
-    formMsg.textContent = 'Semua field harus diisi.';
-    return;
-  }
-  
-  formMsg.textContent = 'Mengirim pesan...';
+  formMsg.textContent = 'Mengirim...';
   
   try {
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1500));
-    formMsg.textContent = 'Pesan berhasil dikirim! Saya akan membalas segera.';
+    formMsg.textContent = 'Pesan berhasil dikirim!';
     contactForm.reset();
+    
+    // Clear message after 3 seconds
+    setTimeout(() => {
+      formMsg.textContent = '';
+    }, 3000);
   } catch (err) {
-    formMsg.textContent = 'Terjadi kesalahan. Silakan coba lagi.';
+    formMsg.textContent = 'Gagal mengirim pesan. Silakan coba lagi.';
   }
 });
 
@@ -219,12 +224,23 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('fade-in');
-      observer.unobserve(entry.target);
     }
   });
 }, observerOptions);
 
-// Observe all sections
+// Observe sections
 $$('section').forEach(section => {
   observer.observe(section);
 });
+
+// ====== Lazy loading for images ======
+if ('loading' in HTMLImageElement.prototype) {
+  $$('img[loading="lazy"]').forEach(img => {
+    img.src = img.dataset.src;
+  });
+} else {
+  // Fallback for browsers that don't support lazy loading
+  const lazyScript = document.createElement('script');
+  lazyScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+  document.body.appendChild(lazyScript);
+}
