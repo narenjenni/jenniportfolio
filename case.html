@@ -7,30 +7,64 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .case-hero { padding: 40px 0 10px; }
-    .case-hero h1 { margin:0; }
+    .case-wrap { max-width: 1020px; margin: 0 auto; padding: 0 20px 40px; }
+    .case-hero { padding: 36px 0 10px; }
+    .case-hero h1 { margin:0; font-size: clamp(22px, 3.2vw, 36px); }
     .meta { color: var(--muted); }
+    .grid-2 { display:grid; grid-template-columns: 1.2fr .8fr; gap: 16px; }
     .mock { aspect-ratio: 16/9; border-radius: 20px; overflow:hidden; border:1px solid rgba(255,255,255,.08);
             background: center/cover no-repeat var(--maroon-600); box-shadow: var(--shadow);}
-    .body { display:grid; gap: 12px; }
+    .kicker { margin:8px 0 0; color:#ffffffb0; }
+    .section { padding: 32px 0; }
+    .panel { background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow); }
+    .chips { display:flex; gap:8px; flex-wrap: wrap; }
+    .chip { padding:6px 10px; border-radius: 999px; border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.06); }
+    .list { margin:0; padding-left: 18px; }
+    .gallery { display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; }
+    .gallery div { aspect-ratio: 16/10; border-radius: 12px; background: center/cover no-repeat var(--maroon-600); border: 1px solid rgba(255,255,255,.08); }
+    .nav { display:flex; gap:10px; padding:12px 0; }
+    @media (max-width: 800px){ .grid-2 { grid-template-columns: 1fr; } .gallery { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 520px){ .gallery { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
-  <div class="container">
-    <nav class="menu" style="justify-content:flex-start; gap:10px; padding:12px 0;">
+  <div class="case-wrap">
+    <nav class="nav">
       <a href="index.html#projects" class="btn ghost">← Kembali</a>
-      <a href="#next" id="nextLink" class="btn">Project Berikutnya</a>
+      <a href="#" id="prevLink" class="btn">← Sebelumnya</a>
+      <a href="#" id="nextLink" class="btn">Berikutnya →</a>
     </nav>
 
     <header class="case-hero">
-      <h1 id="title">Case Study</h1>
+      <p class="kicker">Case Study</p>
+      <h1 id="title">Judul Proyek</h1>
       <p id="meta" class="meta"></p>
     </header>
 
     <div id="mock" class="mock"></div>
 
+    <section class="section grid-2">
+      <div class="panel">
+        <h3>Ringkasan</h3>
+        <p id="summary"></p>
+        <h3>Proses</h3>
+        <ul id="process" class="list"></ul>
+        <h3>Hasil</h3>
+        <ul id="outcomes" class="list"></ul>
+      </div>
+      <aside class="panel">
+        <h3>Peran & Tools</h3>
+        <div class="chips" id="tools"></div>
+        <h3 style="margin-top:10px">Deliverables</h3>
+        <ul id="deliverables" class="list"></ul>
+        <h3 style="margin-top:10px">Detail</h3>
+        <ul id="details" class="list"></ul>
+      </aside>
+    </section>
+
     <section class="section">
-      <div class="body" id="body"></div>
+      <h3>Galeri</h3>
+      <div id="gallery" class="gallery"></div>
     </section>
   </div>
 
@@ -38,95 +72,133 @@
     const data = {
       'baju': {
         title: 'Desain Baju',
-        tag: 'Apparel',
+        tag: 'Apparel · Identitas Komunitas',
         mock: 'assets/ph-apparel.svg',
-        body: [
-          'Tujuan: menciptakan kaos identitas komunitas dengan pesan yang ringkas dan kuat.',
-          'Pendekatan: eksplorasi tipografi dan grid modular untuk fleksibilitas ukuran sablon.',
-          'Hasil: 3 opsi desain final + file produksi (AI, PDF, PNG) & mockup siap katalog.'
-        ]
+        summary: 'Kaos identitas komunitas dengan pesan ringkas dan kuat. Fokus pada tipografi, grid modular, dan skema warna yang kontras untuk produksi sablon.',
+        process: [
+          'Kumpulkan logo/ikon & tone pesan yang diinginkan.',
+          'Eksplor 3 konsep tipografi (bold, condensed, handwritten).',
+          'Uji keterbacaan di jarak 2–3 meter.',
+          'Finalisasi layout dan siapkan file produksi.'
+        ],
+        outcomes: [
+          '3 opsi desain final untuk evaluasi.',
+          'Mockup kaos depan/belakang untuk katalog.',
+          'File produksi (AI, PDF, PNG) terstruktur.'
+        ],
+        tools: ['Illustrator','Photoshop','Figma (moodboard)'],
+        deliverables: ['AI (vector)','PDF siap cetak','PNG transparan','Mockup JPG'],
+        details: ['Timeline: 3–5 hari kerja','Revisi: 1–2 putaran','Aplikasi: kaos, hoodie, tote'],
+        gallery: ['assets/ph-apparel.svg','assets/ph-hoodie.svg','assets/ph-bag.svg']
       },
       'mug': {
         title: 'Desain Mug',
-        tag: 'Merch',
+        tag: 'Merch · Ilustrasi & Slogan',
         mock: 'assets/ph-mug.svg',
-        body: [
-          'Tujuan: merchandise harian dengan pesan brand yang mudah diingat.',
-          'Pendekatan: ilustrasi tematik dan slogan singkat; optimasi area cetak melingkar.',
-          'Hasil: set 4 desain tematik + template produksi CMYK.'
-        ]
+        summary: 'Merchandise harian dengan ilustrasi tematik dan slogan singkat. Penempatan visual disesuaikan dengan area cetak melingkar.',
+        process: [
+          'Buat pola layout 360° untuk area wrap.',
+          'Rancang 2 style: minimal & ilustratif.',
+          'Siapkan versi terang/gelap untuk berbagai material.',
+          'Uji pratinjau pada mockup silinder.'
+        ],
+        outcomes: ['Set 4 desain tematik','Template produksi CMYK','Mockup 3D untuk katalog'],
+        tools: ['Illustrator','Photoshop','Canva'],
+        deliverables: ['AI/PSD','PDF CMYK','PNG 300dpi','Mockup 3D'],
+        details: ['Timeline: 2–4 hari','Revisi: 1–2 putaran','Metode: sublim/sablon'],
+        gallery: ['assets/ph-mug.svg','assets/ph-tumbler.svg','assets/ph-bag.svg']
       },
       'selimut': {
         title: 'Desain Selimut',
-        tag: 'Home',
+        tag: 'Home · Motif Cozy',
         mock: 'assets/ph-blanket.svg',
-        body: [
-          'Tujuan: motif cozy untuk ambience interior yang hangat.',
-          'Pendekatan: pola geometrik dan floral dalam 2 palet warna.',
-          'Hasil: 2 motif utama + variasi warna + panduan skala cetak.'
-        ]
+        summary: 'Motif geometrik & floral yang hangat, tersusun dalam dua palet warna agar mudah dipadupadankan dengan interior.',
+        process: [
+          'Moodboard ambience ruang keluarga.',
+          'Eksplor motif berulang (seamless pattern).',
+          'Uji skala pada ukuran produksi.',
+          'Siapkan varian warna & dokumentasi pattern.'
+        ],
+        outcomes: ['2 motif utama','Varian warna hangat & dingin','File pattern terstruktur'],
+        tools: ['Illustrator','Photoshop'],
+        deliverables: ['AI pattern','PDF panduan skala','PNG preview'],
+        details: ['Timeline: 4–6 hari','Revisi: 1–2 putaran','Ukuran: menyesuaikan vendor'],
+        gallery: ['assets/ph-blanket.svg','assets/ph-pillow.svg','assets/ph-tumbler.svg']
       },
       'bantal': {
         title: 'Desain Bantal',
-        tag: 'Home',
+        tag: 'Home · Dekoratif',
         mock: 'assets/ph-pillow.svg',
-        body: [
-          'Tujuan: aksen dekoratif yang menyatu dengan identitas brand.',
-          'Pendekatan: pattern ringan & ikonografi sederhana.',
-          'Hasil: 3 desain bantal + mockup ruang tamu untuk presentasi.'
-        ]
+        summary: 'Aksen dekoratif yang menyatu dengan identitas brand. Pattern ringan & ikonografi sederhana untuk fleksibilitas.',
+        process: ['Kumpulkan palet & aset brand','Eksplor ikon/pattern ringan','Mockup ruang tamu','Final file produksi'],
+        outcomes: ['3 desain bantal','Mockup ruang tamu','Panduan bahan & ukuran'],
+        tools: ['Illustrator','Photoshop','Figma'],
+        deliverables: ['AI','PDF','PNG','Mockup JPG'],
+        details: ['Timeline: 3–5 hari','Revisi: 1–2 putaran'],
+        gallery: ['assets/ph-pillow.svg','assets/ph-blanket.svg','assets/ph-bag.svg']
       },
       'banner': {
         title: 'Banner',
-        tag: 'Promo',
+        tag: 'Promo · Event & Penjualan',
         mock: 'assets/ph-banner.svg',
-        body: [
-          'Tujuan: visibilitas maksimal pada acara & promo.',
-          'Pendekatan: hierarchy tegas, CTA jelas, jarak baca aman.',
-          'Hasil: ukuran fleksibel (X-banner, spanduk, roll-up) + file siap cetak.'
-        ]
+        summary: 'Materi promosi untuk event/penjualan. Hierarki tegas, CTA jelas, dan jarak baca aman dari berbagai jarak.',
+        process: ['Analisis venue & jarak pandang','Rancang hierarki & CTA','Siapkan layout ukuran X/Roll-up','Proof warna & bleed'],
+        outcomes: ['Ukuran fleksibel (X-banner, spanduk)','File siap cetak + bleed','Preview mockup di venue'],
+        tools: ['Illustrator','Photoshop'],
+        deliverables: ['AI + PDF cetak','PNG preview','Panduan ukuran'],
+        details: ['Timeline: 2–3 hari','Revisi: 1–2 putaran'],
+        gallery: ['assets/ph-banner.svg','assets/ph-bag.svg','assets/ph-apparel.svg']
       },
       'cover': {
         title: 'Cover Novel',
-        tag: 'Publishing',
+        tag: 'Publishing · Naratif',
         mock: 'assets/ph-book.svg',
-        body: [
-          'Tujuan: menarik minat pembaca sejak pandangan pertama.',
-          'Pendekatan: komposisi naratif, warna emosional, tipografi tematik.',
-          'Hasil: cover depan + spine + belakang + mockup 3D.'
-        ]
+        summary: 'Cover yang menyampaikan nuansa cerita sejak pandangan pertama: komposisi naratif, warna emosional, tipografi tematik.',
+        process: ['Ringkas sinopsis & tone','Eksplor 2–3 konsep visual','Uji keterbacaan judul/spine','Final layout front–spine–back'],
+        outcomes: ['Cover depan + spine + belakang','Mockup 3D untuk promosi','File siap cetak/ebook'],
+        tools: ['Photoshop','Illustrator','Figma'],
+        deliverables: ['PSD/AI','PDF cetak','PNG 3D mockup'],
+        details: ['Timeline: 5–7 hari','Revisi: 2 putaran'],
+        gallery: ['assets/ph-book.svg','assets/ph-banner.svg','assets/ph-mug.svg']
       },
       'hoodie': {
         title: 'Desain Hoodie',
-        tag: 'Apparel',
+        tag: 'Apparel · Streetwear',
         mock: 'assets/ph-hoodie.svg',
-        body: [
-          'Tujuan: gaya kasual dengan statement grafis.',
-          'Pendekatan: ikon monogram/logotype + penempatan saku/kapu.',
-          'Hasil: 2 varian (front/back print) + file produksi.'
-        ]
+        summary: 'Gaya kasual dengan statement grafis: ikon monogram/logotype, penempatan grafis di dada/punggung/lengan.',
+        process: ['Eksplor logo/monogram','Uji penempatan (front/back/sleeve)','Proof ukuran sablon','Final file produksi'],
+        outcomes: ['2 varian (front/back print)','File vector siap cetak','Mockup lookbook sederhana'],
+        tools: ['Illustrator','Photoshop'],
+        deliverables: ['AI','PDF','PNG','Mockup'],
+        details: ['Timeline: 3–5 hari','Revisi: 1–2 putaran'],
+        gallery: ['assets/ph-hoodie.svg','assets/ph-apparel.svg','assets/ph-bag.svg']
       },
       'goodiebag': {
         title: 'Goodiebag',
-        tag: 'Merch',
+        tag: 'Merch · Campaign',
         mock: 'assets/ph-bag.svg',
-        body: [
-          'Tujuan: media promosi ramah pakai untuk event/brand.',
-          'Pendekatan: desain minimal high-contrast untuk cetak sablon.',
-          'Hasil: 2 desain + panduan area cetak & ukuran bahan.'
-        ]
+        summary: 'Media promosi ramah pakai untuk event/brand. Desain minimal high-contrast untuk cetak sablon.',
+        process: ['Definisikan pesan & logo','Rancang 2 opsi: teks & ikon','Uji kontras 1-warna','Final file sablon'],
+        outcomes: ['2 desain utama','Area cetak & margin aman','File siap produksi'],
+        tools: ['Illustrator','Canva'],
+        deliverables: ['AI','PDF','PNG','Panduan area cetak'],
+        details: ['Timeline: 2–3 hari','Revisi: 1 putaran'],
+        gallery: ['assets/ph-bag.svg','assets/ph-apparel.svg','assets/ph-banner.svg']
       },
       'tumbler': {
         title: 'Tumbler',
-        tag: 'Merch',
+        tag: 'Merch · Wrap 360°',
         mock: 'assets/ph-tumbler.svg',
-        body: [
-          'Tujuan: merchandise fungsional yang memperkuat brand recall.',
-          'Pendekatan: layout wrap 360° & tipografi bersih.',
-          'Hasil: file vector siap produksi + panduan material.'
-        ]
+        summary: 'Desain clean dengan layout wrap 360°, menjaga keterbacaan logo & elemen utama saat dilihat dari berbagai sudut.',
+        process: ['Template wrap 360°','Penempatan logo & pattern','Proof pada mockup silinder','Final CMYK/SVG'],
+        outcomes: ['File produksi siap','Mockup pratinjau 3 sudut','Versi terang/gelap'],
+        tools: ['Illustrator','Photoshop'],
+        deliverables: ['AI/SVG','PDF CMYK','PNG preview'],
+        details: ['Timeline: 2–4 hari','Revisi: 1–2 putaran'],
+        gallery: ['assets/ph-tumbler.svg','assets/ph-mug.svg','assets/ph-bag.svg']
       }
     };
+
     const order = Object.keys(data);
     function render() {
       let id = location.hash.slice(1) || order[0];
@@ -136,13 +208,16 @@
       document.getElementById('title').textContent = d.title;
       document.getElementById('meta').textContent = d.tag;
       document.getElementById('mock').style.backgroundImage = `url('${d.mock}')`;
-      const body = document.getElementById('body');
-      body.innerHTML = '';
-      d.body.forEach(p => {
-        const el = document.createElement('p'); el.textContent = p; body.appendChild(el);
-      });
-      const nextId = order[(order.indexOf(id)+1) % order.length];
-      document.getElementById('nextLink').setAttribute('href', '#' + nextId);
+      document.getElementById('summary').textContent = d.summary;
+      const proc = document.getElementById('process'); proc.innerHTML = ''; d.process.forEach(t => { const li=document.createElement('li'); li.textContent=t; proc.appendChild(li); });
+      const out = document.getElementById('outcomes'); out.innerHTML = ''; d.outcomes.forEach(t => { const li=document.createElement('li'); li.textContent=t; out.appendChild(li); });
+      const tools = document.getElementById('tools'); tools.innerHTML = ''; d.tools.forEach(t => { const span=document.createElement('span'); span.className='chip'; span.textContent=t; tools.appendChild(span); });
+      const del = document.getElementById('deliverables'); del.innerHTML = ''; d.deliverables.forEach(t => { const li=document.createElement('li'); li.textContent=t; del.appendChild(li); });
+      const det = document.getElementById('details'); det.innerHTML = ''; d.details.forEach(t => { const li=document.createElement('li'); li.textContent=t; det.appendChild(li); });
+      const gal = document.getElementById('gallery'); gal.innerHTML = ''; d.gallery.forEach(src => { const g=document.createElement('div'); g.style.backgroundImage = `url('${src}')`; gal.appendChild(g); });
+      const i = order.indexOf(id);
+      document.getElementById('prevLink').setAttribute('href', '#' + order[(i - 1 + order.length) % order.length]);
+      document.getElementById('nextLink').setAttribute('href', '#' + order[(i + 1) % order.length]);
     }
     window.addEventListener('hashchange', render);
     render();
